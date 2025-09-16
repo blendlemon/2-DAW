@@ -1,0 +1,1 @@
+buscar un caso de diseño y explicarlo
