@@ -14,12 +14,12 @@ B) Busca los puertos por defecto de los siguientes protocolos. Indican si son TC
 
 - HTTP (Protocolo de Transferencia de Hipertexto)
 	- Puerto 80
-	- TCP/UDP 
+	- TCP 
 - HTTPS (HTTP seguro)
 	- Puerto 443
 	- TCP
 - FTP (Protocolo de Transferencia de Archivos)
-	- Puerto 21
+	- Puerto 20/21
 	- TCP
 - SSH (Secure Shell) 
 	- Puerto 22
