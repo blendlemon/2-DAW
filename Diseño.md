@@ -1,0 +1,4 @@
+<h1>Boceto:</h1>
+<p>El boceto es para lo que seria una tienda de segunda mano, he utilizado formas simples y nombres en ingles para indicar donde iría cada cosa, con una barra de navegación fija arriba y un pie de página con información sobre lo que sería la empresa, también he puesto un carrusel de imágenes que mostraría las típicas cosas bonitas para que capten el ojo de la gente</p>
+<h1>Herramienta:</h1>
+<p>Para el boceto he utilizado figma que es una herramienta que permite maquetar y hacer prototipos visuales así como enlazarlos para tener una vista previa de como podría ser el producto final</p>
