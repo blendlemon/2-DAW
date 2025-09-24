@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var cadena = "";
+        var texto = "";
+        while (true){
+            cadena = prompt("Teclee un texto");
+            if (cadena == null){
+                break;
+            }else{
+                if (texto==""){
+                texto = cadena;
+                }else{
+                    texto = texto+"-"+cadena;
+                }
+            }
+        }
+        document.write(texto)
+    </script>
+</body>
+</html>
