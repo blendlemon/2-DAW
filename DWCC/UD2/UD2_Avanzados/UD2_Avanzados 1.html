@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var filas = 0;
+        var columnas = 0;
+
+        filas = prompt("Introduce el número de filas");
+        columnas = prompt("Introduce el número de columnas");
+        inicio = filas*columnas;
+
+        document.write("<table border=\"1\"><tbody>")
+        for(i=1; i<=filas;i++){
+            document.write("<tr>")
+            for(j=1; j<=columnas;j++){
+                document.write("<td>"+inicio+"</td>");
+                inicio--;
+            }
+            document.write("</tr>");
+        }
+        document.write("</tbody></table>")
+    </script>
+</body>
+</html>
