@@ -1,5 +1,7 @@
 1. Crear el directorio dir2 y dir3 en el directorio PRUEBA ¿Cuáles son los actuales permisos del directorio dir2?
+	lectura, escritura y ejecución
 2. Utilizando la notación simbólica, eliminar todos los permisos de escritura (propietario, grupo, otros) del directorio dir2.
+	chmod -w dir2
 3. Utilizando la notación octal, eliminar el permiso de lectura del directorio dir2, al resto de los usuarios.
 4. ¿Cuáles son ahora los permisos asociados a dir2?
 5. Crear bajo dir2, un directorio llamado dir2l.
