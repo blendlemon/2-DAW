@@ -7,99 +7,99 @@
 </head>
 <body>
     <script>
-        var condicion = true;
         var num = "";
         var letra = "" ;
         var resto = 0;
-        while (condicion == true){
+        while (true){
             num = prompt("Introduce un número entre el 0 y 99999999");
-            num = parseInt(num);
-            if (num>=0 && num<=99999999){
-                condicion = false;
+            if (Number(num)==num && num>=0 && num<=99999999){
+                num = Number(num);
+                resto = num%23;
+
+                switch (resto){
+                    case 0:
+                        letra = "T"
+                        break;
+                    case 1:
+                        letra = "R"
+                        break;
+                    case 2:
+                        letra = "W"
+                        break;
+                    case 3:
+                        letra = "A"
+                        break;
+                    case 4:
+                        letra = "G"
+                        break;
+                    case 5:
+                        letra = "M"
+                        break;
+                    case 6:
+                        letra = "Y"
+                        break;
+                    case 7:
+                        letra = "F"
+                        break;
+                    case 8:
+                        letra = "P"
+                        break;
+                    case 9:
+                        letra = "D"
+                        break;
+                    case 10:
+                        letra = "X"
+                        break;
+                    case 11:
+                        letra = "B"
+                        break;
+                    case 12:
+                        letra = "Z"
+                        break;
+                    case 13:
+                        letra = "J"
+                        break;
+                    case 14:
+                        letra = "Z"
+                        break;
+                    case 15:
+                        letra = "S"
+                        break;
+                    case 16:
+                        letra = "Q"
+                        break;
+                    case 17:
+                        letra = "V"
+                        break;
+                    case 18:
+                        letra = "H"
+                        break;
+                    case 19:
+                        letra = "L"
+                        break;
+                    case 20:
+                        letra = "C"
+                        break;
+                    case 21:
+                        letra = "K"
+                        break;
+                    case 22:
+                        letra = "E"
+                        break;
+                    default:
+                        letra = null;
+                }
+
+                if (letra!=null){
+                    document.write("DNI: "+num+letra+"<br>");
+                    console.log("DNI: "+num+letra);
+                }
             }
             else{
-                console.log(num);
+                break;
             }
         }
-        resto = num%23;
-
-        switch (resto){
-            case 0:
-                letra = "T"
-                break;
-            case 1:
-                letra = "R"
-                break;
-            case 2:
-                letra = "W"
-                break;
-            case 3:
-                letra = "A"
-                break;
-            case 4:
-                letra = "G"
-                break;
-            case 5:
-                letra = "M"
-                break;
-            case 6:
-                letra = "Y"
-                break;
-            case 7:
-                letra = "F"
-                break;
-            case 8:
-                letra = "P"
-                break;
-            case 9:
-                letra = "D"
-                break;
-            case 10:
-                letra = "X"
-                break;
-            case 11:
-                letra = "B"
-                break;
-            case 12:
-                letra = "Z"
-                break;
-            case 13:
-                letra = "J"
-                break;
-            case 14:
-                letra = "Z"
-                break;
-            case 15:
-                letra = "S"
-                break;
-            case 16:
-                letra = "Q"
-                break;
-            case 17:
-                letra = "V"
-                break;
-            case 18:
-                letra = "H"
-                break;
-            case 19:
-                letra = "L"
-                break;
-            case 20:
-                letra = "C"
-                break;
-            case 21:
-                letra = "K"
-                break;
-            case 22:
-                letra = "E"
-                break;
-            default:
-                letra = null;
-        }
-
-        if (letra!=null){
-            document.write(num+letra);
-        }
+        
         
     </script>
 </body>

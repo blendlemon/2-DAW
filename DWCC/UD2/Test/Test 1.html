@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num_alumnos = "";
+        var notas = 0;
+        var nota = 0;
+
+        while (true){
+            num_alumnos = prompt("Introduce el número de alumnos entre 1 y 30");
+            if (num_alumnos == Number(num_alumnos) && num_alumnos<=30 && num_alumnos>=0){
+                num_alumnos = Number(num_alumnos);
+                for (i=1; i<=num_alumnos; i++){
+                    while (true){
+                        nota = prompt("Introduce la nota del alumno entre 1 y 10");
+                        if (nota == null || (nota == Number(nota) && nota<=10 && nota>=1)){
+                            break;
+                        }
+                    }if (nota==null){
+                            break;
+                            break;
+                        }else{
+                            notas = Number(nota)+notas;
+                        }
+
+                    }
+                
+                break;
+            } else if (num_alumnos==null){
+                break;
+            }
+        }
+
+        if(num_alumnos==null || nota==null){
+            document.write("Programa cancelado por el usuario");
+        }else{
+            notas = notas/num_alumnos;
+            document.write("La media de los "+num_alumnos+" alumnos es "+(notas));
+        } 
+        
+
+        
+    </script>
+</body>
+</html>
