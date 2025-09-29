@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estructura con posicionamiento</title>
+  <style>
+    header{
+      border: 1px solid black;
+      padding: 10px;
+    }
+    
+    .logo{
+      display: inline-block;
+      border: 1px solid black;
+      padding: 5px;
+      width: 25%;
+    }
+
+    .header-extra{
+      display: inline-block;
+      border: 1px solid black;
+      padding: 5px;
+      width: 70%;
+
+    }
+
+    main{
+      border-top: 1px solid black;
+      padding-top: 20px;
+      margin-top: 20px;
+      margin-bottom: 100px;
+    }
+
+    .col-izq{
+      display: inline-block;
+      border: 1px solid black;
+      width: 25%;
+      height: 200px;
+    }
+    .col-centro{
+      display: inline-block;
+      border: 1px solid black;
+      width: 30%;
+      height: 200px;
+    }
+    .col-der{
+      display: inline-block;
+      border: 1px solid black;
+      width: 40%;
+      height: 200px;
+    }
+
+    .caja-relativa{
+      display: inline-block;
+      border: 1px solid black;
+      position: relative;
+      width: 200%;
+      top: 70px;
+      left: 20px;
+    }
+
+    footer{
+      border: 1px solid black;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Logo</div>
+    <div class="header-extra">Zona cabecera extra</div>
+  </header>
+
+  <main>
+  <div class="col-izq">Columna izquierda</div>
+
+  <div class="col-centro">
+    Columna central
+    <div class="caja-relativa">
+      Caja relativa
+      <div class="caja-absoluta">Absoluta</div>
+    </div>
+  </div>
+
+  <div class="col-der">Columna derecha
+  
+  </div>
+
+  <!-- Caja fija fuera de las columnas -->
+  <div class="caja-fija">Fija</div>
+</main>
+
+  <footer>
+    Pie de página
+  </footer>
+</body>
+</html>
