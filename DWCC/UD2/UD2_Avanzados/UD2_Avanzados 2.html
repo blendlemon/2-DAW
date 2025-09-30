@@ -11,14 +11,15 @@
         var columnas = 0;
         var color = true;
         var modelo = 0;
+        var encabezado = "";
         filas = prompt("Introduce el número de filas");
         columnas = prompt("Introduce el número de columnas");
-        modelo = prompt("Seleccione modelo 1-4");
+        modelo = prompt("Seleccione modelo\n1. Pintar las filas impares con un color distinto\n2. Pintar las celdas no consecutivas en forma de tablero de ajedrez\n3. Modelo 1 con encabezado\n4. Modelo 2 con encabezado");
         inicio = filas*columnas;
 
         switch (modelo){
-            case 1:
-                document.write("<table border=\"1\"><tbody>")
+            case "1":
+                document.write("<table border=\"1\"><tbody>");
                 for(i=1; i<=filas;i++){
                     if (i%2==0) {
                         document.write("<tr>");
@@ -35,8 +36,8 @@
                 
                 break;
 
-            case 2:
-                document.write("<table border=\"1\"><tbody>")
+            case "2":
+                document.write("<table border=\"1\"><tbody>");
                 for(i=1; i<=filas;i++){
                     document.write("<tr>");
                     for(j=1; j<=columnas;j++){
@@ -62,9 +63,60 @@
                 document.write("</tbody></table>")
                 break;
             
-            case 3:
+            case "3":
+                encabezado = prompt("Introduce el enacabezado de la tabla");
+                document.write("<table border=\"1\"><tbody>");
+                document.write("<caption>"+encabezado+"</caption>");
+
+                for(i=1; i<=filas;i++){
+                        if (i%2==0) {
+                            document.write("<tr>");
+                        }else{
+                            document.write("<tr style=\"background-color:grey\">");
+                        }
+                        for(j=1; j<=columnas;j++){
+                            document.write("<td>"+inicio+"</td>");
+                            inicio--;
+                        }
+                        document.write("</tr>");
+                    }
+                    document.write("</tbody></table>")
                 
                 break;
+            
+            case "4":
+
+                encabezado = prompt("Introduce el enacabezado de la tabla");
+                document.write("<table border=\"1\"><tbody>");
+                document.write("<caption>"+encabezado+"</caption>");
+
+                for(i=1; i<=filas;i++){
+                    document.write("<tr>");
+                    for(j=1; j<=columnas;j++){
+                        if (color==true){
+                            document.write("<td style=\"background-color:grey\">");
+                            color= false;
+                        }else{
+                            document.write("<td>");
+                            color = true;
+                        }
+                        document.write(inicio+"</td>");
+                        inicio--;
+                    }
+                    document.write("</tr>");
+                        if (columnas%2==0){
+                        if (color==true){
+                            color = false;
+                        }else{
+                            color = true
+                        }
+                    }
+                }
+                document.write("</tbody></table>")
+
+                break;
+                default:
+                    alert(Error)
         }
     </script>
 </body>

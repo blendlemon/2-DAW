@@ -12,25 +12,35 @@
         var temp;
 
         while (true){
-            temp = prompt("Introduce el número de horas necesarias para estudiar la materia");
-            if (temp == null) break;
-            if (temp>=3 && temp<=500){
-                horas = Number(temp);
+
+            while (true){
+                temp = prompt("Introduce el número de horas necesarias para estudiar la materia (3-500)");
+                if ((temp>=3 && temp<=500)|| temp==null){
+                    horas = Number(temp);
+                    break;
+                }   
             }
-            temp = prompt("Introduce el número de días disponibles para estudiar la materia");
             if (temp == null) break;
-            if (temp>=4 && temp<=300){
-                tiempo = Number(temp);
+            
+            while (true){
+                temp = prompt("Introduce el número de días disponibles para estudiar la materia(4-300)");
+                if ((temp>=4 && temp<=300) || temp==null){
+                    tiempo = Number(temp);
+                    break;
+                }
             }
+            if (temp == null) break;
+
+            if (horas != null && tiempo != null){
+                if (horas > tiempo*24){
+                    document.write("No hay suficiente tiempo para estudiar");
+                } else{
+                    document.write(horas/tiempo+"<br>");
+                }
+            }
+
         }
 
-        if (horas != null && tiempo != null){
-            if (horas > tiempo*24){
-                document.write("No hay suficiente tiempo para estudiar");
-            } else{
-                document.write(horas/tiempo);
-            }
-        }
     </script>
 </body>
 </html>

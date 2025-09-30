@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var min = 0;
+        var max = 1000;
+        var adivina = 0;
+        var respuesta = "";
+        while (true){
+            adivina = Math.floor(Math.random() * (max -min +1)+min);
+
+            respuesta = prompt("Es "+adivina+" el numero en el que estas pensando ? (mayor/menor/si)");
+
+            if (respuesta == "mayor"){
+                min =adivina+1;
+            }else if (respuesta=="menor"){
+                max = adivina-1;
+            }else if(respuesta="si" || respuesta==null){
+                break;
+            }
+        }
+        if (respuesta!=null){
+            document.write("El numero en el que pensabas es:"+adivina);
+        }
+    </script>
+</body>
+</html>

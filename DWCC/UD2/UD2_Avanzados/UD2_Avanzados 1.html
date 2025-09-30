@@ -9,21 +9,24 @@
     <script>
         var filas = 0;
         var columnas = 0;
+        var salida = "";
 
         filas = prompt("Introduce el número de filas");
         columnas = prompt("Introduce el número de columnas");
         inicio = filas*columnas;
 
-        document.write("<table border=\"1\"><tbody>")
+        salida += ("<table border=\"1\"><tbody>")
         for(i=1; i<=filas;i++){
-            document.write("<tr>")
+            salida+=("<tr>")
             for(j=1; j<=columnas;j++){
-                document.write("<td>"+inicio+"</tdre>");
+                salida+=("<td>"+inicio+"</tdre>");
                 inicio--;
             }
-            document.write("</tr>");
+            salida+=("</tr>");
         }
-        document.write("</tbody></table>")
+        salida+=("</tbody></table>");
+
+        document.write(salida);
     </script>
 </body>
 </html>
