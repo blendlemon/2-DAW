@@ -1,7 +1,7 @@
 <?php 
 
 echo "Introduce A, B y C";
-list($A, $B, $C) = fscanf(STDIN, "%f %f %f");
+fscanf(STDIN, "%f %f %f", $A, $B, $C);
 
 $D = ($B**2) - 4*$A*$C;
 $AA = $A * 2;
