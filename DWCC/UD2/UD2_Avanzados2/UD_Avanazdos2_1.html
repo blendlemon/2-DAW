@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var combinaciones = [];
+        var variables =  ["1","2","X"];
+        var contador = 0;
+        var contador2 =0;
+        var repetida = "";
+        var n ;
+        var m;
+        
+        for (i=0; i<3;i++){
+            for (j=0; j<3; j++){
+                for (k=0; k<3; k++){
+                    for(l=0; l<3; l++){
+                        for(m=0;m<3;m++){
+                            combinaciones[contador]=variables[i]+variables[j]+variables[k]+variables[l]+variables[m];
+                            contador++;
+                        }
+                    }
+                }
+            }
+        }
+    
+
+        // n = prompt ("Cuantas variantes ?");
+        // n = Number(n);
+
+        // for (i=0 ; i<combinaciones.length;i++){
+        //     contador = 0;
+        //     for (j=0; j<combinaciones[i].length;j++){
+        //         console.log(combinaciones[i][j]);
+        //         if (combinaciones[i][j]!="1"){
+        //             contador++;
+        //         }
+        //     }
+        //     if (contador == n){
+        //         document.write(combinaciones[i]);
+        //         break;
+        //     }
+        // }
+
+        n = prompt ("Cuantas X ?");
+        n = Number(n);
+        m = prompt ("Cuantos 2 ?");
+        m = Number(n);
+
+        for (i=0 ; i<combinaciones.length;i++){
+            contador = 0;
+            contador2 = 0;
+            for (j=0; j<combinaciones[i].length;j++){
+                console.log(combinaciones[i][j]);
+                if (combinaciones[i][j]=="X"){
+                    contador++;
+                }
+                if (combinaciones[i][j]=="2"){
+                    contador2++;
+                }
+                if (contador == n && contador2 == m){
+                document.write(combinaciones[i]+"<br>");
+                break;
+                }
+            
+            }
+        }
+
+
+
+        
+    </script>
+</body>
+</html>
