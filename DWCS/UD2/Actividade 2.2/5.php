@@ -10,7 +10,7 @@
     
     fscanf(STDIN, "%f", $nota);
 
-    $nota = int($nota);
+    $nota = (int)$nota;
 
     switch ($nota){
         case 10:
