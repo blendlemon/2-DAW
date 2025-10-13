@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var dia = "";
+        var ventas = 0;
+        var importe = 0;
+        var suma = 0;
+        var premium = 0;
+
+        while (true){
+            suma = 0;
+            premium = 0;
+            do{
+            dia = prompt("Nombre del día: ");
+            }while(dia=="");
+            if (dia == null) break;
+
+            do{
+            ventas = prompt("Numero de ventas (1-20): ");
+            }while(ventas == null || (ventas<1 || ventas >20));
+            if (ventas == null) break;
+
+            for(i=1; i<=ventas; i++){
+                importe = prompt("Importe de la venta #"+i+" (1-500):");
+                if (importe<1 || importe>500){
+                    while (importe<1 || importe>500){
+                        importe = prompt("Importe de la venta #"+i+" (1-500):");
+                    }
+                }
+                else if (importe>=100){
+                    premium++;
+                }
+                else if (importe == null){
+                    break;
+                }
+                importe = Number(importe);
+                suma += importe;
+                if (suma>=300){
+                    break;
+                }
+            }
+            if (importe==null) break;
+
+            document.write("<br>Día: "+dia+"<br>Total recaudado: "+suma+"€<br>Ventas premium: "+premium+"<br>");
+            if (suma >=300){
+                document.write("<br>Límite diario de 300 € alcanzado. No se registrarán más ventas para este día.<br>");
+            }
+
+        }
+
+        document.write("<br>Programa finalizado por el usuario.<br>");
+
+    </script>
+</body>
+</html>
