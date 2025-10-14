@@ -14,6 +14,7 @@
         var repetida = "";
         var n ;
         var m;
+        var seguida = false;
         
         for (i=0; i<3;i++){
             for (j=0; j<3; j++){
@@ -46,31 +47,54 @@
         //     }
         // }
 
-        n = prompt ("Cuantas X ?");
-        n = Number(n);
-        m = prompt ("Cuantos 2 ?");
-        m = Number(n);
+        // n = prompt ("Cuantas X ?");
+        // n = Number(n);
+        // m = prompt ("Cuantos 2 ?");
+        // m = Number(n);
+
+        // for (i=0 ; i<combinaciones.length;i++){
+        //     contador = 0;
+        //     contador2 = 0;
+        //     for (j=0; j<combinaciones[i].length;j++){
+        //         console.log(combinaciones[i][j]);
+        //         if (combinaciones[i][j]=="X"){
+        //             contador++;
+        //         }
+        //         if (combinaciones[i][j]=="2"){
+        //             contador2++;
+        //         }
+        //     }
+        //     if (contador == n && contador2 == m){
+        //         document.write(combinaciones[i]+"<br>");
+        //         break;
+        //         }
+        // }
+
+         n = prompt ("Numero de variantes no seguidas?");
+         n = Number(n);
+         
 
         for (i=0 ; i<combinaciones.length;i++){
             contador = 0;
             contador2 = 0;
+            seguida = false;
             for (j=0; j<combinaciones[i].length;j++){
                 console.log(combinaciones[i][j]);
-                if (combinaciones[i][j]=="X"){
+                if (combinaciones[i][j]=="X" || combinaciones[i][j]=="2"){
                     contador++;
+                    seguida = true;
+                }else{
+                    seguida = false;
                 }
-                if (combinaciones[i][j]=="2"){
+                if (seguida = true){
                     contador2++;
                 }
             }
-            if (contador == n && contador2 == m){
+            if (contador2 < n && contador == n){
                 document.write(combinaciones[i]+"<br>");
                 break;
                 }
         }
-
-        
-
 
         
     </script>
