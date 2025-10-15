@@ -14,7 +14,7 @@
         var repetida = "";
         var n ;
         var m;
-        var seguida = false;
+        var salida1, salida2, salida3;
         
         for (i=0; i<3;i++){
             for (j=0; j<3; j++){
@@ -30,73 +30,75 @@
         }
     
 
-        // n = prompt ("Cuantas variantes ?");
-        // n = Number(n);
+        n = prompt ("Cuantas variantes ?");
+        n = Number(n);
 
-        // for (i=0 ; i<combinaciones.length;i++){
-        //     contador = 0;
-        //     for (j=0; j<combinaciones[i].length;j++){
-        //         console.log(combinaciones[i][j]);
-        //         if (combinaciones[i][j]!="1"){
-        //             contador++;
-        //         }
-        //     }
-        //     if (contador == n){
-        //         document.write(combinaciones[i]);
-        //         break;
-        //     }
-        // }
+        for (i=0 ; i<combinaciones.length;i++){
+            contador = 0;
+            for (j=0; j<combinaciones[i].length;j++){
+                console.log(combinaciones[i][j]);
+                if (combinaciones[i][j]!="1"){
+                    contador++;
+                }
+            }
+            if (contador == n){
+                salida1 = (combinaciones[i]);
+                break;
+            }
+        }
 
-        // n = prompt ("Cuantas X ?");
-        // n = Number(n);
-        // m = prompt ("Cuantos 2 ?");
-        // m = Number(n);
+        n = prompt ("Cuantas X ?");
+        n = Number(n);
+        m = prompt ("Cuantos 2 ?");
+        m = Number(n);
 
-        // for (i=0 ; i<combinaciones.length;i++){
-        //     contador = 0;
-        //     contador2 = 0;
-        //     for (j=0; j<combinaciones[i].length;j++){
-        //         console.log(combinaciones[i][j]);
-        //         if (combinaciones[i][j]=="X"){
-        //             contador++;
-        //         }
-        //         if (combinaciones[i][j]=="2"){
-        //             contador2++;
-        //         }
-        //     }
-        //     if (contador == n && contador2 == m){
-        //         document.write(combinaciones[i]+"<br>");
-        //         break;
-        //         }
-        // }
+        for (i=0 ; i<combinaciones.length;i++){
+            contador = 0;
+            contador2 = 0;
+            for (j=0; j<combinaciones[i].length;j++){
+                console.log(combinaciones[i][j]);
+                if (combinaciones[i][j]=="X"){
+                    contador++;
+                }
+                if (combinaciones[i][j]=="2"){
+                    contador2++;
+                }
+            }
+            if (contador == n && contador2 == m){
+                salida2 = (combinaciones[i]+"<br>");
+                break;
+                }
+        }
 
          n = prompt ("Numero de variantes no seguidas?");
          n = Number(n);
          
 
-        for (i=0 ; i<combinaciones.length;i++){
+        for (i = 0; i < combinaciones.length; i++) {
             contador = 0;
             contador2 = 0;
-            seguida = false;
-            for (j=0; j<combinaciones[i].length;j++){
-                console.log(combinaciones[i][j]);
-                if (combinaciones[i][j]=="X" || combinaciones[i][j]=="2"){
+            for (j = 0; j < combinaciones[i].length; j++) {
+                if (combinaciones[i][j] == "X" || combinaciones[i][j] == "2") {
                     contador++;
-                    seguida = true;
-                }else{
-                    seguida = false;
-                }
-                if (seguida = true){
                     contador2++;
+                    if (contador2 == n) {
+                        break; // Hay n variantes seguidas, no es válida
+                    }
+                } else {
+                    contador2 = 0; // Se rompe la racha de seguidas
                 }
             }
-            if (contador2 < n && contador == n){
-                document.write(combinaciones[i]+"<br>");
+            if (contador2 < n && contador == n) {
+                salida3 = (combinaciones[i] + "<br>");
                 break;
-                }
+            }
         }
 
-        
+        document.write("<pre>");
+        for (i=0;i<5;i++){
+            document.write(salida1[i]+"\t"+salida2[i]+"\t"+salida3[i]+"<br>");
+        }
+        document.write("</pre>");
     </script>
 </body>
 </html>
