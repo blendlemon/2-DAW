@@ -7,12 +7,11 @@
 </head>
 <body>
     <script>
-        var min = 0;
+        var min = 1;
         var max = 1000;
-        var adivina = 0;
-        var respuesta = "";
+        var adivina = Math.floor((min+max)/2);
         while (true){
-            adivina = Math.floor(Math.random() * (max -min +1)+min);
+            adivina = Math.floor((min+max)/2);
 
             respuesta = prompt("Es "+adivina+" el numero en el que estas pensando ? (mayor/menor/si)");
 

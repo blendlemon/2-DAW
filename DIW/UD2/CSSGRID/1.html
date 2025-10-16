@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .grid-container1{
+            display: grid;
+            background-color: blue;
+            /* 5 columnas x 3 filas */
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(3, auto);
+            border: 1px solid black;
+        }
+        /* make the wrapper behave as if it's not there so its children become grid items */
+        .grid-container1 > .item1 {
+            display: contents;
+        }
+
+        /* adjust grid to a 4x3 layout with gaps (overrides earlier declarations) */
+        .grid-container1 {
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 120px);
+            gap: 16px;
+            padding: 12px;
+        }
+
+        /* top-left big square (spans 2 columns and 2 rows) */
+        .grid-container1 > .item1 > div:nth-child(1) {
+            grid-column: 1 / span 2;
+            grid-row: 1 / span 2;
+            background: #2bb673;
+        }
+
+        /* bottom-left bar (under the big square) */
+        .grid-container1 > .item1 > div:nth-child(2) {
+            grid-column: 1 / span 2;
+            grid-row: 3 / span 1;
+            background: #d26aa6;
+        }
+
+        /* top-right long rectangle (spans 2 columns on the top row) */
+        .grid-container1 > .item1 > div:nth-child(3) {
+            grid-column: 3 / span 2;
+            grid-row: 1 / span 1;
+            background: #4fb7e6;
+            border-radius: 12px;
+        }
+
+        /* right-center large block (spans 2 columns, 2 rows) */
+        .grid-container1 > .item1 > div:nth-child(4) {
+            grid-column: 3 / span 2;
+            grid-row: 2 / span 2;
+            background: #d0644a;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container1">
+        <div class="item1">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+        </div>
+    </div>
+</body>
+</html>
