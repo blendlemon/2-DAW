@@ -7,11 +7,11 @@
 </head>
 <body>
 
-    <form method="get" action="">
+    <form method="post" action="">
     <h1>Reservas lunch</h1>
 
     <label for="fecha">Introduzca la fecha: </label>
-    <input type="date" id="fecha" name="fecha" value="<?php echo date('Y-m-d'); ?>">
+    <input type="date" id="fecha" name="fecha" min="<?php echo date('Y-m-d'); ?>" value="<?php echo date('Y-m-d'); ?>">
     <br>
     <label for="hora">Introduzca la hora: </label>
     <input type="time" id="hora" name="hora" value="13:00" min="13:00" max="15:00">
@@ -25,7 +25,7 @@
         <option value="" disabled>--</option>
         <option value="leche">Leche</option>
         <option value="huevo">Huevo</option>
-        <option value="Gluten">Gluten</option>
+        <option value="gluten">Gluten</option>
     </select>
     <br>
     <input type="submit">
@@ -33,7 +33,7 @@
 
     <?php 
     
-        foreach ($_GET as $clave => $valor) {
+        foreach ($_POST as $clave => $valor) {
             echo "<pre>";
             if (is_array($valor)) {
                 echo "$clave: " . implode(", ", $valor);

@@ -55,7 +55,7 @@
                 "else" => ESCORPIO),
                 //completar aquí...
             //noviembre
-            11 => array(21 => ESCORPIO,
+            11 => array(22 => ESCORPIO,
                 "else" => SAGITARIO),
             //diciembre
             12 => array(21 => SAGITARIO,
