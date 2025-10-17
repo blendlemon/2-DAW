@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .grid-container{
+            display: grid;
+            border: 1px solid black;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(5, 120px);
+            gap:10px;
+        }
+
+        .pequeno{
+            background-color: lightblue;
+            grid-row: span 1;
+            grid-column: span 1;
+        }
+
+        .gordo{
+            background-color: lightblue;
+            grid-row: span 2;
+            grid-column:  span 2;
+        }
+        .largoh{
+            background-color: lightblue;
+            grid-row: span 1;
+            grid-column:  span 3;
+        }
+
+        .largov{
+            background-color: lightblue;
+            grid-row: span 3;
+            grid-column:  span 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="pequeno"></div>
+        <div class="gordo"></div>
+        <div class="largov"></div>
+        <div class="pequeno"></div>
+        <div class="pequeno"></div>
+        <div class="pequeno"></div>
+        <div class="pequeno"></div>
+        <div class="largoh"></div>
+    </div>
+</body>
+</html>
