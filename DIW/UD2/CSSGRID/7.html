@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .grid-container{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 120px);
+            gap: 2px;
+            background-color: white;
+            border: 10px solid black;
+            
+        }
+        .grid-container > div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: small;
+        }
+        .largo{
+            grid-column: span 2;
+            background-color: magenta;
+        }
+
+        .gordo{
+            grid-row: span 2;
+            grid-column: span 2;
+            background-color: magenta;
+        }
+        .largov{
+            grid-row: span 2;
+            background-color: magenta;
+        }   
+        .normal{
+            background-color: magenta;
+        }   
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="largo">1</div>
+        <div class="gordo">2</div>
+        <div class="largov">3</div>
+        <div class="normal">4</div>
+        <div class="normal">5</div>
+        <div class="largo">6</div>
+    </div>
+</body>
+</html>
