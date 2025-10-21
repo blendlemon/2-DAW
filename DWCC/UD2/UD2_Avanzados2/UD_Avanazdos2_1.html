@@ -43,7 +43,6 @@
             }
             if (contador == n){
                 salida1 = (combinaciones[i]);
-                break;
             }
         }
 
@@ -66,7 +65,6 @@
             }
             if (contador == n && contador2 == m){
                 salida2 = (combinaciones[i]+"<br>");
-                break;
                 }
         }
 
@@ -82,15 +80,14 @@
                     contador++;
                     contador2++;
                     if (contador2 == n) {
-                        break; // Hay n variantes seguidas, no es válida
+                        break; 
                     }
                 } else {
-                    contador2 = 0; // Se rompe la racha de seguidas
+                    contador2 = 0; 
                 }
             }
             if (contador2 < n && contador == n) {
                 salida3 = (combinaciones[i] + "<br>");
-                break;
             }
         }
 

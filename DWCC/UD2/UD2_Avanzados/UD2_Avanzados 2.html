@@ -20,8 +20,13 @@
         inicio = filas*columnas;
 
         switch (modelo){
+            case "3":
             case "1":
                 salida += ("<table style=\"border: 1px solid black;\"><tbody>");
+                    if(modelo=="3"){
+                        encabezado = prompt("Introduce el enacabezado de la tabla");
+                        salida += ("<caption>"+encabezado+"</caption>");
+                    }
                 for(i=1; i<=filas;i++){
                     if (i%2==0) {
                         salida += ("<tr>");
@@ -37,9 +42,13 @@
                 salida += ("</tbody></table>")
                 
                 break;
-
+            case "4":
             case "2":
                 salida += ("<table style=\"border: 1px solid black;\"><tbody>");
+                if(modelo=="4"){
+                    encabezado = prompt("Introduce el enacabezado de la tabla");
+                    salida += ("<caption>"+encabezado+"</caption>");
+                }
                 for(i=1; i<=filas;i++){
                     salida += ("<tr>");
                     for(j=1; j<=columnas;j++){
@@ -65,58 +74,7 @@
                 salida += ("</tbody></table>")
                 break;
             
-            case "3":
-                encabezado = prompt("Introduce el enacabezado de la tabla");
-                salida += ("<table style=\"border: 1px solid black;\"><tbody>");
-                salida += ("<caption>"+encabezado+"</caption>");
-
-                for(i=1; i<=filas;i++){
-                        if (i%2==0) {
-                            salida += ("<tr>");
-                        }else{
-                            salida += ("<tr style=\"background-color:grey\">");
-                        }
-                        for(j=1; j<=columnas;j++){
-                            salida += ("<td>"+inicio+"</td>");
-                            inicio--;
-                        }
-                        salida += ("</tr>");
-                    }
-                    salida += ("</tbody></table>")
-                
-                break;
-            
-            case "4":
-
-                encabezado = prompt("Introduce el enacabezado de la tabla");
-                salida += ("<table style=\"border: 1px solid black;\"><tbody>");
-                salida += ("<caption>"+encabezado+"</caption>");
-
-                for(i=1; i<=filas;i++){
-                    salida += ("<tr>");
-                    for(j=1; j<=columnas;j++){
-                        if (color==true){
-                            salida += ("<td style=\"background-color:grey\">");
-                            color= false;
-                        }else{
-                            salida += ("<td>");
-                            color = true;
-                        }
-                        salida += (inicio+"</td>");
-                        inicio--;
-                    }
-                    salida += ("</tr>");
-                        if (columnas%2==0){
-                        if (color==true){
-                            color = false;
-                        }else{
-                            color = true
-                        }
-                    }
-                }
-                salida += ("</tbody></table>");
-
-                break;
+           
                 default:
                     alert(Error)
         }
