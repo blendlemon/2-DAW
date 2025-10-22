@@ -24,3 +24,46 @@ La entidad pública empresarial Red.es es la organización encargada de la gesti
 	Sus actuaciones se alinean con las políticas y directrices de la corporación internacional ICANN (Corporación de Internet para la Asignación de Nombres y Números), que coordina el sistema global de nombres de dominio. 
 - Agentes registradores:
 	Para la comercialización de los dominios, Red.es trabaja a través de los agentes registradores acreditados, que son las empresas a las que los usuarios acuden para registrar un nombre de dominio .es, como se puede ver en la sección de agentes registradores de dominios.es. 
+
+# Actividad 3: Busca en Internet todos los dominios de primer nivel
+1. Dominios genéricos (gTLD)
+	Son los más comunes y no están vinculados a un país específico. Algunos ejemplos clásicos son:
+
+    .com – comercial (el más usado a nivel mundial)
+    .org – organizaciones (generalmente sin fines de lucro)
+    .net – redes o servicios de infraestructura
+    .info – información
+    .biz – negocios
+    .name – personas individuales
+
+También existen nuevos gTLD que se han introducido en años recientes, como:
+
+    .app, .blog, .tech, .guru, .store, .xyz, entre cientos más 
+
+    .
+2. Dominios de código de país (ccTLD)
+	Están asociados a un país o territorio específico. Ejemplos:
+
+    .es – España
+    .mx – México
+    .ar – Argentina
+    .uk – Reino Unido
+    .fr – Francia
+    .de – Alemania
+    .us – Estados Unidos
+    .br – Brasil
+    .jp – Japón
+    .cn – China
+
+Estos dominios suelen estar regulados por entidades nacionales y pueden tener restricciones de uso 
+3. Dominios patrocinados (sTLD)
+	Son un subconjunto de gTLD que están patrocinados por organizaciones específicas y tienen requisitos de uso. Ejemplos:
+
+    .gov – gobiernos (EE.UU.)
+    .edu – instituciones educativas
+    .mil – fuerzas militares (EE.UU.)
+    .int – organizaciones internacionales establecidas por tratados 
+
+4. Dominios infraestructurales
+
+    .arpa – utilizado exclusivamente para infraestructura de Internet (no es para sitios web comunes) 
