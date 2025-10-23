@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function br(){
+            document.write("<br>");
+        }
+        var dias = ["domingo","lunes","martes","miercoles","jueves","viernes","sabado"];
+        var meses = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+        var dia = new Date();
+        dia.setFullYear(Number(prompt("Introduce año : ")));
+        dia.setMonth(Number(prompt("Introduce mes : ")-1));
+        dia.setDate(Number(prompt("Introduce dia : ")));
+        
+
+        document.write(dias[dia.getDay()]+", "+dia.getDate()+" de "+meses[dia.getMonth()]+" de "+dia.getFullYear());
+        br();
+        dia.setDate(dia.getDate()+30);
+        document.write(dias[dia.getDay()]+", "+dia.getDate()+" de "+meses[dia.getMonth()]+" de "+dia.getFullYear());
+        br();
+        dia.setDate(dia.getDate()+30);
+        document.write(dias[dia.getDay()]+", "+dia.getDate()+" de "+meses[dia.getMonth()]+" de "+dia.getFullYear());
+        br();
+        dia.setDate(dia.getDate()+30);
+        document.write(dias[dia.getDay()]+", "+dia.getDate()+" de "+meses[dia.getMonth()]+" de "+dia.getFullYear());
+
+    </script>
+
+</body>
+</html>

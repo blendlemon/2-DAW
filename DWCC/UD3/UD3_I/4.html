@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var hoy = new Date();
+        var cumple = new Date();
+        cumple.setFullYear(Number(prompt("Introduce año de nacimiento: ")));
+        cumple.setMonth(Number(prompt("Introduce mes de nacimiento: ")-1));
+        cumple.setDate(Number(prompt("Introduce dia de nacimiento: ")));
+        dias = hoy.getTime() - cumple.getTime();
+        dias = dias/1000;
+        dias = dias/3600;
+        dias = dias/24;
+        dias = Math.floor(dias);
+        document.write(dias);
+
+    </script>
+
+</body>
+</html>

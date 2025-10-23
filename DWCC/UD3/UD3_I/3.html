@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        var dias = ["domingo","lunes","martes","miercoles","jueves","viernes","sabado"];
+        var dia = new Date();
+        mes = Number(prompt("Introduzca el mes (numero 0-11)"));
+        ano = Number(prompt("Introduzca el año (4 digitos): "));
+        dia.setDate(1);
+        dia.setMonth(mes);
+        dia.setFullYear(ano);
+        
+        document.write("<table><tbody>");
+        document.write("<tr><td>"+dia.getDate()+"</td><td>"+dias[dia.getDay()]+"</td></tr>");
+        dia.setDate(dia.getDate()+1);
+        while (true){
+            document.write("<tr><td>"+dia.getDate()+"</td><td>"+dias[dia.getDay()]+"</td></tr>");
+            dia.setDate(dia.getDate()+1);
+            if (dia.getDate()==1) break;
+        }
+        document.write("</tbody></table>");
+    </script>
+    
+</body>
+</html>
