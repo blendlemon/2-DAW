@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .gris{
+            grid-area: gris;
+            background-color: grey;
+        }
+        .azul{
+            grid-area: azul;
+            background-color: blue;
+        }
+        .rosa{
+            grid-area: rosa;
+            background-color: pink;
+        }
+        .amarillo{
+            grid-area: amarillo;
+            background-color: yellow;
+        }
+        .morado{
+            grid-area: morado;
+            background-color: violet;
+        }
+
+        @media (min-width: 500px){
+            .grid-container{
+                gap: 20px;
+                display: grid;
+                grid-auto-rows: 100px;
+                grid-template-areas: 
+                "gris gris gris"
+                "amarillo amarillo amarillo"
+                "amarillo amarillo amarillo"
+                "amarillo amarillo amarillo"
+                "azul azul azul"
+                "rosa rosa rosa"
+                "morado morado morado";
+                ;
+            }
+        }
+
+        @media (min-width: 700px){
+            .grid-container{
+                gap: 20px;
+                display: grid;
+                grid-auto-rows: 100px;
+                grid-template-areas: 
+                "gris gris gris gris"
+                "amarillo amarillo amarillo amarillo"
+                "amarillo amarillo amarillo amarillo"
+                "amarillo amarillo amarillo amarillo"
+                "rosa azul azul azul"
+                "morado morado morado morado";
+                ;
+            }
+        }
+
+        @media (min-width: 900px){
+            .grid-container{
+                gap: 20px;
+                display: grid;
+                grid-auto-rows: 100px;
+                grid-template-areas: 
+                "gris gris gris gris gris"
+                "azul amarillo amarillo amarillo amarillo"
+                "azul amarillo amarillo amarillo amarillo"
+                "rosa amarillo amarillo amarillo amarillo"
+                "morado morado morado morado morado";
+                ;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="grid-container">
+        <div class="gris">a</div>
+        <div class="azul">b</div>
+        <div class="rosa">c</div>
+        <div class="amarillo">d</div>
+        <div class="morado">e</div>
+    </div>
+</body>
+</html>

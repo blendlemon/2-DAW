@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .coche{
+            grid-area: coche;
+            background-image: url("https://fotos.quecochemecompro.com/opel-corsa/opel-corsa-dinamismo-carretera.jpg?size=750x400");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .texto1{
+            grid-area: texto1;
+            background-color: grey;
+        }
+        .texto2{
+            grid-area: texto2;
+            background-color: grey;
+        }
+
+        @media (min-width:500px){
+            .grid-container{
+                display: grid;
+                background-color: lightblue;
+                grid-auto-rows: 100px;
+                gap: 20px;
+                grid-template-areas: 
+                "coche"
+                "coche"
+                "texto1"
+                "texto1"
+                "texto1"
+                "texto2"
+                "texto2"
+                ;
+            }
+        }
+        @media (min-width:700px){
+            .grid-container{
+                display: grid;
+                background-color: lightblue;
+                grid-auto-rows: 100px;
+                gap: 20px;
+                grid-template-areas: 
+                "coche coche"
+                "coche coche"
+                "coche coche"
+                "texto1 texto2"
+                "texto1 texto2"
+                "texto1 texto2"
+                ;
+            }
+        }
+        @media (min-width:900px){
+            .grid-container{
+                display: grid;
+                background-color: lightblue;
+                grid-auto-rows: 100px;
+                gap: 20px;
+                grid-template-areas: 
+                "coche coche texto1"
+                "coche coche texto1"
+                "coche coche texto1"
+                "coche coche texto2"
+                "coche coche texto2"
+                "coche coche texto2"
+                ;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="grid-container">
+        <div class="coche"></div>
+        <div class="texto1"></div>
+        <div class="texto2"></div>
+    </div>
+</body>
+</html>

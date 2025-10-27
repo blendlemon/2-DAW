@@ -31,13 +31,13 @@
         .azul1    { grid-area: azul1;    background-color: blue;   }
         .azul2    { grid-area: azul2;    background-color: blue;   }
         .azul3    { grid-area: azul3;    background-color: blue;   }
-        .gris1    { grid-area: gris1;    background-color: grey;   } /* CORREGIDO: antes "gri1" */
+        .gris1    { grid-area: gris1;    background-color: grey;   } 
         .gris2    { grid-area: gris2;    background-color: grey;   }
         .gris3    { grid-area: gris3;    background-color: grey;   }
         .gris4    { grid-area: gris4;    background-color: grey;   }
 
         @media (min-width: 500px) {
-            /* ocultar gris2/3/4 en pantallas medianas */
+           
             .gris2, .gris3, .gris4 { display: none; }
 
             .grid-container {
@@ -56,11 +56,11 @@
         }
 
         @media (min-width: 700px) {
-            /* volver a mostrar los elementos gris en pantallas grandes */
+            
             .gris2, .gris3, .gris4 { display: block; }
+            
 
             .grid-container {
-                grid-template-columns: repeat(2, 1fr);
                 grid-template-areas:
                     'naranja1 naranja1'
                     'naranja2 naranja2'
@@ -74,6 +74,20 @@
             }
         }
 
+        @media (min-width: 900px) {
+           
+            .gris2, .gris3, .gris4, .azul2, .azul3 { display: block; }
+            .grid-container {
+                grid-template-areas:
+                    'naranja1 naranja1 naranja1 naranja1 naranja1 naranja1 naranja2 naranja2 naranja2 naranja2 naranja2 naranja2'
+                    'verde verde verde verde verde verde verde verde verde verde verde verde'
+                    'verde verde verde verde verde verde verde verde verde verde verde verde'
+                    'verde verde verde verde verde verde verde verde verde verde verde verde'
+                    'azul1 azul1 azul1 azul1 azul2 azul2 azul2 azul2  azul3 azul3 azul3 azul3'
+                    'azul1 azul1 azul1 azul1 azul2 azul2 azul2 azul2  azul3 azul3 azul3 azul3'
+                    'gris1 gris1 gris1 gris2 gris2 gris2 gris3 gris3 gris3 gris4 gris4 gris4';
+            }
+        }
         
        
 
