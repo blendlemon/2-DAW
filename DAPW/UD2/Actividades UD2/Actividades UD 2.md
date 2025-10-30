@@ -67,3 +67,15 @@ Estos dominios suelen estar regulados por entidades nacionales y pueden tener re
 4. Dominios infraestructurales
 
     .arpa – utilizado exclusivamente para infraestructura de Internet (no es para sitios web comunes) 
+
+# Actividad 4: Describe con tus palabras como funciona un DNS
+
+1. Tú le dices el nombre: Cuando escribes un nombre de dominio fácil de recordar, como www.google.com, es como si buscaras el nombre de una persona en tu agenda.
+
+2. El sistema busca el número: Internet, en realidad, no funciona con nombres, sino con números muy largos llamados direcciones IP. El DNS es el servicio que traduce ese nombre de google.com al número de dirección IP que le corresponde.
+
+3. Te conecta con el destino: Una vez que el DNS ha encontrado el número, le dice a tu navegador dónde encontrar la página de Google y te conecta automáticamente. 
+
+De esta manera, no es necesario memorizar números complejos, y el DNS se encarga de llegar al sitio web correcto de forma rápida y transparente. 
+
+p<
