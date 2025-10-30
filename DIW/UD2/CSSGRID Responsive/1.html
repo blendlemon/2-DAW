@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .grid-container {
+            display: grid;
+            background-color: aqua;
+            grid-template-areas:
+                'naranja1'
+                'naranja2'
+                'verde'
+                'azul1'
+                'azul2'
+                'azul3'
+                'gris1'
+                'gris2'
+                'gris3'
+                'gris4';
+            grid-gap: 10px;
+            grid-auto-columns: 1fr;
+            grid-auto-rows: 100px;
+        }
+
+        .naranja1 { grid-area: naranja1; background-color: orange; }
+        .naranja2 { grid-area: naranja2; background-color: orange; }
+        .verde    { grid-area: verde;    background-color: green;  }
+        .azul1    { grid-area: azul1;    background-color: blue;   }
+        .azul2    { grid-area: azul2;    background-color: blue;   }
+        .azul3    { grid-area: azul3;    background-color: blue;   }
+        .gris1    { grid-area: gris1;    background-color: grey;   } 
+        .gris2    { grid-area: gris2;    background-color: grey;   }
+        .gris3    { grid-area: gris3;    background-color: grey;   }
+        .gris4    { grid-area: gris4;    background-color: grey;   }
+
+        @media (min-width: 500px) {
+           
+            .gris2, .gris3, .gris4 { display: none; }
+
+            .grid-container {
+                grid-template-areas:
+                    'naranja1'
+                    'naranja2'
+                    'verde'
+                    'azul1'
+                    'azul1'
+                    'azul2'
+                    'azul2'
+                    'azul3'
+                    'azul3'
+                    'gris1';
+            }
+        }
+
+        @media (min-width: 700px) {
+            
+            .gris2, .gris3, .gris4 { display: block; }
+            
+
+            .grid-container {
+                grid-template-areas:
+                    'naranja1 naranja1'
+                    'naranja2 naranja2'
+                    'verde verde'
+                    'verde verde'
+                    'azul1 azul1'
+                    'azul2 azul2'
+                    'azul3 azul3'
+                    'gris1 gris2'
+                    'gris3 gris4';
+            }
+        }
+
+        @media (min-width: 900px) {
+           
+            .gris2, .gris3, .gris4, .azul2, .azul3 { display: block; }
+            .grid-container {
+                grid-template-areas:
+                    'naranja1 naranja1 naranja1 naranja1 naranja1 naranja1 naranja2 naranja2 naranja2 naranja2 naranja2 naranja2'
+                    'verde verde verde verde verde verde verde verde verde verde verde verde'
+                    'verde verde verde verde verde verde verde verde verde verde verde verde'
+                    'verde verde verde verde verde verde verde verde verde verde verde verde'
+                    'azul1 azul1 azul1 azul1 azul2 azul2 azul2 azul2  azul3 azul3 azul3 azul3'
+                    'azul1 azul1 azul1 azul1 azul2 azul2 azul2 azul2  azul3 azul3 azul3 azul3'
+                    'gris1 gris1 gris1 gris2 gris2 gris2 gris3 gris3 gris3 gris4 gris4 gris4';
+            }
+        }
+        
+       
+
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="naranja1">a</div>
+        <div class="naranja2">a</div>
+        <div class="verde">a</div>
+        <div class="azul1">b</div>
+        <div class="azul2">b</div>
+        <div class="azul3">b</div>
+        <div class="gris1">b</div>
+        <div class="gris2">b</div>
+        <div class="gris3">b</div>
+        <div class="gris4">c</div>
+    </div>
+</body>
+</html>

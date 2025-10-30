@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .grid-container{
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(3, 120px);
+            border: 1px solid black;
+            gap: 10px;
+        }
+
+        .azul{
+            grid-column: span 5;
+            background-color: blue;
+        }
+        .rojo{
+            grid-column: span 2;
+            grid-row: span 2;
+            background-color: red;
+        }
+
+        .blanco{
+            grid-column: span 1;
+        }
+        
+        .verde{
+            grid-column: span 2;
+            background-color: green;
+        }
+
+        .amarillo{
+            grid-column: span 3;
+            background-color: darkgoldenrod;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="grid-container">
+        <div class="azul"></div>
+        <div class="rojo"></div>
+        <div class="blanco"></div>
+        <div class="verde"></div>
+        <div class="amarillo"></div>
+    </div>
+</body>
+</html>

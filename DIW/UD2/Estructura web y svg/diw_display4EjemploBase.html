@@ -8,6 +8,7 @@
     header{
       border: 1px solid black;
       padding: 10px;
+      background-color: aquamarine;
     }
     
     .logo{
@@ -15,6 +16,7 @@
       border: 1px solid black;
       padding: 5px;
       width: 25%;
+      background-color: lightcoral;
     }
 
     .header-extra{
@@ -22,14 +24,27 @@
       border: 1px solid black;
       padding: 5px;
       width: 70%;
+      background-color: lightblue;
 
     }
 
     main{
       border-top: 1px solid black;
+      border-bottom: 1px solid black;
       padding-top: 20px;
       margin-top: 20px;
-      margin-bottom: 100px;
+      padding-bottom: 50px;
+    }
+
+    @media (max-width: 600px) {
+      .col-izq,
+      .col-centro,
+      .col-der {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+      }
     }
 
     .col-izq{
@@ -37,12 +52,14 @@
       border: 1px solid black;
       width: 25%;
       height: 200px;
+      background-color: lightyellow;
     }
     .col-centro{
       display: inline-block;
       border: 1px solid black;
       width: 30%;
       height: 200px;
+      background-color: lightgray;
     }
     .col-der{
       display: inline-block;
@@ -51,18 +68,47 @@
       height: 200px;
     }
 
+    .col-izq, .col-centro, .col-der{
+      vertical-align: top;
+    }
+
     .caja-relativa{
       display: inline-block;
-      border: 1px solid black;
+      border: 1px dotted darkgreen;
+      background-color: lightgreen;
       position: relative;
-      width: 200%;
+      width: 150%;
+      height: 20%;
       top: 70px;
       left: 20px;
     }
 
-    footer{
+    .caja-absoluta{
       border: 1px solid black;
+      position: absolute;
+      top: -50px;
+      left: 95%;
+      padding: 20px;
+      background-color: orange;
+    }
+
+    .caja-fija{
+      position:absolute;
+      border: 1px solid black;
+      top: 20px;
+      right: 20px;
+      max-width: 200px;
+      height: 100px;
+      width: 100px;
+      background-color: red;
+    }
+
+    footer{
+      margin-top: 10px;
+      border: 1px solid black;
+      border-top: 2px solid black;
       text-align: center;
+      background-color: lightgray;
       padding: 10px;
     }
   </style>

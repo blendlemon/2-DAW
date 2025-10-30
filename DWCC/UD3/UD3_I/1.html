@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //     function mes(numero){
+    //         var nombre = "";
+    //         switch (numero){
+    //             case 1: 
+    //                 nombre = "enero";
+    //             break;
+    //             case 2: 
+    //                 nombre = "febrero";
+    //             break;
+    //             case 3: 
+    //                 nombre = "marzo";
+    //             break;
+    //             case 4: 
+    //                 nombre = "abril";
+    //             break;
+    //             case 5: 
+    //                 nombre = "mayo";
+    //             break;
+    //             case 6: 
+    //                 nombre = "junio";
+    //             break;
+    //             case 7: 
+    //                 nombre = "julio";
+    //             break;
+    //             case 8: 
+    //                 nombre = "agosto";
+    //             break;
+    //             case 9: 
+    //                 nombre = "septiembre";
+    //             break;
+    //             case 10: 
+    //                 nombre = "octubre";
+    //             break;
+    //             case 11: 
+    //                 nombre = "noviembre";
+    //             break;
+    //             case 12: 
+    //                 nombre = "diciembre";
+    //             break;
+    //         }
+    //         return nombre;
+    //     }
+
+    //     function dia(numero){
+    //         var nombre = "";
+    //         switch (numero){
+    //             case 1: 
+    //                 nombre = "lunes";
+    //             break;
+    //             case 2: 
+    //                 nombre = "martes";
+    //             break;
+    //             case 3: 
+    //                 nombre = "miercoles";
+    //             break;
+    //             case 4: 
+    //                 nombre = "jueves";
+    //             break;
+    //             case 5: 
+    //                 nombre = "viernes";
+    //             break;
+    //             case 6: 
+    //                 nombre = "sabado";
+    //             break;
+    //             case 0: 
+    //                 nombre = "domingo";
+    //             break;
+    //     }
+    //     return nombre;
+    // }
+        var dias = ["domingo","lunes","martes","miercoles","jueves","viernes","sabado"];
+        var meses = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+        var ahora = new Date();
+        document.write("Hoy es "+dias[ahora.getDay()]+", "+ahora.getDate()+" de "+meses[ahora.getMonth()]+" de "+ahora.getFullYear()+" y son las "+ahora.getHours()+":"+ahora.getMinutes()+" horas.");
+    </script>
+</body>
+</html>

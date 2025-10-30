@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .grid-container{
+            display: grid;
+            border: 1px solid black;
+            grid-template-columns: repeat(9, 1fr);
+            grid-template-rows: repeat(3, 120px);
+        }
+
+        .cabecera{
+            grid-column: span 9;
+            grid-row: span 1;
+            border: 1px solid black;
+            text-align: center;
+            align-content: center;
+            font-size: 200%;
+        }
+
+        .medio{
+            grid-column: 3 span ;
+            border: 1px solid black;
+            text-align: center;
+            align-content: center;
+            font-size: 150%;
+        }
+
+        .pequeño{
+            grid-column: 1 span;
+            border: 1px solid black;
+            text-align: center;
+            align-content: center;
+            font-size: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="cabecera"><p>WEB</p></div>
+        <div class="medio"><p>Estructura</p></div>
+        <div class="medio"><p>Contenido</p></div>
+        <div class="medio"><p>Apariencia</p></div>
+        <div class="pequeño"><p>Coherencia</p></div>
+        <div class="pequeño"><p>Navegación</p></div>
+        <div class="pequeño"><p>Palabras Clave</p></div>
+        <div class="pequeño"><p>Claridad</p></div>
+        <div class="pequeño"><p>Usabilidad (Usuario)</p></div>
+        <div class="pequeño"><p>Palabras Clave</p></div>
+        <div class="pequeño"><p>Atractiva</p></div>
+        <div class="pequeño"><p>Titulos e imágenes</p></div>
+        <div class="pequeño"><p>Palabras Clave</p></div>
+
+    </div>
+</body>
+</html>

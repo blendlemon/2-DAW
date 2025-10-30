@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid-container{
+            display: grid;
+            grid-template-rows: repeat(4, 120px);
+            grid-template-columns: repeat(7, 1fr);
+            border: 1px solid black;
+            gap: 10px
+        }
+
+        .a{
+            grid-column: span 5;
+            background-color: orangered;
+        }
+
+        .b{
+            grid-column: span 2;
+            background-color: orangered;
+        }
+
+        .c{
+            grid-column: span 3;
+            grid-row: span 2;
+            background-color: darkgoldenrod;
+        }
+
+        .d{
+            grid-column: span 4;
+            background-color: purple;
+        } 
+        
+        .e{
+            grid-column: span 2;
+            background-color: blue;
+        }
+
+        .f{
+            grid-column: span 3;
+            background-color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="a"></div>
+        <div class="b"></div>
+        <div class="c"></div>
+        <div class="d"></div>
+        <div class="d"></div>
+        <div class="e"></div>
+        <div class="f"></div>
+        <div class="e"></div>
+    </div>
+</body>
+</html>
