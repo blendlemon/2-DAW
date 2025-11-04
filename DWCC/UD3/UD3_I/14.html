@@ -7,18 +7,31 @@
 </head>
 <body>
     <script>
-        var texto = prompt("Texto: ");
-        var numero = Number(prompt("Numero del 1 al 5: "));
+        var texto = "";
+        var numero;
         var vocales = ['a','e','i','o','u'];
         var contador = 0;
 
-        for (i=0; i<texto.length;i++){
-            if (texto.charAt(i)==vocales[numero-1]){
-                contador ++;
+        texto = prompt("Texto: ");
+        if (texto!=null){
+            while (true){
+                numero = prompt("Numero del 1 al 5: ")
+                if (numero != null) numero = Number(numero);
+                if ((numero>0 && numero<6) || numero ==null) break;
+            }
+            if (numero!=null){
+                
+                for (i=0; i<texto.length;i++){
+                    if (texto.charAt(i)==vocales[numero-1]){
+                        contador ++;
+                    }
+                }
+            
+                document.write(contador+" Es el número de veces que aparece la vocal "+vocales[numero-1]+" en la frase :"+texto);
             }
         }
 
-        document.write(contador+" Es el número de veces que aparece la vocal "+vocales[numero-1]+" en la frase :"+texto);
+        
     </script>
 </body>
 </html>

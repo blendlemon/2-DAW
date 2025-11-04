@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var texto = prompt("Intoduce texto 1: ");
+        var aux = "";
+        var split = texto.split(" ");
+        var contador = 0;
+        texto = "";
+
+        for(i = split.length-1; i>=0 ; i--){
+            aux += split[contador]  ;
+            texto += split[contador];
+            contador++;
+        }
+
+        if (aux.toLowerCase() == texto.toLowerCase()){
+            document.write("Es palindromo");
+        }else{
+            document.write("No es palindormo");
+        }
+    </script>
+</body>
+</html>
