@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var texto = prompt("Texto: ");
+        var numero = Number(prompt("Numero del 1 al 5: "));
+        var vocales = ['a','e','i','o','u'];
+        var contador = 0;
+
+        for (i=0; i<texto.length;i++){
+            if (texto.charAt(i)==vocales[numero-1]){
+                contador ++;
+            }
+        }
+
+        document.write(contador+" Es el número de veces que aparece la vocal "+vocales[numero-1]+" en la frase :"+texto);
+    </script>
+</body>
+</html>
