@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var texto = prompt("Texto: ");
+        var start = texto.indexOf("(");
+        var end = texto.indexOf(")");
+        
+        if (start >= 0){
+            if (end>start){
+                for (i = start+1 ; i<end;i++){
+                    document.write(texto.charAt(i));
+                }
+            }else{
+                for (i = start+1 ; i<texto.length;i++){
+                    document.write(texto.charAt(i));
+                }
+            }
+        }
+    </script>
+</body>
+</html>
