@@ -13,14 +13,13 @@
         
         if (start >= 0){
             if (end>start){
-                for (i = start+1 ; i<end;i++){
-                    document.write(texto.charAt(i));
-                }
+                end = end;
             }else{
-                for (i = start+1 ; i<texto.length;i++){
+                end = texto.length;
+            }
+            for (i = start+1 ; i<end;i++){
                     document.write(texto.charAt(i));
                 }
-            }
         }
     </script>
 </body>

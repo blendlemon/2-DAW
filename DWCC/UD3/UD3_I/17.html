@@ -7,16 +7,20 @@
 </head>
 <body>
     <script>
-        var texto = prompt("Intoduce texto 1: ");
+        var texto = prompt("Intoduce texto: ");
         var aux = "";
-        var split = texto.split(" ");
         var contador = 0;
-        texto = "";
+        
 
-        for(i = split.length-1; i>=0 ; i--){
-            aux += split[contador]  ;
-            texto += split[contador];
-            contador++;
+        for(i = texto.length-1; i>=0 ; i--){
+
+            if (texto.charAt(i)!=" " && texto.charAt(i)!="," && texto.charAt(i)!="."){
+                aux += texto.charAt(i) ;
+            }
+        }
+        texto = "";
+        for (i = aux.length-1; i>=0; i--){
+            texto += aux.charAt(i);
         }
 
         if (aux.toLowerCase() == texto.toLowerCase()){
