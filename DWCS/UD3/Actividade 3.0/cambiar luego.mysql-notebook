@@ -1,0 +1,81 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "Script",
+    "content": "USE w3schools;\r\n-- 1- Obter os identificadores, nomes, país e cidade da táboa de clientes cuxo país é España ou cidade é Lisboa, ordenados primeiro por país e despois por cidade\r\nSELECT CustomerID, CustomerName, Country, City \r\nFROM customers\r\nWHERE Country = Spain OR City = Lisboa\r\nORDER BY Country, City\r\n;\r\n\r\n-- 2- Insira un novo rexistro na táboa de categorías cun nome e unha descrición, pero sen indicar o CategoryID (asignarase automaticamente)\r\n-- SELECT * from categories;\r\n-- INSERT INTO categories () VALUES ();",
+    "options": {
+        "tabSize": 4,
+        "insertSpaces": true,
+        "indentSize": 4,
+        "defaultEOL": "CRLF",
+        "trimAutoWhitespace": true
+    },
+    "viewState": null,
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 11,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "1bd555bd-27f2-4a53-e928-d3a761a03808",
+                            "content": "OK, 0 records retrieved in 0.245ms"
+                        },
+                        {
+                            "type": 0,
+                            "index": 1,
+                            "content": "MySQL Error (1064): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 5",
+                            "language": "ansi"
+                        },
+                        {
+                            "type": 0,
+                            "index": -1,
+                            "content": "✕ SQL Script execution completed in 27ms. 3 statements executed, 1 error occurred.",
+                            "language": "ansi"
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": ""
+                    }
+                },
+                "currentHeight": 300,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 14
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 14,
+                            "length": 289
+                        },
+                        "contentStart": 177,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 303,
+                            "length": 183
+                        },
+                        "contentStart": 303,
+                        "state": 1
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}
