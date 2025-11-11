@@ -7,20 +7,120 @@
 
     <style>
         .verde1{
-            grid-area: verde1;        
+            grid-area: verde1;
+            background-color: green;
         }
+        
+        .verde2{
+            grid-area: verde2;
+            background-color: green;  
+        }
+        
+        .azul1{
+            grid-area: azul1;
+            background-color: lightblue; 
+        }
+
+        .azul2{
+            grid-area: azul2;
+            background-color: blue; 
+        }
+
+        .rojo{
+            grid-area: rojo;
+            background-color: red; 
+        }
+
+        .morado{
+            grid-area: morado;
+            background-color: purple; 
+        }
+
+        .gris{
+            grid-area: gris;
+            background-color: grey; 
+        }
+
+        @media (min-width:500px) and (max-width:699px){
+            .verde1, .verde2{
+                display: none;
+            }
+            .grid-container{
+                display: grid;
+                grid-auto-rows: 100px;
+                gap: 10px;
+                grid-template-areas: 
+                "azul1"
+                "rojo"
+                "azul2"
+                "morado"
+                "morado"
+                "morado"
+                "gris"
+                ;
+            }
+            .grid-container > div{
+                border: 5px solid black;
+            }
+        }
+
+        @media (min-width:700px) and (max-width:899px){
+            .verde1, .verde2{
+                display: none;
+            }
+            .grid-container{
+                display: grid;
+                grid-auto-rows: 100px;
+                gap: 10px;
+                grid-template-areas: 
+                "azul1 azul1 azul1 azul1 azul1 azul1"
+                "rojo rojo rojo rojo rojo rojo"
+                "azul2 azul2 morado morado morado morado"
+                "azul2 azul2 morado morado morado morado"
+                "azul2 azul2 morado morado morado morado"
+                "azul2 azul2 morado morado morado morado"
+                "azul2 azul2 morado morado morado morado"
+                "gris gris gris gris gris gris"
+                ;
+            }
+            .grid-container > div{
+                border: 5px solid black;
+            }
+        }
+
+        @media (min-width:900px){
+            .grid-container{
+                display: grid;
+                grid-auto-rows: 100px;
+                gap: 10px;
+                grid-template-areas: 
+                "verde1 verde1 azul1 azul1 azul1 azul1 azul1"
+                "rojo rojo rojo rojo rojo rojo rojo"
+                "azul2 azul2 azul2 morado morado morado morado"
+                "azul2 azul2 azul2 morado morado morado morado"
+                "azul2 azul2 azul2 morado morado morado morado"
+                "azul2 azul2 azul2 morado morado morado morado"
+                "azul2 azul2 azul2 morado morado morado morado"
+                "verde2 verde2 verde2 gris gris gris gris"
+                ;
+            }
+            .grid-container > div{
+                border: 5px solid black;
+            }
+        }
+
     </style>
 
 </head>
 <body>
     <div class="grid-container">
         <div class="verde1"></div>
-        <div class="azul"></div>
+        <div class="azul1"></div>
         <div class="rojo"></div>
         <div class="azul2"></div>
         <div class="morado"></div>
         <div class="verde2"></div>
-        <div class="grid"></div>
+        <div class="gris"></div>
     </div>
 </body>
 </html>
