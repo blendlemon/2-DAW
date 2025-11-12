@@ -1,32 +1,6 @@
-﻿<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Búsqueda</title>
-</head>
-
-<body>
-    <h1>Búsqueda de libros</h1>
-
-    <form method="GET">
-        <label for="busqueda">Introduzca los términos de búsqueda: </label>
-        <input type="search" name="busqueda" id="busqueda" required>
-        <button type="submit">Buscar</button>
-    </form>
-</body>
-
-</html>
 <?php
-if (isset($_GET["busqueda"])) {
-    $terminos_busqueda = $_GET["busqueda"];
-    if (trim($terminos_busqueda) !== "") {
-
-        require_once "connection.php";
-
-        try {
-            // (1) Crear la conexión
+function buscarLibros(string $termo_busqueda): array {
+     try{// (1) Crear la conexión
             $con = getConnection();
             // (2) Preparar la consulta
             //En la bd bookdb no importan mayúsculas/minúsculas porque está usando collation caseinsensitive, pero no está demás que nuestro código no dependa de la collation de la base de datos
@@ -38,7 +12,7 @@ if (isset($_GET["busqueda"])) {
                                     OR a.first_name LIKE :q");
 
             // (3) Sustituir de los parámetros
-            $pattern = '%' . strtoupper($terminos_busqueda) . '%';
+            $pattern = '%' . strtoupper($termo_busqueda) . '%';
             $stmt->bindParam(':q', $pattern, PDO::PARAM_STR);
 
             //Antes de ejecutar: 
@@ -58,32 +32,34 @@ if (isset($_GET["busqueda"])) {
 
             // (5) Recuperar los resultados
             $fila = $stmt->fetch(PDO::FETCH_ASSOC);
-            // if (($array !== false)) {
-            if ($fila) {
+    if ($fila){
+    do {
+        array_push($array, $fila);
 
-                echo "<ol>";
-                do {
-                    echo "<li>{$fila["title"]}</li>";
-                }while($fila = $stmt->fetch(PDO::FETCH_ASSOC));
-                echo "</ol>";
-            } else {
-                echo "<p>No se han encontrado resultados</p>";
-            }
-            //}
+    } while ($fila = $stmt->fetch(PDO::FETCH_ASSOC) !== false);
 
-            //(6) Capturar excepciones
-        } catch (Exception $e) {
-            echo "<p>Ha ocurrido una excepción: " . $e->getMessage() . "</p>";
-            error_log($e->getMessage());
-        } finally {
+    return $array;
+    }else{
+        return [];
+    }
+    }finally {
             //(7) 
             // Liberar los recursos
             $con = null;
             $stmt = null;
         }
-    } else {
-        echo "<p> Introduzca una cadena no vacía </p>";
-    }
 }
 
+function showResults(array $array){
+    if($array){
+        echo "<ol>";
+        foreach ($array as $fila){
+            echo "<li>{$fila["title"]}</li>";
+        }
+        echo "</ol>";
+
+    }else{
+        echo "<p>Non se atoparon resultados</p>";
+    }
+}
 ?>
