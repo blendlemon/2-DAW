@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function ModWindow(){
+            var size = Math.floor(Math.random()*(500-200+1)+200);
+            win.resizeTo(size, size);
+        }
+        var win = window.open("","popupId","width=500,height =500");
+
+        setInterval(ModWindow, 10*1000);
+    </script>
+</body>
+</html>

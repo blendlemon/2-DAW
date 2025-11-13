@@ -6,10 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-    
     <script>
+        function NewWindow(){
+            var win = window.open("algo.html", "popupId", "location=no,menubar=no,titlebar=no,resizable=no,toolbar=no,width=500,height=500");
+            win.document.write("<h1>"+nombre+"</h1>");
+            win.document.bgColor = "red";
+        }
         var nombre = prompt("Introduce tu nombre");
-        window.open()
+        setTimeout(NewWindow, 10 * 1000);
+        
 
     </script>
 </body>
