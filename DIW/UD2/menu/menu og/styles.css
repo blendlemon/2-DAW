@@ -54,7 +54,7 @@ body {
   font-size: 1.1rem;
   letter-spacing: 0.05em;
   background: linear-gradient(145deg, #a87b5c, #7b523a);
-  color: white;
+  color: #f5e6d3;
   cursor: pointer;
   box-shadow: inset 2px 2px 4px #0003, inset -2px -2px 4px #fff3,
     4px 4px 8px #0004;
@@ -104,5 +104,5 @@ body {
 
 /* Optional: leichte Farbvariation beim Hover */
 .btn:hover {
-  background-image: url(https://wallpapercave.com/wp/wp11022584.jpg);
+  background: linear-gradient(145deg, #b68c68, #875a3f);
 }
