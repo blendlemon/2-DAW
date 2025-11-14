@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    var nombre = prompt("Introduce tu nombre: ");
+    var apellidos = prompt ("Introduce tus apellidos: ");
+    var edad = Number(prompt("Introduce tu edad"));
+    var win = null;
+
+    if (edad>17){
+        win = window.open("","popupId","width=500,height=500");
+        win.document.write("<h1>Bienvenido</h1><br>"+nombre+" "+apellidos);
+    }
+   </script> 
+</body>
+</html>

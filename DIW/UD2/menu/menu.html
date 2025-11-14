@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link  rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+  <div class="menu-background">
+    <nav class="menu" role="menu">
+      <button class="btn is-active" role="menuitem">Start Adventure</button>
+      <button class="btn" role="menuitem">Continue</button>
+      <button class="btn" role="menuitem">Settings</button>
+      <button class="btn" role="menuitem">Extras</button>
+      <button class="btn" role="menuitem" onclick="window.close()">Exit</button>
+    </nav>
+
+    <script>
+        function nicolas(){
+            var botones = document.getElementsByClassName("btn");
+            for (var i=0; i<botones.length;i++){
+                botones[i].style.background="red";
+            }
+        }
+    </script>
+  </div>
+</div>
+</body>
+</html>
