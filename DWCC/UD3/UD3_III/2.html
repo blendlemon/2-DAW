@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        var texto = prompt("Introduzca texto: ");
+        var contador = 0;
+        var numero = Number(prompt("Introduzca numero: "));
+        var salida = "";
+
+        for (var i = 0; i < texto.length; i++) {
+            if (texto.charAt(i) === '|') contador ++;
+            if (numero === contador && texto.charAt(i)!=='|'){
+                salida += texto.charAt(i);
+            }
+        }
+        document.write(salida);
+    </script>
+  </body>
+</html>
