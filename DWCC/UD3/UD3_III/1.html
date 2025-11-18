@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var contraseña = "";
+      var mayus_inicio = 65;
+      var mayus_fin = 90;
+      var minus_inicio = 97;
+      var minus_fin = 122;
+      var especial = ".-()";
+
+      for (var i = 0; i < 8; i++) {
+        if (i == 0) {
+          contraseña += String.fromCharCode(
+            Math.floor(
+              Math.random() * (mayus_fin - mayus_inicio + 1) + mayus_inicio
+            )
+          );
+        } else if (i > 0 && i < 6) {
+          contraseña += String.fromCharCode(
+            Math.floor(
+              Math.random() * (minus_fin - minus_inicio + 1) + minus_inicio
+            )
+          );
+        } else if (i == 6) {
+          contraseña += especial.charAt(
+            Math.floor(Math.random() * (especial.length + 1))
+          );
+        } else contraseña += Math.floor(Math.random() * (9 + 1));
+      }
+
+      document.write(contraseña);
+    </script>
+  </body>
+</html>
