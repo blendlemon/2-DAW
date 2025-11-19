@@ -1,0 +1,135 @@
+body {
+  background-image: url(images/fondo.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+  overflow: hidden;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
+
+.box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+body {
+  font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  line-height: 1.45;
+  color: #111;
+}
+
+.links {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  bottom: 0;
+}
+
+.table {
+  width: 100%;
+  height: 100%;
+}
+
+.table td {
+  width: 100%;
+  height: 10%;
+  background-color: #50C7AF;
+}
+
+.main {
+  position: absolute;
+  top: 0;
+  left: 200px;
+  right: 0;
+  bottom: 0;
+}
+
+.mySlides {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(images/rotating-earth.gif);
+  background-size: cover;
+  animation: door1 1s linear forwards;
+}
+
+.slideshow-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.dot {
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+@keyframes door1 {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.active,
+.dot:hover {
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
+    0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;
+  color: #000000;
+}
+
+@keyframes picture {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.picture {
+  position: absolute;
+  width: 60%;
+  top: 20%;
+  left: 20%;
+  bottom: 20%;
+  border: ridge 4px #333b31;
+  transform: translateY(100%);
+  animation: picture 600ms ease forwards;
+}
+
+.picture img {
+  width: 100%;
+  height: 100%;
+}
