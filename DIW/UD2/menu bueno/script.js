@@ -23,6 +23,8 @@ function showSlides(n) {
     }
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
+
+    document.body.style.backgroundImage = "url(images/rotating-earth.gif)";
 }
 
 window.addEventListener('wheel', function (event) {

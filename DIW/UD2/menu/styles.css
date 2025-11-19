@@ -42,6 +42,30 @@ body {
   max-width: 260px;
 }
 
+/* Barra superior: cuando el nav está dentro de header.top-nav lo mostramos en fila */
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(90deg, #ffffffcc, #e6f0ffcc);
+  padding: 12px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  z-index: 1000;
+}
+.top-nav .menu {
+  flex-direction: row;
+  gap: 10px;
+  max-width: none;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Reservar espacio para la barra superior */
+body {
+  padding-top: 72px; /* ajusta según altura de .top-nav */
+}
+
 /* 🧵 Sackboy-Style Buttons */
 .btn {
   position: relative;

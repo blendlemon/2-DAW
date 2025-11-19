@@ -7,18 +7,24 @@
     <link  rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-  <div class="menu-background">
-    <nav class="menu" role="menu">
-      <button class="btn is-active" role="menuitem" onclick="window.open('https://www.youtube.com/embed/uSGIPIAikZU?autoplay=1&mute=1','_blank')">Start Adventure</button>
-      <button class="btn" role="menuitem">Continue</button>
-      <button class="btn" role="menuitem">Settings</button>
-      <button class="btn" role="menuitem">Extras</button>
-      <button class="btn" role="menuitem" onclick="window.close()">Exit</button>
-      <button class="btn" role="menuitem">Boton a mayores</button>
-    </nav>
+    <header class="top-nav">
+      <nav class="menu" role="menu">
+        <button class="btn is-active" role="menuitem" onclick="window.open('https://www.youtube.com/embed/uSGIPIAikZU?autoplay=1&mute=1','_blank')">Start Adventure</button>
+        <button class="btn" role="menuitem">Continue</button>
+        <button class="btn" role="menuitem">Settings</button>
+        <button class="btn" role="menuitem">Extras</button>
+        <button class="btn" role="menuitem" onclick="window.close()">Exit</button>
+        <button class="btn" role="menuitem">Boton a mayores</button>
+      </nav>
+    </header>
 
-  </div>
-</div>
+    <main class="page-content">
+      <div class="container">
+        <div class="menu-background">
+          <!-- Contenido principal de la página -->
+          <p style="text-align:center; color:#333;">Contenido de la página. El menú ahora está en la parte superior.</p>
+        </div>
+      </div>
+    </main>
 </body>
 </html>
