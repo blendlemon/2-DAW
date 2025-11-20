@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "db00cb8fee2c1a99",
+        "id": "85179a2dd5bbae49",
         "type": "tabs",
         "children": [
           {
-            "id": "d548c947d91e2c1f",
+            "id": "1269c7e57e2e9f2c",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -74,8 +74,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "5f028309ee4b3137",
@@ -167,9 +166,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "d548c947d91e2c1f",
+  "active": "1269c7e57e2e9f2c",
   "lastOpenFiles": [
     "DWCS/Resumenes/UD1/Protocolos y arquitecturas de aplicaciones en internet.md",
+    "DWCS/Resumenes/UD1/UD1.md",
     "DWCS/Resumenes/UD1",
     "DWCS/Resumenes",
     "DAPW/UD2/Actividades UD2/Actividades UD 2.md",
