@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "8a0eed1cdcbed936",
+        "id": "db00cb8fee2c1a99",
         "type": "tabs",
         "children": [
           {
-            "id": "65f417fcfd13743e",
+            "id": "d548c947d91e2c1f",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -74,7 +74,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "5f028309ee4b3137",
@@ -166,8 +167,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "65f417fcfd13743e",
+  "active": "d548c947d91e2c1f",
   "lastOpenFiles": [
+    "DWCS/Resumenes/UD1/Protocolos y arquitecturas de aplicaciones en internet.md",
+    "DWCS/Resumenes/UD1",
+    "DWCS/Resumenes",
     "DAPW/UD2/Actividades UD2/Actividades UD 2.md",
     "DWCC/Ejercicios UD3.md",
     "DIW/UD2/Notas UD2.md",
@@ -179,8 +183,6 @@
     "DWCC/UD3/UD3_II/4.html",
     "DWCC/UD3/UD3_II/3.html",
     "DWCC/UD3/UD3_II/2.html",
-    "DWCC/UD3/UD3_II/1.html",
-    "DWCC/UD3/UD3_II",
     "DAPW/UD1/Actividades UD1.md",
     "DAPW/Ejercicio 3.md",
     "DIW/Ejercicios que hacer.md",
