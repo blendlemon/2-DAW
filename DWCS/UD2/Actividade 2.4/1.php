@@ -14,11 +14,11 @@
 
     <form action="" method="get">
         <div>
-            <lablel for="koprenda" class="form-label"></lablel>
-            <select name="prenda" id="prenda" multiple class="form-select">
-                <option value="value1">Abrigos</option>
-                <option value="value2">Tops</option>
-                <option value="value3">Camisas</option>
+            <lablel for="prenda" class="form-label"></lablel>
+            <select name="prenda[]" id="prenda" multiple class="form-select">
+                <option value="abrigos">Abrigos</option>
+                <option value="tops">Tops</option>
+                <option value="camisas">Camisas</option>
             </select>
         </div>
 
@@ -37,7 +37,7 @@
         echo "<strong>$clave</strong>:";
 
         if (!is_array($valor)) {
-            if ($clave == "color") {
+            if ($clave == "prenda") {
                 $color = $valor;
 
                 echo "<span style=\"background-color:$color\">$valor</span>";
