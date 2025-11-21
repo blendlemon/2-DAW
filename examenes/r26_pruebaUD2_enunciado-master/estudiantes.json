@@ -1,0 +1,50 @@
+[
+    {
+        "nombre": "Ana",
+        "edad": "23",
+        "curso": "2025-26",
+        "tipo": "alumno"
+    },
+    {
+        "nombre": "Juan",
+        "edad": "18",
+        "curso": "2025-26",
+        "tipo": "becado"
+    },
+    {
+        "nombre": "Luis",
+        "edad": "20",
+        "curso": "2025-26",
+        "tipo": "oyente"
+    },
+    {
+        "nombre": "ejemplo1",
+        "edad": "20",
+        "curso": "2025-26",
+        "tipo": "becado"
+    },
+    {
+        "nombre": "Ejemplo2",
+        "edad": "2",
+        "curso": "2025-26",
+        "tipo": "alumno"
+    },
+    {
+        "nombre": "Ejemplo2",
+        "edad": "2",
+        "curso": "2025-26",
+        "tipo": "alumno"
+    },
+    {
+        "nombre": "w",
+        "edad": "12",
+        "curso": "2025-26",
+        "tipo": "alumno"
+    },
+    {
+        "nombre": "a",
+        "edad": "123",
+        "curso": "2025-26",
+        "tipo": "oyente"
+    }
+]
