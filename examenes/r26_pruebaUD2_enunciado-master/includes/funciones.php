@@ -5,14 +5,14 @@
  * Comprueba si los datos recibidos por el formulario son válidos
  *
  * @return bool
- */
+ */ 
 function validar(array $registro)
 {
     $valida = true;
     if ($registro["nombre"] == "") {
         $valida = false;
     }
-    if ($registro["edad"] <= 0 && $registro["edad"] == "") {
+    if ($registro["edad"] <= 0 || $registro["edad"] == "") {
         $valida = false;
     }
     if ($registro["curso"] != "2025-26") {
@@ -52,7 +52,7 @@ function mostrarListado($estudiantes)
             echo "<tr>
                     <td>{$estudiantes[$i]["nombre"]}</td>
                     <td>{$estudiantes[$i]["edad"]}</td>
-                    <td>{$estudiantes[$i]["curso"]}</th>
+                    <td>{$estudiantes[$i]["curso"]}</td>
                     <td>{$estudiantes[$i]["tipo"]}</td>
                 </tr>";
         }
