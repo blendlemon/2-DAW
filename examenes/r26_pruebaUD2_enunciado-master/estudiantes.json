@@ -46,5 +46,11 @@
         "edad": "123",
         "curso": "2025-26",
         "tipo": "oyente"
+    },
+    {
+        "nombre": "Nicolas",
+        "edad": "23",
+        "curso": "2025-26",
+        "tipo": "alumno"
     }
 ]
