@@ -9,18 +9,18 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-
+<div class="container-fluid">
+    
         <h1>Búsqueda de libros</h1>
-
+    
         <form method="GET">
             <div class="mb-3">
                 <label class="form-label" for="busqueda">Introduzca los términos de búsqueda: </label>
                 <input type="search" class="form-control" name="busqueda" id="busqueda" required>
             </div>
-            <button type="submit" class="btn btn-primary">Buscar</button>
+            <button type="submit"  class="btn btn-primary">Buscar</button>
         </form>
-    </div>
+</div>
 </body>
 
 </html>
@@ -41,37 +41,17 @@ if (isset($_GET["busqueda"])) {
                  as resultado from authors where first_name like ?;");
 
             $filtro = "%" . strtoupper($terminos_busqueda) . "%";
-            // Encapsulamos la obtención en una función externa si existe, si no usamos la sustitución por array y fetchAll
-            require_once "util.php";
+            $stmt->bind_param("ss", $filtro, $filtro);
+            $stmt->execute();
 
-            try {
-                if (function_exists('fetch_search_results')) {
-                    // la función externa debe devolver un array de filas con índices numéricos (PDO::FETCH_NUM / MYSQLI_NUM)
-                    $resultados = fetch_search_results($con, $terminos_busqueda);
-                } else {
-                    // sustitución mediante array en lugar de bind_param
-                    $params = [$filtro, $filtro];
-                    $stmt->execute($params);
-
-                    // obtenemos todos los registros en un array con índices numéricos
-                    // (para PDO)
-                    $resultados = $stmt->fetchAll(PDO::FETCH_NUM);
-                }
-            } catch (Exception $e) {
-                error_log("Error ejecutando la búsqueda: " . $e->getMessage());
-                // Re-lanzamos para que el catch externo lo registre igualmente
-                throw $e;
-            }
-            $stmt->execute(params: [$filtro] );
-
-            // $resultado = $stmt->get_result();
+            $resultado = $stmt->get_result();
 
             $counter = 0;
             //fetch_assoc devuelve:
             // array asoc
             //null si no hay más filas
             //false si falla algo
-            while (($row = $resultado->fetch(PDO::FETCH_OBJ)) !== false) {
+            while (($row = $resultado->fetch_assoc())) {
                 $counter++;
                 if ($counter == 1) {
                     echo "<ol>";
