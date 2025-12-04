@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let filas;
+      let columnas;
+      let cadena = "";
+      let aux = "";
+      let simbolo = ".";
+      let contador = 0;
+      let num;
+      let salida = "Programa cancelado por el usuario";
+
+      while (true) {
+        while (true) {
+          filas = prompt("Introduce el número de filas (3-5):");
+          if ((Number(filas) >= 3 && Number(filas) <= 5) || filas == null) {
+            break;
+          }
+        }
+        if (filas == null) break;
+        filas = Number(filas);
+
+        while (true) {
+          columnas = prompt("Introduce el número de columnas (3-7):");
+          if ((Number(columnas) >= 3 && Number(columnas) <= 7) || columnas == null) {
+            break;
+          }
+        }
+        if (columnas == null) break;
+        columnas = Number(columnas);
+
+        while (true) {
+          cadena = prompt("Introduce cadena (longitud maxima" + filas * columnas + "):");
+          if (cadena.length > 0 || cadena == null) {
+            break;
+          }
+        }
+        if (cadena == null) break;
+
+        while (true) {
+          num = prompt("Introduce un número (1 o 2):");
+          if ((Number(num) > 0 && Number(num) < 3) || num == null) {
+            break;
+          }
+        }
+        if (num == null) break;
+        num = Number(num);
+
+        salida ='<table bgcolor="lightgreen" style="border: 1px solid black; border-collapse: collapse;">';
+        if (num == 2) {
+          salida += "<th colspan=\""+columnas+"\"style=\"border: 1px solid black>\">" + cadena + "</th>";
+          simbolo = "-";
+        }
+        for (let i = 0; i < filas; i++) {
+          salida += "<tr>";
+          for (let j = 0; j < columnas; j++) {
+             if (cadena.length > contador){
+                aux = simbolo+cadena.charAt(contador)+simbolo;
+                contador++;
+            }
+            else{
+                aux = " ";
+            }
+            salida += "<td style=\"border: 1px solid black; text-align: center;\" width=\"100px\" height=\"50px\">"+aux+"</td>";
+          }
+          salida += "</tr>";
+        }
+        salida +="</table>";
+        break;
+      }
+      document.write(salida);
+      console.log(salida);
+    </script>
+  </body>
+</html>
