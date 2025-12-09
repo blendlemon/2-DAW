@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ejercicio de cajas</title>
+
+<style>
+  /* Contenedor para controlar posiciones */
+   
+
+   .caja {
+	width : 150px;
+	height : 150px;
+  position: absolute;
+   }
+
+  .caja1 {
+    background-color: red;
+    
+  }
+
+  .caja2 {
+    background-color: blue;
+    z-index: 2;
+    top: 40px;
+    left: 40px;
+  }
+
+  .caja3 {
+    background-color: green;
+    z-index: 1;
+    top: 70px;
+    left: 70px;
+  }
+</style>
+
+</head>
+<body>
+
+<div class="contenedor">
+  <div class="caja caja1"></div>
+  <div class="caja caja2"></div>
+  <div class="caja caja3"></div>
+</div>
+
+</body>
+</html>

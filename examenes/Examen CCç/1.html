@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let fecha1 = new Date();
+      let fecha2 = new Date();
+      let aux = new Date();
+      let inicio = new Date();
+      let fin;
+      let diferencia;
+      let dia;
+      let contador = 0;
+      let diaSemana = [
+        "Lunes",
+        "Martes",
+        "Miércoles",
+        "Jueves",
+        "Viernes",
+        "Sábados",
+        "Domingos"
+      ];
+      let input = "";
+      let salida = "Programa cancelado por el usuario";
+      while (true) {
+        input = prompt("Introduce el dia del mes (1-31): ");
+        if (input == null) {
+          break;
+        }
+        fecha1.setDate(Number(input));
+
+        input = prompt("Introduce el mes (1-12): ");
+        if (input == null) {
+          break;
+        }
+        fecha1.setMonth(Number(input) - 1);
+
+        input = prompt("Introduce el año completo: ");
+        if (input == null) {
+          break;
+        }
+        fecha1.setFullYear(Number(input));
+
+        input = prompt("Introduce el dia del mes (1-31): ");
+        if (input == null) {
+          break;
+        }
+        fecha2.setDate(Number(input));
+
+        input = prompt("Introduce el mes (1-12): ");
+        if (input == null) {
+          break;
+        }
+        fecha2.setMonth(Number(input) - 1);
+
+        input = prompt("Introduce el año completo: ");
+        if (input == null) {
+          break;
+        }
+        fecha2.setFullYear(Number(input));
+
+        diferencia = (fecha2.getTime() - fecha1.getTime()) / (1000 * 3600 * 24);
+
+        if (diferencia > 20) {
+          while (true) {
+            input = prompt("Introduce un número del 1 al 7: ");
+            if ((Number(input) > 0 && Number(input) < 8) || input == null) {
+              break;
+            }
+          }
+          if (input == null) {
+            break;
+          }
+          dia = Number(input) - 1;
+          aux.setDate(fecha1.getDate());
+          aux.setMonth(fecha1.getMonth());
+          aux.setFullYear(fecha1.getFullYear());
+          while (true) {
+            if (fecha1.getDay() == dia) {
+              contador++;
+            }
+            if (fecha1.getTime() == fecha2.getTime()) {
+              break;
+            }
+            fecha1.setDate(fecha1.getDate() + 1);
+          }
+          fin = new Date();
+          fin = parseInt((fin.getTime() - inicio.getTime())/1000);
+          salida = "El número de " + diaSemana[dia] + " que hay entre las fechas " + aux.getDate() + "/" + (aux.getMonth() + 1) +"/" + aux.getFullYear() + " y " + fecha2.getDate() + "/" + (fecha2.getMonth() + 1) + "/" + fecha2.getFullYear() + " son : " + contador + "<br>En todo el proceso se tardó : "+fin+" segundos.";
+          break;
+        }
+      }
+      document.write(salida);
+    </script>
+  </body>
+</html>
