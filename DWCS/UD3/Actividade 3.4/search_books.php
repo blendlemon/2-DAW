@@ -29,41 +29,13 @@ if (isset($_GET["busqueda"])) {
     $terminos_busqueda = $_GET["busqueda"];
     if (trim($terminos_busqueda) !== "") {
 
-        require_once "connection.php";
-
+        require_once "util.php";
         try {
-            $con =  getConnection();
 
-            //En la bd bookdb no importan mayúsculas/minúsculas porque está usando collation caseinsensitive, pero no está demás que nuestro código no dependa de la collation de la base de datos
-            $stmt = $con->prepare("select title as resultado from books where UPPER(title) like ?
-                union 
-                select Concat(first_name,' ', last_name)
-                 as resultado from authors where first_name like ?;");
+            $resultado = getResultados($terminos_busqueda);
 
-            // $filtro = "%" . strtoupper($terminos_busqueda) . "%";
-            // $stmt->bind_param("ss", $filtro, $filtro);
-            $stmt->execute(array($terminos_busqueda => "p%"));
+            mostrarResultados($resultado);
 
-            // $resultado = $stmt->get_result();
-
-            $counter = 0;
-            //fetch_assoc devuelve:
-            // array asoc
-            //null si no hay más filas
-            //false si falla algo
-            while (($row = $resultado->fetch(PDO::FETCH_OBJ)) !== false) {
-                $counter++;
-                if ($counter == 1) {
-                    echo "<ol>";
-                }
-                echo "<li>" . $row["resultado"] . "</li>";
-            }
-            if ($counter > 0) {
-                echo "</ol>";
-            }
-            if ($counter == 0) {
-                echo "<p>No se han encontrado resultados</p>";
-            }
         } catch (Exception $e) {
             error_log("Ha ocurrido una una excepción: " . $e->getMessage());
             echo "<p>Ha ocurrido un error inesperado: </p>";
