@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Grid Responsive Completo</title>
+
+<style>
+    .h1{
+        grid-area: h1;
+        background-color: yellow;
+    }
+    .h2{
+        grid-area: h2;
+        background-color: yellow;
+    }
+    .c1{
+        grid-area: c1;
+        background-color: red;
+    }
+    .c2{
+        grid-area: c2;
+        background-color: blue;
+    }
+
+    .c3{
+        grid-area: c3;
+        background-color: green;
+    }
+
+    .c4{
+        grid-area: c4;
+        background-color: black;
+        color: white;
+    }
+
+    .c5{
+        grid-area: c5;
+        background-color: yellow;
+    }
+
+    .c6{
+        grid-area: c6;
+        background-color: red;
+    }
+
+    .f1{
+        grid-area: f1;
+        background-color: blue;
+    }
+
+    .f2{
+        grid-area: f2;
+        background-color: green;
+    }
+
+    @media (min-width:900px){
+
+        .grid{
+            display: grid;
+            grid-gap: 10px;
+            grid-auto-rows: 80px;
+            grid-template-areas: 
+            "h1 h1 h1 h1 h2 h2 h2 h2"
+            "c1 c1 c2 c2 c3 c3 c4 c4"
+            "c5 c5 c5 c5 c6 c6 c6 c6"
+            "f1 f1 f1 f1 f1 f2 f2 f2"
+            ;
+        }
+    }
+
+    @media (min-width:700px) and (max-width:899px){
+        .f2{
+            display: none;
+        }
+        .grid{
+            display: grid;
+            grid-gap: 10px;
+            grid-auto-rows: 80px;
+            grid-template-areas: 
+            "h1 h1 h1 h1 h2 h2 h2 h2"
+            "c1 c1 c1 c1 c2 c2 c2 c2"
+            "c3 c3 c3 c3 c4 c4 c4 c4"
+            "c5 c5 c5 c5 c5 c6 c6 c6"
+            "f1 f1 f1 f1 f1 f1 f1 f1"
+            ;
+        }
+    }
+
+    @media (max-width:699px){
+         .f2 ,.h2{
+            display: none;
+        }
+        .grid{
+            display: grid;
+            grid-gap: 10px;
+            grid-auto-rows: 80px;
+            grid-template-areas: 
+            "h1"
+            "c1"
+            "c2"
+            "c3"
+            "c4"
+            "c5"
+            "c6"
+            "f1"
+            ;
+        }
+    }
+    
+</style>
+
+</head>
+<body>
+
+<div class="grid">
+ 
+    <div class="h1">Encabezado 1</div>
+    <div class="h2">Encabezado 2 desaparece</div>
+ 
+    <div class="c1">Caja 1</div>
+    <div class="c2">Caja 2</div>
+    <div class="c3">Caja 3</div>
+    <div class="c4">Caja 4</div>
+    <div class="c5">Caja 5</div>
+    <div class="c6">Caja 6</div>
+
+    <div class="f1">Pie Grande</div>
+    <div class="f2">Pie Pequeño desaparece</div>
+
+</div>
+
+</body>
+</html>

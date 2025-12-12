@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Grid Asimétrico 9x9</title>
+
+<style>
+  .caja{
+    color: white;
+  }
+
+  .c1{
+    grid-area: c1;
+    background-color: red;
+  }
+
+  .c2{
+    grid-area: c2;
+    background-color: purple;
+  }
+
+  .c3{
+    grid-area: c3;
+    background-color: blue;
+  }
+
+  .c4{
+    grid-area: c4;
+    background-color: lightgreen;
+  }
+
+  .c5{
+    grid-area: c5;
+    background-color: yellow;
+  }
+
+  .c6{
+    grid-area: c6;
+    background-color: orange;
+  }
+
+  .c7{
+    grid-area: c7;
+    background-color: green;
+  }
+
+  .c8{
+    grid-area: c8;
+    background-color: black;
+  }
+
+  .grid{
+    display: grid;
+    grid-auto-rows: 50px;
+    grid-gap: 10px;
+    padding: 10px;
+    background-color: grey;
+
+    grid-template-areas: 
+    "c1 c1 c1 c1 . . . . ."
+    "c1 c1 c1 c1 c2 c2 . . ."
+    "c1 c1 c1 c1 c2 c2 . c3 c3"
+    "c1 c1 c1 c1 . . . c3 c3"
+    ". c4 c4 c4 c4 c4 . c3 c3"
+    "c5 c4 c4 c4 c4 c4 . . ."
+    "c5 . c6 c6 c6 . . . ."
+    "c5 . . . . c8 c8 c8 c8"
+    "c5 c7 c7 . . c8 c8 c8 c8"
+    ". c7 c7 . . c8 c8 c8 c8"
+    ;
+
+  }
+</style>
+
+</head>
+<body>
+
+ 
+
+<div class="grid">
+  <div class="caja c1">Caja 1</div>
+  <div class="caja c2">Caja 2</div>
+  <div class="caja c3">Caja 3</div>
+  <div class="caja c4">Caja 4</div>
+  <div class="caja c5">Caja 5</div>
+  <div class="caja c6">Caja 6</div>
+  <div class="caja c7">Caja 7</div>
+  <div class="caja c8">Caja 8</div>
+</div>
+
+</body>
+</html>

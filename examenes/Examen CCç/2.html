@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let cadena = "";
+        let aux = "";
+        let aux2 = "";
+        let numero = 0;
+        let contador = 0;
+        let salida = "Programa cancelado por el usuario";
+
+        while (true){
+            cadena = prompt("Introduce una cadena: ");
+            cadena = cadena.toLowerCase();
+            if (cadena==null) break;
+
+            while(true){
+                numero = prompt("Introduce un numero entre 1 y"+cadena.length+":");
+                if ((Number(numero)>0 && Number(numero)<=cadena.length) || numero == null){
+                    break;
+                }
+            }
+            if (numero==null) break;
+            salida = "Generando 100 cadenas aleatorias<br>";
+            for (let i =0 ; i<100; i++){
+                salida+="Generada: "
+                for (let j=0; j<numero; j++){
+                    aux += cadena.charAt(Math.floor(Math.random()*(cadena.length)));
+                }
+                for (let j=numero-1; j>=0; j--){
+                    aux2 += aux.charAt(j);
+                }
+                if (aux==aux2){
+                    aux += " (palíndromo)"
+                    contador++;
+                }
+                salida += aux+"<br>"
+                aux = "";
+                aux2 = "";
+            }
+            salida+="<b>Total</b> palíndromos generados: "+contador;
+            break;
+        }
+        document.write(salida);
+    </script>
+</body>
+</html>

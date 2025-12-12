@@ -9,18 +9,18 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-
+<div class="container-fluid">
+    
         <h1>Búsqueda de libros</h1>
-
+    
         <form method="GET">
             <div class="mb-3">
                 <label class="form-label" for="busqueda">Introduzca los términos de búsqueda: </label>
                 <input type="search" class="form-control" name="busqueda" id="busqueda" required>
             </div>
-            <button type="submit" class="btn btn-primary">Buscar</button>
+            <button type="submit"  class="btn btn-primary">Buscar</button>
         </form>
-    </div>
+</div>
 </body>
 
 </html>
@@ -29,39 +29,41 @@ if (isset($_GET["busqueda"])) {
     $terminos_busqueda = $_GET["busqueda"];
     if (trim($terminos_busqueda) !== "") {
 
-        require_once "util.php";
+        require_once "connection.php";
+
         try {
+            $con =  getConnection();
 
-            $resultado = getResultados($terminos_busqueda);
+            //En la bd bookdb no importan mayúsculas/minúsculas porque está usando collation caseinsensitive, pero no está demás que nuestro código no dependa de la collation de la base de datos
+            $stmt = $con->prepare("select title as resultado from books where UPPER(title) like ?
+                union 
+                select Concat(first_name,' ', last_name)
+                 as resultado from authors where first_name like ?;");
 
-<<<<<<< HEAD
-            mostrarResultados($resultado);
-=======
             $filtro = "%" . strtoupper($terminos_busqueda) . "%";
-            // Encapsulamos la obtención en una función externa si existe, si no usamos la sustitución por array y fetchAll
-            require_once "util.php";
+            $stmt->bind_param("ss", $filtro, $filtro);
+            $stmt->execute();
 
-            try {
-                if (function_exists('fetch_search_results')) {
-                    // la función externa debe devolver un array de filas con índices numéricos (PDO::FETCH_NUM / MYSQLI_NUM)
-                    $resultados = fetch_search_results($con, $terminos_busqueda);
-                } else {
-                    // sustitución mediante array en lugar de bind_param
-                    $params = [$filtro, $filtro];
-                    $stmt->execute($params);
+            $resultado = $stmt->get_result();
 
-                    // obtenemos todos los registros en un array con índices numéricos
-                    // (para PDO)
-                    $resultados = $stmt->fetchAll(PDO::FETCH_NUM);
+            $counter = 0;
+            //fetch_assoc devuelve:
+            // array asoc
+            //null si no hay más filas
+            //false si falla algo
+            while (($row = $resultado->fetch_assoc())) {
+                $counter++;
+                if ($counter == 1) {
+                    echo "<ol>";
                 }
-            } catch (Exception $e) {
-                error_log("Error ejecutando la búsqueda: " . $e->getMessage());
-                // Re-lanzamos para que el catch externo lo registre igualmente
-                throw $e;
+                echo "<li>" . $row["resultado"] . "</li>";
             }
-            $stmt->execute(params: [$filtro] );
->>>>>>> 5e5c8ff2dd1fc1d2cca009983e3fd5cc5959a466
-
+            if ($counter > 0) {
+                echo "</ol>";
+            }
+            if ($counter == 0) {
+                echo "<p>No se han encontrado resultados</p>";
+            }
         } catch (Exception $e) {
             error_log("Ha ocurrido una una excepción: " . $e->getMessage());
             echo "<p>Ha ocurrido un error inesperado: </p>";
