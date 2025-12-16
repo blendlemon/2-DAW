@@ -12,7 +12,7 @@ function entreNumeros(productos, num1, num2) {
         menor = num1;
     }
     for (let i = 0; i < productos.length; i++) {
-        aux2 = [...productos][i].split("|");
+        aux2 = productos[i].split("|");
         if (Number(aux2[1]) < mayor && Number(aux2[1]) > menor) {
             aux.push(productos[i]);
         }
