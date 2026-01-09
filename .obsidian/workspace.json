@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "UD4 Ejercicios"
             }
+          },
+          {
+            "id": "068c433d4c644de5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "DIW/UD2/EJERCICIOS UNIDAD 2.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "EJERCICIOS UNIDAD 2"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -166,18 +181,20 @@
       "bases:Create new base": false
     }
   },
-  "active": "a991dd2541c92310",
+  "active": "068c433d4c644de5",
   "lastOpenFiles": [
+    "DIW/UD2/Ejercicio_Tablas/index.html",
+    "DIW/UD2/Ejercicio_Tablas",
+    "DIW/UD2/Nueva carpeta",
+    "DWCC/UD4/UD4 Ejercicios.md",
+    "DIW/UD2/EJERCICIOS UNIDAD 2.md",
+    "DWCC/UD4/Ejercicios/EjerciciosUD4_1/Ejercicio15/script.js",
+    "DWCC/UD4/Ejercicios/EjerciciosUD4_1/Ejercicio15/index.html",
+    "DWCC/UD4/Ejercicios/EjerciciosUD4_1/Ejercicio15",
+    "DWCC/UD4/Ejercicios/EjerciciosUD4_1/Ejercicio14/script.js",
+    "DWCC/UD4/Ejercicios/EjerciciosUD4_1/Ejercicio14/index.html",
+    "DWCC/UD4/Ejercicios/EjerciciosUD4_1/Ejercicio14",
     "DWCC/UD4/Ejercicios/EjerciciosUD4_1/Ejercicio11/script.js",
-    "DWCC/UD4/Ejercicios/EjerciciosUD4_1/Ejercicio11/index.html",
-    "DWCC/UD4/Ejercicios/EjerciciosUD4_1/Ejercicio8/script.js",
-    "DWCC/UD4/Ejercicios/EjerciciosUD4_1/Ejercicio8/index.html",
-    "DWCC/UD4/Ejercicios/EjerciciosUD4_1/Ejercicio8",
-    "DWCC/UD4/Ejercicios/EjerciciosUD4_1/Ejercicio7/script.js",
-    "DWCC/UD4/Ejercicios/EjerciciosUD4_1/Ejercicio7/index.html",
-    "DWCC/UD4/Ejercicios/EjerciciosUD4_1/Ejercicio7",
-    "DWCC/UD4/Ejercicios/EjerciciosUD4_1/Ejercicio4/script.js",
-    "DWCC/UD4/Ejercicios/EjerciciosUD4_1/Ejercicio4/index.html",
-    "DWCC/UD4/Ejercicios/EjerciciosUD4_1/Ejercicio4"
+    "DWCC/UD4/Ejercicios/EjerciciosUD4_1/Ejercicio11/index.html"
   ]
 }
