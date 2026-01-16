@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Comparación de Métodos de Ordenamiento</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        button {
+            margin: 5px 0;
+            padding: 10px;
+        }
+        .result {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Comparación de tiempos de ordenamiento</h1>
+
+<p>Tamaño del array: <strong>100,000 elementos</strong></p>
+
+<button onclick="ordenarBurbuja()">Ordenar con Burbuja</button><br>
+<button onclick="ordenarAvanzado()">Ordenar con Método Avanzado</button>
+
+<div class="result" id="resultado"></div>
+
+<script>
+    const SIZE = 1000000;
+
+    function generarArray() {
+        const arr = new Array(SIZE);
+        for (let i = 0; i < SIZE; i++) {
+            arr[i] = Math.floor(Math.random() * SIZE);
+        }
+        return arr;
+    }
+
+    function bubbleSort(arr) {
+        let n = arr.length;
+        let swapped;
+        do {
+            swapped = false;
+            for (let i = 0; i < n - 1; i++) {
+                if (arr[i] > arr[i + 1]) {
+                    let temp = arr[i];
+                    arr[i] = arr[i + 1];
+                    arr[i + 1] = temp;
+                    swapped = true;
+                }
+            }
+            n--;
+        } while (swapped);
+        return arr;
+    }
+
+    function ordenarBurbuja() {
+        const arr = generarArray();
+        const inicio = performance.now();
+        bubbleSort(arr);
+        const fin = performance.now();
+
+        document.getElementById("resultado").innerHTML =
+            `⏱️ Burbuja: ${(fin - inicio).toFixed(2)} ms`;
+    }
+
+    function ordenarAvanzado() {
+        const arr = generarArray();
+        const inicio = performance.now();
+        arr.sort((a, b) => a - b); // método avanzado (Timsort / QuickSort híbrido)
+        const fin = performance.now();
+
+        document.getElementById("resultado").innerHTML =
+            `⚡ Método avanzado: ${(fin - inicio).toFixed(2)} ms`;
+    }
+</script>
+
+</body>
+</html>

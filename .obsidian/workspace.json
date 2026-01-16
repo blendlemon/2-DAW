@@ -1,14 +1,14 @@
 {
   "main": {
-    "id": "d3261c508d2df049",
+    "id": "8239bcfa6f228173",
     "type": "split",
     "children": [
       {
-        "id": "9f85bcab619900b5",
+        "id": "b65813aca04dfd7f",
         "type": "tabs",
         "children": [
           {
-            "id": "4fb5a4ec46580fe8",
+            "id": "a991dd2541c92310",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -22,26 +22,17 @@
             }
           },
           {
-            "id": "91aae3f2eb719928",
+            "id": "068c433d4c644de5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-<<<<<<< HEAD
-                "file": "DAPW/UD2/Actividades UD2/Actividades UD 2.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Actividades UD 2"
-=======
-                "file": "DWCC/UD4/UD4 Ejercicios.md",
+                "file": "DIW/UD2/EJERCICIOS UNIDAD 2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "UD4 Ejercicios"
->>>>>>> 5e5c8ff2dd1fc1d2cca009983e3fd5cc5959a466
+              "title": "EJERCICIOS UNIDAD 2"
             }
           }
         ],
@@ -51,15 +42,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "8bcb288741f28592",
+    "id": "eac2302c39f9a3d4",
     "type": "split",
     "children": [
       {
-        "id": "250d0dee7e6dd2bb",
+        "id": "6cd26ad74b5bd9d8",
         "type": "tabs",
         "children": [
           {
-            "id": "c0eb15748f26e3d5",
+            "id": "28a1cecc2b4244d4",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -72,7 +63,7 @@
             }
           },
           {
-            "id": "6a9e81245d216590",
+            "id": "e8ab81014be085a6",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -89,7 +80,7 @@
             }
           },
           {
-            "id": "2137a4e37d8a8ff0",
+            "id": "07a71bcc384f725e",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -105,20 +96,19 @@
     "width": 300
   },
   "right": {
-    "id": "84dcd66bf78ceae1",
+    "id": "04b88d723be669b9",
     "type": "split",
     "children": [
       {
-        "id": "0665f63887f1e597",
+        "id": "9772c673fe02ce47",
         "type": "tabs",
         "children": [
           {
-            "id": "ac39dc1121489882",
+            "id": "ac73613346d1592a",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DWCC/UD4/UD4 Ejercicios.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -128,25 +118,24 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for UD4 Ejercicios"
+              "title": "Backlinks"
             }
           },
           {
-            "id": "d72ac119f2fc51df",
+            "id": "c2f54eebb83550e7",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "DWCC/UD4/UD4 Ejercicios.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from UD4 Ejercicios"
+              "title": "Outgoing links"
             }
           },
           {
-            "id": "6696bad73ca800f4",
+            "id": "5f7e659f2b390d61",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -161,18 +150,17 @@
             }
           },
           {
-            "id": "e165ae3dc1abfecc",
+            "id": "2ead96b434c2d87d",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "DWCC/UD4/UD4 Ejercicios.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of UD4 Ejercicios"
+              "title": "Outline"
             }
           }
         ]
@@ -193,41 +181,20 @@
       "bases:Create new base": false
     }
   },
-<<<<<<< HEAD
-  "active": "8dadeb1bb9851c1b",
+  "active": "068c433d4c644de5",
   "lastOpenFiles": [
-    "DWCS/Resumenes/UD1/UD1.md",
-    "DWCS/Resumenes/UD1/Protocolos y arquitecturas de aplicaciones en internet.md",
-    "DWCS/Resumenes/UD1/GET-POST.md",
-    "DWCS/Resumenes/UD1",
-    "DWCS/Resumenes",
-    "DAPW/UD2/Actividades UD2/Actividades UD 2.md",
-    "DWCC/Ejercicios UD3.md",
-    "DIW/UD2/Notas UD2.md",
-    "DWCS/UD3/Actividade 3.1/search_books copy.php",
-    "DWCS/UD3/Actividade 3.1/util.php",
-    "DWCS/UD3/Actividade 3.1/search_functions.php",
-    "DWCS/UD3/Actividade 3.1/db_settings.ini",
-    "DWCS/UD3/Actividade 3.1/search_books.php",
-    "DWCC/UD3/UD3_II/4.html",
-    "DWCC/UD3/UD3_II/3.html",
-    "DWCC/UD3/UD3_II/2.html",
-    "DAPW/UD1/Actividades UD1.md",
-    "DAPW/Ejercicio 3.md",
-    "DIW/Ejercicios que hacer.md",
-    "Diseño.md",
-    "DIW/Ejercicio.md",
-    "DWCC/UD2/Notas/Ejercicios obligatorios.md",
-    "DWCC/UD2/Notas/Que hace defer.md",
-    "DWCC/Ejercicios UD1/Ejercicios UD 1.md",
-    "2025-09-18.md",
-    "Untitled.canvas",
-    "DAPW/Ejercicio 1.md",
-    "Welcome.md",
-    "DWCS/Actividad 1.2 Clasificación de Tecnologías y puertos.md"
+    "DIW/UD2/Ejercicio_Tablas/index.html",
+    "DIW/UD2/Ejercicio_Tablas",
+    "DIW/UD2/Nueva carpeta",
+    "DWCC/UD4/UD4 Ejercicios.md",
+    "DIW/UD2/EJERCICIOS UNIDAD 2.md",
+    "DWCC/UD4/Ejercicios/EjerciciosUD4_1/Ejercicio15/script.js",
+    "DWCC/UD4/Ejercicios/EjerciciosUD4_1/Ejercicio15/index.html",
+    "DWCC/UD4/Ejercicios/EjerciciosUD4_1/Ejercicio15",
+    "DWCC/UD4/Ejercicios/EjerciciosUD4_1/Ejercicio14/script.js",
+    "DWCC/UD4/Ejercicios/EjerciciosUD4_1/Ejercicio14/index.html",
+    "DWCC/UD4/Ejercicios/EjerciciosUD4_1/Ejercicio14",
+    "DWCC/UD4/Ejercicios/EjerciciosUD4_1/Ejercicio11/script.js",
+    "DWCC/UD4/Ejercicios/EjerciciosUD4_1/Ejercicio11/index.html"
   ]
-=======
-  "active": "91aae3f2eb719928",
-  "lastOpenFiles": []
->>>>>>> 5e5c8ff2dd1fc1d2cca009983e3fd5cc5959a466
 }
