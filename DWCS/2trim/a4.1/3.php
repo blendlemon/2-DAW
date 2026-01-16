@@ -1,3 +1,4 @@
+<?php
 // Write your code here :D
 class CurrentUSPresident
 {

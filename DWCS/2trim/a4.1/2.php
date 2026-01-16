@@ -1,3 +1,4 @@
+<?php
 // Write your code here
 
 class Person {

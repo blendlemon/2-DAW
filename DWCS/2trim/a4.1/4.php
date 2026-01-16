@@ -1,3 +1,4 @@
+<?php
 // Write your code here
 class Person{
   const species = "Homo Sapiens";
@@ -11,15 +12,15 @@ class Person{
     $this->age = $age;
   }
   
-  public function introduce(){
+  public function introduce(): string{
     return "Hello, my name is $this->name";
   }
   
-  public function describe_job(){
+  public function describe_job(): string{
     return "I am currently working as a(n) $this->occupation";
   }
   
-  public static function greet_extraterrestrials($species){
+  public static function greet_extraterrestrials($species): string{
     return "Welcome to Planet Earth ".$species."!";
   }
 }
