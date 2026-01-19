@@ -4,7 +4,7 @@ require_once "persona.php";
 class Alumno extends Persona
 {
     private $numClases;
-    public function __construct($nombre, $apellidos, $mobil)
+    public function __construct(string $nombre, int $apellidos, int $mobil)
     {
         return parent::__construct($nombre, $apellidos, $mobil);
     }
