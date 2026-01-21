@@ -2,7 +2,7 @@
 require_once "persona.php";
 require_once "baile.php";
 
-class Profesor extends Persona
+final class Profesor extends Persona
 {
     private $bailes = [];
     public function __construct($nombre, $apellidos, $mobil, $nif)
