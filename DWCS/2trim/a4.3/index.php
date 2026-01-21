@@ -21,8 +21,9 @@ $academia->anadirAlumno($alumno1);
 $academia->anadirAlumno($alumno2);
 
 // Mostrar información inicial
-echo "=== INFORMACIÓN INICIAL ===\n";
+echo "=== INFORMACIÓN INICIAL ===<br>";
 echo $profesor->verInformacion();
+echo $profesor->mostrarBailes();
 echo $alumno1->verInformacion();
 echo $alumno2->verInformacion();
 
@@ -30,5 +31,6 @@ echo $alumno2->verInformacion();
 $profesor->eliminarBaile("AFRO");
 
 // Mostrar información actualizada do profesor
-echo "\n=== DESPUÉS DE ELIMINAR AFRO ===\n";
+echo "<br>=== DESPUÉS DE ELIMINAR AFRO ===<br>";
 echo $profesor->verInformacion();
+echo $profesor->mostrarBailes();

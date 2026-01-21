@@ -14,24 +14,24 @@ class Profesor extends Persona
     {
         return $horas * $importe;
     }
-    public function engadirBaile($baile)
+    public function engadirBaile($nombre, $edad = 8)
     {
         $existe = false;
         foreach ($this->bailes as $bailExistente) {
-            if ($bailExistente->nome == $baile->nome && $bailExistente->idadeMinima == $baile->idadeMinima) {
+            if ($bailExistente->nome == $nombre && $bailExistente->idadeMinima == $edad) {
                 $existe = true;
                 break;
             }
         }
         if ($existe == false) {
-            $this->bailes[] = $baile;
+            $this->bailes[] = $nombre;
         }
     }
     
-    public function eliminarBaile($baile)
+    public function eliminarBaile($nombre, $edad = 8)
     {
         foreach ($this->bailes as $key => $bailExistente) {
-            if ($bailExistente->nome == $baile->nome && $bailExistente->idadeMinima == $baile->idadeMinima) {
+            if ($bailExistente->nome == $nombre && $bailExistente->idadeMinima == $edad) {
                 unset($this->bailes[$key]);
                 break;
             }
@@ -40,7 +40,7 @@ class Profesor extends Persona
 
     public function mostrarBailes(){
         $resultado = "";
-        foreach ($this->bailes as $key=>$value){
+        foreach ($this->bailes as $value){
             $resultado .= "$value->nome (idade min: $value->idadeMinima anos)\n";
         }
         return $resultado;
