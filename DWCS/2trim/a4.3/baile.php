@@ -8,4 +8,20 @@ class Baile{
         $this->nome = $nome;
         $this->idadeMinima = $idadeMinima;
     }
+
+    /**
+     * Get the value of nome
+     */
+    public function getNome()
+    {
+        return $this->nome;
+    }
+
+    /**
+     * Get the value of idadeMinima
+     */
+    public function getIdadeMinima()
+    {
+        return $this->idadeMinima;
+    }
 }

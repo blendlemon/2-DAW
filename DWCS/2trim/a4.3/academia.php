@@ -5,10 +5,10 @@ class Academia{
     private $alumnos = [];
 
     public function anadirProfesor($profesor){
-        $this->profesores += $profesor;
+        $this->profesores [] = $profesor;
     }
     public function anadirAlumno($alumno){
-        $this->alumnos += $alumno;
+        $this->alumnos [] = $alumno;
     }
 
 }

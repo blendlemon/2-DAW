@@ -17,21 +17,21 @@ class Profesor extends Persona
     public function engadirBaile($baile)
     {
         $existe = false;
-        foreach ($this->bailes as $key => $value) {
-            if ($key == $baile) {
+        foreach ($this->bailes as $bailExistente) {
+            if ($bailExistente->nome == $baile->nome && $bailExistente->idadeMinima == $baile->idadeMinima) {
                 $existe = true;
                 break;
             }
         }
-        if ($existe==false){
+        if ($existe == false) {
             $this->bailes[] = $baile;
         }
     }
     
     public function eliminarBaile($baile)
     {
-        foreach ($this->bailes as $key => $value) {
-            if ($value== $baile) {
+        foreach ($this->bailes as $key => $bailExistente) {
+            if ($bailExistente->nome == $baile->nome && $bailExistente->idadeMinima == $baile->idadeMinima) {
                 unset($this->bailes[$key]);
                 break;
             }
