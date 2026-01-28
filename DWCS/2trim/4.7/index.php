@@ -1,13 +1,13 @@
 <?php
-require_once "Logger.php";
-require_once 'Exportador.php';
-require_once 'ExportadorTexto.php';
-require_once 'ExportadorJSON.php';
-require_once 'ExportadorXML.php';
-require_once 'Recurso.php';
-require_once 'Libro.php';
-require_once 'Revista.php';
-require_once 'Video.php';
+use App\Service\Traits\Logger;
+use App\Service\Exportador;
+use App\Service\ExportadorTexto;
+use App\Service\ExportadorJSON;
+use App\Service\ExportadorXML;
+use App\Model\Biblioteca\Recurso;
+use App\Model\Biblioteca\Libro;
+use App\Model\Biblioteca\Revista;
+use App\Model\Biblioteca\Video;
 
 
 $libro = new Libro("Aprendiendo PHP", "978-3-16-148410-0");
