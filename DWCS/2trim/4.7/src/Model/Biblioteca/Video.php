@@ -1,7 +1,5 @@
 <?php
 namespace App\Model\Biblioteca;
-use App\Model\Biblioteca\Recurso;
-use App\Model\Infraestructura\Recurso as RecursoInfra;
 class Video extends Recurso
 {
     private int $duracion; // Duración en minutos
@@ -26,7 +24,7 @@ class Video extends Recurso
         return "Tipo: " . $this->getTipo() . ", Título: " . $this->titulo . ", Duración: " . $this->duracion . " minutos";
     }
 
-    public function agregarRecurso(RecursoInfra $recurso): void
+    public function agregarRecurso(\App\Model\Infraestructura\Recurso $recurso): void
     {
         $this->recursos[] = $recurso;
         $this->log("Recurso agregado al video '{$this->titulo}': {$recurso->getDescripcion()}");
