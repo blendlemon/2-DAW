@@ -8,6 +8,6 @@ trait Logger {
         $nivel = $nivel?? $this->nivelLog;
         $fileName = $fileName?? $this->fileName;
       //escribe en un fichero app.log en el directorio actual
-        error_log("[$nivel] " . date('Y-m-d H:i:s') . " - " . $mensaje . "\n", 3, \dirname(__DIR__, 3 ) . "/log"."/". $fileName);
+        error_log("[$nivel] " . date('Y-m-d H:i:s') . " - " . $mensaje . "\n", 3, \dirname(__DIR__, 3 ) . \DIRECTORY_SEPARATOR . "log". \DIRECTORY_SEPARATOR . $fileName);
     }
 }
