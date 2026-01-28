@@ -15,7 +15,7 @@ use App\Service\ExportadorTexto;
 use App\Service\ExportadorJSON;
 use App\Service\ExportadorXML;
 use App\Model\Biblioteca\Recurso;
-use App\Model\Biblioteca\Libro as Libro;
+use App\Model\Biblioteca\Libro;
 use App\Model\Biblioteca\Revista;
 use App\Model\Biblioteca\Video;
 
