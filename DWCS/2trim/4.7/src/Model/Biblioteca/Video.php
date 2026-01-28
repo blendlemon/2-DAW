@@ -1,5 +1,6 @@
 <?php
 namespace App\Model\Biblioteca;
+use App\Model\Biblioteca\Recurso;
 use App\Model\Infraestructura\Recurso as RecursoInfra;
 class Video extends Recurso
 {

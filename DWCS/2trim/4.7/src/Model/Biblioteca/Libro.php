@@ -1,6 +1,6 @@
 <?php
 namespace App\Model\Biblioteca;
-use App\Service\Traits\Logger;
+use App\Model\Biblioteca\Recurso;
 class Libro extends Recurso {
     private string $isbn;
 
