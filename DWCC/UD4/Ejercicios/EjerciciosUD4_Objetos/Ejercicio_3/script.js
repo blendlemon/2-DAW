@@ -1,7 +1,9 @@
-function Curso(curso, grupo, alumnos) {
-    this.curso = curso;
-    this.grupo = grupo;
-    this.alumnos = alumnos;
+class Curso {
+    constructor(curso, grupo, alumnos) {
+        this.curso = curso;
+        this.grupo = grupo;
+        this.alumnos = alumnos;
+    }
 }
 
 function Aula(aula, capacidad) {
