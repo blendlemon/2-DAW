@@ -68,4 +68,28 @@ abstract class Recurso
     public function isDisponible(): bool{
         return $this->estado === EstadoRecurso::DISPONIBLE;
     }
+
+    /**
+     * Get the value of estado
+     *
+     * @return EstadoRecurso
+     */
+    public function getEstado(): EstadoRecurso
+    {
+        return $this->estado;
+    }
+
+    /**
+     * Set the value of estado
+     *
+     * @param EstadoRecurso $estado
+     *
+     * @return self
+     */
+    public function setEstado(EstadoRecurso $estado): self
+    {
+        $this->estado = $estado;
+
+        return $this;
+    }
 }

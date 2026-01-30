@@ -4,6 +4,7 @@ use App\Model\Biblioteca\Usuario;
 use App\Model\Biblioteca\Recurso;
 use App\Model\Biblioteca\Prestamo;
 use App\Exception\RecursoNoDisponibleException;
+use DateTimeImmutable;
 
 class PrestamoService{
     private static array $usuarios;
@@ -19,19 +20,22 @@ class PrestamoService{
 
     public function prestar(string $emailUsuario, int $idRecurso){
         if(!isset(self::$usuarios[$emailUsuario])){
-            throw new RecursoNoDisponibleException();
+            throw new RecursoNoDisponibleException("El email no se encuentra en el registro");
         }
         if(!isset(self::$recursos[$idRecurso])){
-            throw new RecursoNoDisponibleException();
+            throw new RecursoNoDisponibleException("El recurso no se encuentra en el registro");
         }
         if(self::$recursos[$idRecurso]->estado !== 'disponible'){
-            throw new RecursoNoDisponibleException();
+            throw new RecursoNoDisponibleException("El recurso no se encuentra actualmente disponible");
         }
 
         try{
-            if()
-        }catch{
-
+            if(count(self::$usuarios[$emailUsuario]->getPrestamos())<3){
+                $prestamo = new Prestamo(self::$usuarios[$emailUsuario], self::$recursos[$idRecurso], new DateTimeImmutable());
+                self::$recursos[$idRecurso]->setEstado();
+            }
+        }catch (RecursoNoDisponibleException $e){
+            echo "Otro error: " . $e->getMessage();
         }
 
     }
