@@ -4,7 +4,7 @@ namespace App\Model\Biblioteca;
 class Usuario {
     private string $nombre;
     private string $email;
-    private array $prestamos;
+    private array $prestamos = [];
 
     public function __construct(string $nombre, string $email) {
         $this->nombre = $nombre;

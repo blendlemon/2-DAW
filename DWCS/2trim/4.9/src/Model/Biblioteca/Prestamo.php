@@ -15,4 +15,34 @@ class Prestamo {
         $this->recurso = $recurso;
         $this->fechaPrestamo = $fechaPrestamo;
     }
+
+    /**
+     * Get the value of recurso
+     *
+     * @return Recurso
+     */
+    public function getRecurso(): Recurso
+    {
+        return $this->recurso;
+    }
+
+    /**
+     * Get the value of fechaPrestamo
+     *
+     * @return DateTimeImmutable
+     */
+    public function getFechaPrestamo(): DateTimeImmutable
+    {
+        return $this->fechaPrestamo;
+    }
+
+    /**
+     * Get the value of fechaDevolucion
+     *
+     * @return ?DateTimeImmutable
+     */
+    public function getFechaDevolucion(): ?DateTimeImmutable
+    {
+        return $this->fechaDevolucion;
+    }
 }
