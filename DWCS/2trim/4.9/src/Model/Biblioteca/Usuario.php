@@ -31,17 +31,8 @@ class Usuario {
         return $this->prestamos;
     }
 
-    /**
-     * Set the value of prestamos
-     *
-     * @param array $prestamos
-     *
-     * @return self
-     */
-    public function setPrestamos(array $prestamos): self
+    public function addPrestamo(Prestamo $prestamo): void
     {
-        $this->prestamos = $prestamos;
-
-        return $this;
+        $this->prestamos [] = $prestamo;
     }
 }

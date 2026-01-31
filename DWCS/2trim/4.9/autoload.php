@@ -6,7 +6,7 @@ const APP_DIRECTORIO_BASE = __DIR__ . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SE
 
 spl_autoload_register(function (string $nombreClase) {
 
-    echo "<p>Nombre de la clase: $nombreClase</p>";
+    //echo "<p>Nombre de la clase: $nombreClase</p>";
 
     // Normalizamos el nombre en el caso de que empiece con \
     $nombreClase = ltrim($nombreClase, '\\');
@@ -25,7 +25,7 @@ spl_autoload_register(function (string $nombreClase) {
     // Archivo final
     $archivo = APP_DIRECTORIO_BASE . $rutaRelativa . '.php';
 
-    echo "<p>Archivo final: $archivo</p>";
+    //echo "<p>Archivo final: $archivo</p>";
     // Si existe, lo cargamos
     if (file_exists($archivo)) {
         require_once $archivo;

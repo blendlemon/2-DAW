@@ -10,11 +10,11 @@ class PrestamoService{
     private static array $usuarios;
     private static array $recursos;
 
-    public function registraUsuario(Usuario $usuario){
+    public function registrarUsuario(Usuario $usuario){
         self::$usuarios[$usuario->getEmail()] = $usuario;
     }
 
-    public function registraRecurso(Recurso $recurso){
+    public function registrarRecurso(Recurso $recurso){
         self::$recursos[$recurso->getId()] = $recurso;
     }
 
@@ -25,14 +25,16 @@ class PrestamoService{
         if(!isset(self::$recursos[$idRecurso])){
             throw new RecursoNoDisponibleException("El recurso no se encuentra en el registro");
         }
-        if(self::$recursos[$idRecurso]->estado !== 'disponible'){
+        if(!self::$recursos[$idRecurso]->isDisponible()){
             throw new RecursoNoDisponibleException("El recurso no se encuentra actualmente disponible");
         }
 
         try{
             if(count(self::$usuarios[$emailUsuario]->getPrestamos())<3){
                 $prestamo = new Prestamo(self::$usuarios[$emailUsuario], self::$recursos[$idRecurso], new DateTimeImmutable());
-                self::$recursos[$idRecurso]->setEstado();
+                self::$recursos[$idRecurso]->setEstado(\App\Model\Biblioteca\Enum\EstadoRecurso::PRESTADO);
+                self::$usuarios[$emailUsuario]->addPrestamo($prestamo);
+                return $prestamo;
             }
         }catch (RecursoNoDisponibleException $e){
             echo "Otro error: " . $e->getMessage();

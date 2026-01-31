@@ -11,7 +11,7 @@ abstract class Recurso
     protected Exportador $exportador;
     static int $contador = 0;
     protected int $id;
-    protected EstadoRecurso $estado;
+    protected EstadoRecurso $estado = EstadoRecurso::DISPONIBLE;
 
     public function __construct(string $titulo)
     {
