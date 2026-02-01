@@ -45,4 +45,29 @@ class Prestamo {
     {
         return $this->fechaDevolucion;
     }
+
+
+    /**
+     * Set the value of fechaDevolucion
+     *
+     * @param ?DateTimeImmutable $fechaDevolucion
+     *
+     * @return self
+     */
+    public function setFechaDevolucion(DateTimeImmutable $fechaDevolucion): self
+    {
+        $this->fechaDevolucion = $fechaDevolucion;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of usuario
+     *
+     * @return Usuario
+     */
+    public function getUsuario(): Usuario
+    {
+        return $this->usuario;
+    }
 }

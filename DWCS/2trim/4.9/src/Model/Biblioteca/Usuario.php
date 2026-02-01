@@ -33,6 +33,10 @@ class Usuario {
 
     public function addPrestamo(Prestamo $prestamo): void
     {
-        $this->prestamos [] = $prestamo;
+        $this->prestamos [$prestamo->getRecurso()->getId()] = $prestamo;
+    }
+
+    public function removePrestamo(int $recursoId){
+        unset($this->prestamos[$recursoId]);
     }
 }

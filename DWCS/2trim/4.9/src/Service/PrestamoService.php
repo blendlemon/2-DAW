@@ -6,6 +6,7 @@ use App\Model\Biblioteca\Prestamo;
 use App\Exception\RecursoNoDisponibleException;
 use App\Service\Traits\Logger;
 use DateTimeImmutable;
+use App\Model\Biblioteca\Enum\EstadoRecurso;
 
 class PrestamoService{
     use Logger;
@@ -36,8 +37,8 @@ class PrestamoService{
         }
 
         if (count(self::$usuarios[$emailUsuario]->getPrestamos()) < 3) {
-            $prestamo = new Prestamo(self::$usuarios[$emailUsuario], self::$recursos[$idRecurso], new DateTimeImmutable());
-            self::$recursos[$idRecurso]->setEstado(\App\Model\Biblioteca\Enum\EstadoRecurso::PRESTADO);
+            $prestamo = new Prestamo(self::$usuarios[$emailUsuario], self::$recursos[$idRecurso], new DateTimeImmutable("now"));
+            self::$recursos[$idRecurso]->setEstado(EstadoRecurso::PRESTADO);
             self::$usuarios[$emailUsuario]->addPrestamo($prestamo);
         }
         else {
@@ -45,5 +46,11 @@ class PrestamoService{
             $prestamo = false;
         }
         return $prestamo;
+    }
+
+    public function devolverPrestamo(Prestamo $prestamo){
+        $prestamo->setFechaDevolucion(new DateTimeImmutable("now"));
+        $prestamo->getRecurso()->setEstado(EstadoRecurso::DISPONIBLE);
+        $prestamo->getUsuario()->removePrestamo($prestamo->getRecurso()->getId());
     }
 }
