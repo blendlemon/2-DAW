@@ -29,11 +29,11 @@ class PrestamoService{
         }
         if (!isset(self::$recursos[$idRecurso])) {
             $this->log("El id de recurso indicado: {$idRecurso}, no se corresponde con ningún recurso", null, "prestamoservice.log");
-            throw new RecursoNoDisponibleException("El recurso no se encuentra en el registro");
+            throw new RecursoNoDisponibleException();
         }
         if (!self::$recursos[$idRecurso]->isDisponible()) {
             $this->log("El recurso con id: {$idRecurso}, no se encuentra disponible", null, "prestamoservice.log");
-            throw new RecursoNoDisponibleException("El recurso no se encuentra actualmente disponible");
+            throw new RecursoNoDisponibleException();
         }
 
         if (count(self::$usuarios[$emailUsuario]->getPrestamos()) < 3) {
