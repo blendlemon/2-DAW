@@ -1,0 +1,17 @@
+{
+    "name": "app/biblioteca",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Diego",
+            "email": "diegogonzalezsoto1@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}

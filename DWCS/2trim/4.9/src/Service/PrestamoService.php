@@ -3,7 +3,6 @@ namespace App\Service;
 use App\Model\Biblioteca\Usuario;
 use App\Model\Biblioteca\Recurso;
 use App\Model\Biblioteca\Prestamo;
-use App\Exception\RecursoNoDisponibleException;
 use App\Service\Traits\Logger;
 use DateTimeImmutable;
 use App\Model\Biblioteca\Enum\EstadoRecurso;
@@ -25,15 +24,15 @@ class PrestamoService{
     {
         if (!isset(self::$usuarios[$emailUsuario])) {
             $this->log("El email indicado: {$emailUsuario}, no se corresponde con ningún usuario", null, "prestamoservice.log");
-            throw new RecursoNoDisponibleException("El email no se encuentra en el registro");
+            throw new \Exception("El email no se encuentra en el registro");
         }
         if (!isset(self::$recursos[$idRecurso])) {
             $this->log("El id de recurso indicado: {$idRecurso}, no se corresponde con ningún recurso", null, "prestamoservice.log");
-            throw new RecursoNoDisponibleException();
+            throw new \Exception("El recurso no existe");
         }
         if (!self::$recursos[$idRecurso]->isDisponible()) {
             $this->log("El recurso con id: {$idRecurso}, no se encuentra disponible", null, "prestamoservice.log");
-            throw new RecursoNoDisponibleException();
+            throw new \Exception("El recurso no está disponible");
         }
 
         if (count(self::$usuarios[$emailUsuario]->getPrestamos()) < 3) {
@@ -43,7 +42,7 @@ class PrestamoService{
         }
         else {
             $this->log("El email indicado: {$emailUsuario}, tiene ya registrados 3 prestamos", null, "prestamoservice.log");
-            $prestamo = false;
+            throw new \Exception("El email indicado: {$emailUsuario}, tiene ya registrados 3 prestamos");
         }
         return $prestamo;
     }

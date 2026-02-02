@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . DIRECTORY_SEPARATOR . 'autoload.php';
+require_once __DIR__ . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR. 'autoload.php';
 // require_once "src/Service/Traits/Logger.php";
 // require_once 'src/Service/Exportador.php';
 // require_once 'src/Service/ExportadorTexto.php';
