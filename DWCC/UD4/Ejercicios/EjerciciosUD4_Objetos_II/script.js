@@ -48,10 +48,18 @@ class Plato {
             }
         }
 
-        for (let i in platostipo) {
-            for
+        for (let i of platostipo["Primero"]) {
+            for (let j of platostipo["Segundo"]) {
+                for (let k of platostipo["Postre"]) {
+                    for (let l of platostipo["Bebida"]) {
+                        if ((i.precio + j.precio + k.precio + l.precio) < precioMaximo) {
+                            for (let lista in [i, j, k, l]) {
+                                resultado += `${lista[0].tipo} : ${lista[0].nombre}<br>`;
+                            }
+                        }
+                    }
+                }
+            }
         }
-        resultado += `Precio: ${preciototal}€`
-        return resultado;
     }
 }
