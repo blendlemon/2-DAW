@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="script.js"></script>
+    <script>
+        const platos = [
+            new Plato("Tabla de Quesos", "Primero", 6.50),
+            new Plato("Agua", "Bebida", 1.50),
+            new Plato("Refresco", "Bebida", 2.00),
+            new Plato("Cerveza", "Bebida", 2.50),
+            new Plato("Vino Tinto", "Bebida", 3.50),
+            new Plato("Café", "Bebida", 1.50),
+            new Plato("Bruschettas", "Primero", 5.00),
+            new Plato("Tabla de Jamones", "Primero", 7.99),
+            new Plato("Caldo de Pollo", "Primero", 3.99),
+            new Plato("Camarones al Ajillo", "Segundo", 11.50),
+            new Plato("Costillas BBQ", "Segundo", 13.00),
+            new Plato("Salmón a la Mantequilla", "Segundo", 14.50),
+            new Plato("Rabo Encendido", "Segundo", 9.99),
+            new Plato("Flan Casero", "Postre", 3.50),
+            new Plato("Tiramisú", "Postre", 4.50),
+            new Plato("Helado Variado", "Postre", 3.00),
+            new Plato("Tarta de Chocolate", "Postre", 5.00),
+            new Plato("Ensalada", "Primero", 5.50),
+            new Plato("Pasta Carbonara", "Segundo", 8.99),
+            new Plato("Pollo a la Plancha", "Segundo", 9.50),
+            new Plato("Sopa de Verduras", "Primero", 4.99),
+            new Plato("Hamburguesa", "Segundo", 7.50),
+            new Plato("Pizza Margherita", "Segundo", 6.99),
+            new Plato("Pescado a la Sal", "Segundo", 12.50),
+            new Plato("Arroz con Pollo", "Segundo", 10.00)
+        ];
+        
+        document.write(Plato.menuBarato(platos));
+
+        menuBarato(platos);
+    </script>
+</body>
+</html>
