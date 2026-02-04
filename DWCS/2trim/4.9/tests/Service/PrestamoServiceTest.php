@@ -1,6 +1,5 @@
 <?php
-require_once dirname(__DIR__,2) . DIRECTORY_SEPARATOR .'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
-
+namespace App\Tests\Service;
 use PHPUnit\Framework\TestCase;
 
 class PrestamoServiceTest extends TestCase
