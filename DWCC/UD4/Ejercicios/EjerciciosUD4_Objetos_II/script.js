@@ -33,7 +33,7 @@ class Plato {
     static menusUmbral(platos) {
         let platostipo = {};
         let precioMaximo = 0;
-        let resultado = '<h1><b>Menú</b></h1>';
+        let resultado = '';
         for (let i = 0; i < platos.length; i++) {
             if (!platostipo[platos[i].tipo]) {
                 platostipo[platos[i].tipo] = [];
@@ -48,18 +48,27 @@ class Plato {
             }
         }
 
-        for (let i of platostipo["Primero"]) {
-            for (let j of platostipo["Segundo"]) {
-                for (let k of platostipo["Postre"]) {
-                    for (let l of platostipo["Bebida"]) {
-                        if ((i.precio + j.precio + k.precio + l.precio) < precioMaximo) {
-                            for (let lista in [i, j, k, l]) {
-                                resultado += `${lista[0].tipo} : ${lista[0].nombre}<br>`;
-                            }
-                        }
+        let tipos = Object.keys(platostipo);
+        
+        function generarCombinaciones(index, combinacionActual, precioActual) {
+            if (index === tipos.length) {
+                if (precioActual < precioMaximo && !resultado) {
+                    resultado = `<h1><b>Menú</b></h1>`;
+                    for (let plato of combinacionActual) {
+                        resultado += `${plato.tipo}:${plato.nombre}<br>`;
                     }
+                    resultado += `Precio: ${precioActual}€`;
                 }
+                return;
+            }
+            
+            let tipoActual = tipos[index];
+            for (let plato of platostipo[tipoActual]) {
+                generarCombinaciones(index + 1, [...combinacionActual, plato], precioActual + plato.precio);
             }
         }
+        
+        generarCombinaciones(0, [], 0);
+        return resultado;
     }
 }
