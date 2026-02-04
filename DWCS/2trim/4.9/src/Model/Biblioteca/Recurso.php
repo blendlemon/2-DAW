@@ -9,7 +9,7 @@ abstract class Recurso
     use Logger;
     protected string $titulo;
     protected Exportador $exportador;
-    static int $contador = 0;
+    static int $contador = 1;
     protected int $id;
     protected EstadoRecurso $estado = EstadoRecurso::DISPONIBLE;
 

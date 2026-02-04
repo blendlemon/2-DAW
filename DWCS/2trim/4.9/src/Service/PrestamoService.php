@@ -9,8 +9,8 @@ use App\Model\Biblioteca\Enum\EstadoRecurso;
 
 class PrestamoService{
     use Logger;
-    private static array $usuarios;
-    private static array $recursos;
+    private static array $usuarios = [];
+    private static array $recursos = [];
 
     public function registrarUsuario(Usuario $usuario){
         self::$usuarios[$usuario->getEmail()] = $usuario;
@@ -24,15 +24,15 @@ class PrestamoService{
     {
         if (!isset(self::$usuarios[$emailUsuario])) {
             $this->log("El email indicado: {$emailUsuario}, no se corresponde con ningún usuario", null, "prestamoservice.log");
-            throw new \Exception("El email no se encuentra en el registro");
+            throw new \Exception("Usuario no encontrado");
         }
         if (!isset(self::$recursos[$idRecurso])) {
             $this->log("El id de recurso indicado: {$idRecurso}, no se corresponde con ningún recurso", null, "prestamoservice.log");
-            throw new \Exception("El recurso no existe");
+            throw new \Exception("Recurso inexistente");
         }
         if (!self::$recursos[$idRecurso]->isDisponible()) {
             $this->log("El recurso con id: {$idRecurso}, no se encuentra disponible", null, "prestamoservice.log");
-            throw new \Exception("El recurso no está disponible");
+            throw new \Exception("Recurso no disponible");
         }
 
         if (count(self::$usuarios[$emailUsuario]->getPrestamos()) < 3) {
