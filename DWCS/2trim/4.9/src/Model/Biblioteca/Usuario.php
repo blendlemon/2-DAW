@@ -37,6 +37,9 @@ class Usuario {
     }
 
     public function removePrestamo(int $recursoId){
-        unset($this->prestamos[$recursoId]);
+        if(isset($this->prestamos[$recursoId])){
+            unset($this->prestamos[$recursoId]);
+            $this->prestamos = array_values($this->prestamos);
+        }
     }
 }
