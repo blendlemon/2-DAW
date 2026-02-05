@@ -81,7 +81,7 @@ class PrestamoServiceTest extends TestCase
         $this->service->prestar("juan@example.com", 4);
     }
 
-    public function testDevolverPrestamoLanzaExcepcion(): void {
+    public function testDevolverPrestamo(): void {
         $this->service->prestar("juan@example.com", 1);
         $prestamo = $this->service->prestar("juan@example.com", 2);
         $this->service->prestar("juan@example.com", 3);
