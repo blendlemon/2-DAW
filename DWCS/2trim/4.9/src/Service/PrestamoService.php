@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Service;
+
 use App\Model\Biblioteca\Usuario;
 use App\Model\Biblioteca\Recurso;
 use App\Model\Biblioteca\Prestamo;
@@ -7,16 +9,19 @@ use App\Service\Traits\Logger;
 use DateTimeImmutable;
 use App\Model\Biblioteca\Enum\EstadoRecurso;
 
-class PrestamoService{
+class PrestamoService
+{
     use Logger;
     private array $usuarios = [];
     private array $recursos = [];
 
-    public function registrarUsuario(Usuario $usuario){
+    public function registrarUsuario(Usuario $usuario)
+    {
         $this->usuarios[$usuario->getEmail()] = $usuario;
     }
 
-    public function registrarRecurso(Recurso $recurso){
+    public function registrarRecurso(Recurso $recurso)
+    {
         $this->recursos[$recurso->getId()] = $recurso;
     }
 
@@ -39,17 +44,25 @@ class PrestamoService{
             $prestamo = new Prestamo($this->usuarios[$emailUsuario], $this->recursos[$idRecurso], new DateTimeImmutable("now"));
             $this->recursos[$idRecurso]->setEstado(EstadoRecurso::PRESTADO);
             $this->usuarios[$emailUsuario]->addPrestamo($prestamo);
-        }
-        else {
+        } else {
             $this->log("El email indicado: {$emailUsuario}, tiene ya registrados 3 prestamos", null, "prestamoservice.log");
             throw new \Exception("El usuario, tiene ya registrados 3 prestamos");
         }
         return $prestamo;
     }
 
-    public function devolverPrestamo(Prestamo $prestamo){
+    public function devolverPrestamo(Prestamo $prestamo)
+    {
         $prestamo->setFechaDevolucion(new DateTimeImmutable("now"));
         $prestamo->getRecurso()->setEstado(EstadoRecurso::DISPONIBLE);
         $prestamo->getUsuario()->removePrestamo($prestamo->getRecurso()->getId());
+    }
+
+    public function getUsuarioByEmail(string $emailUsuario): ?Usuario
+    {
+        if (isset($this->usuarios[$emailUsuario])) {
+            return $this->usuarios[$emailUsuario];
+        }
+        return null;
     }
 }

@@ -4,8 +4,10 @@ namespace App\Tests\Service;
 
 use Exception;
 use App\Model\Biblioteca\Libro;
+use App\Model\Biblioteca\Video;
 use PHPUnit\Framework\TestCase;
 use App\Service\PrestamoService;
+use App\Model\Biblioteca\Revista;
 use App\Model\Biblioteca\Usuario;
 use App\Model\Biblioteca\Enum\EstadoRecurso;
 
@@ -17,7 +19,6 @@ class PrestamoServiceTest extends TestCase
 
     protected function setUp(): void
     {
-        // Resetear el contador estático de Recurso
         $reflection = new \ReflectionClass(Libro::class);
         $property = $reflection->getParentClass()->getProperty('contador');
         $property->setValue(null, 1);
@@ -25,22 +26,23 @@ class PrestamoServiceTest extends TestCase
         $this->service = new PrestamoService();
         $usuario = new Usuario("juan", "juan@example.com");
         $libro = new Libro("Libro de prueba", "Autor de prueba");
+        $revista = new Revista("Libro de prueba", 1);
+        $video = new Video("Libro de prueba", 30);
         $libro2 = new Libro("Libro de prueba", "Autor de prueba");
-        $libro3 = new Libro("Libro de prueba", "Autor de prueba");
-        $libro4 = new Libro("Libro de prueba", "Autor de prueba");
 
         $this->service->registrarUsuario($usuario);
         $this->service->registrarRecurso($libro);
+        $this->service->registrarRecurso($revista);
+        $this->service->registrarRecurso($video);
         $this->service->registrarRecurso($libro2);
-        $this->service->registrarRecurso($libro3);
-        $this->service->registrarRecurso($libro4);
     }
 
     public function testPrestarRecursoDisponible(): void
     {
+        $antes = count($this->service->getUsuarioByEmail("juan@example.com")->getPrestamos());
         $prestamo = $this->service->prestar("juan@example.com", 1);
         $this->assertEquals(EstadoRecurso::PRESTADO, $prestamo->getRecurso()->getEstado());
-        $this->assertEquals(1, count($prestamo->getUsuario()->getPrestamos()));
+        $this->assertEquals($antes + 1, count($prestamo->getUsuario()->getPrestamos()));
     }
 
     public function testUsuarioNoEncontradoLanzaExcepcion(): void
@@ -49,6 +51,10 @@ class PrestamoServiceTest extends TestCase
         $this->expectExceptionMessage("Usuario no encontrado");
 
         $this->service->prestar("inexistente", 1);
+    }
+
+    public function testUsuariosByEmail(){
+        $this->assertNull($this->service->getUsuarioByEmail("Inexistente"));
     }
 
     public function testRecursoNoEncontradoLanzaExcepcion(): void
@@ -86,8 +92,10 @@ class PrestamoServiceTest extends TestCase
         $prestamo = $this->service->prestar("juan@example.com", 2);
         $this->service->prestar("juan@example.com", 3);
 
+        $antes = count($this->service->getUsuarioByEmail("juan@example.com")->getPrestamos());
+
         $this->service->devolverPrestamo($prestamo);
         $this->assertEquals(EstadoRecurso::DISPONIBLE, $prestamo->getRecurso()->getEstado());
-        $this->assertEquals(2, count($prestamo->getUsuario()->getPrestamos()));
+        $this->assertEquals($antes-1, count($prestamo->getUsuario()->getPrestamos()));
     }
 }
