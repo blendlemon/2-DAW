@@ -10,11 +10,18 @@ class UsuarioRepository extends AbstractRepository
 {
     protected string $table = 'usuarios';
 
-    public function findByEmail(string $email): ?array
+    public function findByEmail(string $email): ?Usuario
     {
         $stmt = $this->pdo->prepare("SELECT * FROM usuarios WHERE email = ?");
         $stmt->execute([$email]);
-        return $stmt->fetch(PDO::FETCH_ASSOC) ?: null;
+        $datos = $stmt->fetch(PDO::FETCH_ASSOC) ?: null;
+        if ($datos) {
+            $usuario = new Usuario($datos['nombre'], $datos['email']);
+            $usuario->setId($datos['id']);
+            return $usuario;
+        } else {
+            return null;
+        }
     }
 
 

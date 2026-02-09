@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Repository;
-
 use PDO;
 
 abstract class AbstractRepository
@@ -27,4 +26,7 @@ abstract class AbstractRepository
         $stmt->execute([$id]);
         return $stmt->fetch(PDO::FETCH_ASSOC) ?: null;
     }
+
+    public abstract function create(object $object): ?object;  //La creación y la actualización son más dependientes del nº de columnas de la tabla y menos sencillo de generalizar.
+    // Podría haber otro método abstracto para update
 }
