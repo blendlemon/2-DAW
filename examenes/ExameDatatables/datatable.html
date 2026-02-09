@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<link>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.datatables.net/2.3.7/css/dataTables.dataTables.css"/>
+
+</head>
+
+<body>
+  <table id="pelis">
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Género</th>
+        <th>Año</th>
+        <th>Duración (min)</th>
+        <th>Director/a</th>
+        <th>Calificación</th>
+        <th>Recaudación (M$)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Sombras del Ayer</td>
+        <td>Drama</td>
+        <td>2001</td>
+        <td>112</td>
+        <td>Fernando Arias</td>
+        <td>7.8</td>
+        <td>120</td>
+      </tr>
+      <tr>
+        <td>Horizonte Rojo</td>
+        <td>Acción</td>
+        <td>2003</td>
+        <td>124</td>
+        <td>Carlos Méndez</td>
+        <td>6.9</td>
+        <td>340</td>
+      </tr>
+      <tr>
+        <td>La Última Carta</td>
+        <td>Romance</td>
+        <td>1999</td>
+        <td>108</td>
+        <td>Lucía Ferrer</td>
+        <td>8.2</td>
+        <td>95</td>
+      </tr>
+      <tr>
+        <td>Ciudad Neón</td>
+        <td>Ciencia ficción</td>
+        <td>2015</td>
+        <td>130</td>
+        <td>David Cruz</td>
+        <td>7.1</td>
+        <td>410</td>
+      </tr>
+      <tr>
+        <td>El Bosque Interior</td>
+        <td>Thriller</td>
+        <td>2007</td>
+        <td>116</td>
+        <td>Marta Gil</td>
+        <td>7.5</td>
+        <td>180</td>
+      </tr>
+      <tr>
+        <td>Más Allá del Mar</td>
+        <td>Aventura</td>
+        <td>2004</td>
+        <td>119</td>
+        <td>Pedro Salas</td>
+        <td>6.8</td>
+        <td>210</td>
+      </tr>
+      <tr>
+        <td>Tiempo Roto</td>
+        <td>Drama</td>
+        <td>2018</td>
+        <td>122</td>
+        <td>Elena Rivas</td>
+        <td>7.9</td>
+        <td>260</td>
+      </tr>
+      <tr>
+        <td>El Código Azul</td>
+        <td>Policiaco</td>
+        <td>2011</td>
+        <td>105</td>
+        <td>Jorge Molina</td>
+        <td>6.5</td>
+        <td>145</td>
+      </tr>
+      <tr>
+        <td>Planeta Olvidado</td>
+        <td>Ciencia ficción</td>
+        <td>2020</td>
+        <td>138</td>
+        <td>Fernando Arias</td>
+        <td>7.3</td>
+        <td>390</td>
+      </tr>
+      <tr>
+        <td>Risas en Agosto</td>
+        <td>Comedia</td>
+        <td>1998</td>
+        <td>97</td>
+        <td>Sonia Vega</td>
+        <td>6.9</td>
+        <td>88</td>
+      </tr>
+
+      <tr>
+        <td>El Último Tren</td>
+        <td>Drama</td>
+        <td>2006</td>
+        <td>110</td>
+        <td>Carlos Méndez</td>
+        <td>7.0</td>
+        <td>160</td>
+      </tr>
+      <tr>
+        <td>Fuego Cruzado</td>
+        <td>Acción</td>
+        <td>2014</td>
+        <td>128</td>
+        <td>Marcos León</td>
+        <td>6.7</td>
+        <td>450</td>
+      </tr>
+      <tr>
+        <td>La Casa de Cristal</td>
+        <td>Suspense</td>
+        <td>2009</td>
+        <td>114</td>
+        <td>Paula Nieto</td>
+        <td>7.4</td>
+        <td>230</td>
+      </tr>
+      <tr>
+        <td>Vidas Paralelas</td>
+        <td>Drama</td>
+        <td>2002</td>
+        <td>121</td>
+        <td>Alberto Campos</td>
+        <td>8.0</td>
+        <td>175</td>
+      </tr>
+      <tr>
+        <td>Noche Perpetua</td>
+        <td>Terror</td>
+        <td>2017</td>
+        <td>102</td>
+        <td>Clara Romero</td>
+        <td>6.6</td>
+        <td>310</td>
+      </tr>
+      <tr>
+        <td>Destino Final</td>
+        <td>Acción</td>
+        <td>2005</td>
+        <td>118</td>
+        <td>Óscar Ruiz</td>
+        <td>6.4</td>
+        <td>390</td>
+      </tr>
+      <tr>
+        <td>El Jardín Secreto</td>
+        <td>Fantasía</td>
+        <td>1997</td>
+        <td>109</td>
+        <td>Isabel Mora</td>
+        <td>7.6</td>
+        <td>92</td>
+      </tr>
+      <tr>
+        <td>Fragmentos</td>
+        <td>Drama</td>
+        <td>2013</td>
+        <td>113</td>
+        <td>Fernando Arias</td>
+        <td>7.1</td>
+        <td>140</td>
+      </tr>
+      <tr>
+        <td>Velocidad Máxima</td>
+        <td>Acción</td>
+        <td>2019</td>
+        <td>131</td>
+        <td>Carlos Méndez</td>
+        <td>6.8</td>
+        <td>520</td>
+      </tr>
+      <tr>
+        <td>La Última Función</td>
+        <td>Drama</td>
+        <td>2008</td>
+        <td>117</td>
+        <td>Daniela Fuentes</td>
+        <td>7.9</td>
+        <td>155</td>
+      </tr>
+
+      <tr>
+        <td>Reflejos Oscuros</td>
+        <td>Thriller</td>
+        <td>2016</td>
+        <td>111</td>
+        <td>Mario Vidal</td>
+        <td>6.9</td>
+        <td>275</td>
+      </tr>
+      <tr>
+        <td>La Ruta Infinita</td>
+        <td>Aventura</td>
+        <td>2012</td>
+        <td>129</td>
+        <td>Patricia Núñez</td>
+        <td>7.2</td>
+        <td>305</td>
+      </tr>
+      <tr>
+        <td>Sin Retorno</td>
+        <td>Drama</td>
+        <td>2021</td>
+        <td>115</td>
+        <td>Fernando Arias</td>
+        <td>7.0</td>
+        <td>190</td>
+      </tr>
+      <tr>
+        <td>Crónicas del Alba</td>
+        <td>Fantasía</td>
+        <td>2000</td>
+        <td>123</td>
+        <td>Julia Torres</td>
+        <td>7.7</td>
+        <td>165</td>
+      </tr>
+      <tr>
+        <td>Bajo la Lluvia</td>
+        <td>Romance</td>
+        <td>1996</td>
+        <td>104</td>
+        <td>Fernando Arias</td>
+        <td>7.3</td>
+        <td>80</td>
+      </tr>
+
+      <tr>
+        <td>La Noche Blanca</td>
+        <td>Suspense</td>
+        <td>2010</td>
+        <td>109</td>
+        <td>Beatriz Cano</td>
+        <td>6.8</td>
+        <td>220</td>
+      </tr>
+      <tr>
+        <td>Colisión</td>
+        <td>Ciencia ficción</td>
+        <td>2018</td>
+        <td>136</td>
+        <td>Hugo Serrano</td>
+        <td>7.1</td>
+        <td>480</td>
+      </tr>
+      <tr>
+        <td>El Último Refugio</td>
+        <td>Drama</td>
+        <td>2004</td>
+        <td>118</td>
+        <td>Daniela Fuentes</td>
+        <td>7.4</td>
+        <td>150</td>
+      </tr>
+      <tr>
+        <td>Instinto Primario</td>
+        <td>Thriller</td>
+        <td>2015</td>
+        <td>121</td>
+        <td>Samuel Cortés</td>
+        <td>6.6</td>
+        <td>360</td>
+      </tr>
+      <tr>
+        <td>La Chispa</td>
+        <td>Comedia</td>
+        <td>2009</td>
+        <td>99</td>
+        <td>Rocío Martín</td>
+        <td>7.0</td>
+        <td>110</td>
+      </tr>
+
+      <tr>
+        <td>Zona Cero</td>
+        <td>Acción</td>
+        <td>2020</td>
+        <td>127</td>
+        <td>Adrián Fuentes</td>
+        <td>6.9</td>
+        <td>430</td>
+      </tr>
+      <tr>
+        <td>El Viaje Invisible</td>
+        <td>Fantasía</td>
+        <td>2011</td>
+        <td>120</td>
+        <td>Fernando Arias</td>
+        <td>7.5</td>
+        <td>240</td>
+      </tr>
+      <tr>
+        <td>Oscuridad Total</td>
+        <td>Terror</td>
+        <td>2017</td>
+        <td>101</td>
+        <td>Carlos Méndez</td>
+        <td>6.4</td>
+        <td>295</td>
+      </tr>
+      <tr>
+        <td>Latidos</td>
+        <td>Drama</td>
+        <td>2002</td>
+        <td>112</td>
+        <td>Daniela Fuentes</td>
+        <td>7.8</td>
+        <td>135</td>
+      </tr>
+      <tr>
+        <td>La Frontera</td>
+        <td>Western</td>
+        <td>2006</td>
+        <td>114</td>
+        <td>Diego Roldán</td>
+        <td>7.1</td>
+        <td>98</td>
+      </tr>
+
+      <tr>
+        <td>Conexión Perdida</td>
+        <td>Drama</td>
+        <td>2019</td>
+        <td>108</td>
+        <td>Eva Morales</td>
+        <td>6.7</td>
+        <td>210</td>
+      </tr>
+      <tr>
+        <td>Al Final del Día</td>
+        <td>Romance</td>
+        <td>2008</td>
+        <td>110</td>
+        <td>Luis Navarro</td>
+        <td>7.6</td>
+        <td>145</td>
+      </tr>
+      <tr>
+        <td>Proyecto Atlas</td>
+        <td>Ciencia ficción</td>
+        <td>2022</td>
+        <td>142</td>
+        <td>Silvia Domínguez</td>
+        <td>7.2</td>
+        <td>510</td>
+      </tr>
+      <tr>
+        <td>La Mentira</td>
+        <td>Suspense</td>
+        <td>2001</td>
+        <td>107</td>
+        <td>Tomás Herrera</td>
+        <td>6.8</td>
+        <td>125</td>
+      </tr>
+      <tr>
+        <td>Entre Sombras</td>
+        <td>Drama</td>
+        <td>2014</td>
+        <td>119</td>
+        <td>Rebeca Luna</td>
+        <td>7.3</td>
+        <td>185</td>
+      </tr>
+
+      <tr>
+        <td>El Último Código</td>
+        <td>Policiaco</td>
+        <td>2016</td>
+        <td>113</td>
+        <td>Álvaro Cid</td>
+        <td>6.9</td>
+        <td>265</td>
+      </tr>
+      <tr>
+        <td>Mar Abierto</td>
+        <td>Aventura</td>
+        <td>2005</td>
+        <td>121</td>
+        <td>Carlos Méndez</td>
+        <td>7.2</td>
+        <td>155</td>
+      </tr>
+      <tr>
+        <td>Punto de Fuga</td>
+        <td>Acción</td>
+        <td>2018</td>
+        <td>126</td>
+        <td>Daniela Fuentes</td>
+        <td>6.6</td>
+        <td>390</td>
+      </tr>
+      <tr>
+        <td>El Silencio de Abril</td>
+        <td>Drama</td>
+        <td>2010</td>
+        <td>118</td>
+        <td>Fernando Arias</td>
+        <td>7.7</td>
+        <td>140</td>
+      </tr>
+      <tr>
+        <td>Niebla</td>
+        <td>Terror</td>
+        <td>1999</td>
+        <td>98</td>
+        <td>Julián Ponce</td>
+        <td>6.5</td>
+        <td>75</td>
+      </tr>
+
+      <tr>
+        <td>En Caída Libre</td>
+        <td>Drama</td>
+        <td>2021</td>
+        <td>120</td>
+        <td>Belén Ríos</td>
+        <td>7.1</td>
+        <td>205</td>
+      </tr>
+      <tr>
+        <td>Última Señal</td>
+        <td>Ciencia ficción</td>
+        <td>2013</td>
+        <td>133</td>
+        <td>Iván Guerrero</td>
+        <td>6.9</td>
+        <td>330</td>
+      </tr>
+      <tr>
+        <td>El Pasajero</td>
+        <td>Thriller</td>
+        <td>2007</td>
+        <td>115</td>
+        <td>Rafael Lozano</td>
+        <td>7.0</td>
+        <td>170</td>
+      </tr>
+      <tr>
+        <td>Al Borde</td>
+        <td>Acción</td>
+        <td>2019</td>
+        <td>129</td>
+        <td>Camila Rojo</td>
+        <td>6.8</td>
+        <td>410</td>
+      </tr>
+      <tr>
+        <td>La Voz Interior</td>
+        <td>Drama</td>
+        <td>2003</td>
+        <td>117</td>
+        <td>Manuel Ibarra</td>
+        <td>7.9</td>
+        <td>160</td>
+      </tr>
+
+      <tr>
+        <td>Segundo Acto</td>
+        <td>Comedia</td>
+        <td>2012</td>
+        <td>101</td>
+        <td>Carlos Méndez</td>
+        <td>7.1</td>
+        <td>135</td>
+      </tr>
+      <tr>
+        <td>Camino de Sal</td>
+        <td>Drama</td>
+        <td>2000</td>
+        <td>113</td>
+        <td>Daniela Fuentes</td>
+        <td>7.4</td>
+        <td>120</td>
+      </tr>
+      <tr>
+        <td>La Puerta Roja</td>
+        <td>Suspense</td>
+        <td>2017</td>
+        <td>110</td>
+        <td>Elisa Montero</td>
+        <td>6.7</td>
+        <td>290</td>
+      </tr>
+      <tr>
+        <td>Órbita</td>
+        <td>Ciencia ficción</td>
+        <td>2023</td>
+        <td>145</td>
+        <td>Fernando Arias</td>
+        <td>7.5</td>
+        <td>560</td>
+      </tr>
+      <tr>
+        <td>El Último Verano</td>
+        <td>Romance</td>
+        <td>1995</td>
+        <td>106</td>
+        <td>Carmen Soler</td>
+        <td>7.2</td>
+        <td>70</td>
+      </tr>
+
+      <tr>
+        <td>Rehenes</td>
+        <td>Thriller</td>
+        <td>2008</td>
+        <td>109</td>
+        <td>Ignacio Bernal</td>
+        <td>6.6</td>
+        <td>185</td>
+      </tr>
+      <tr>
+        <td>La Caída</td>
+        <td>Drama</td>
+        <td>2014</td>
+        <td>116</td>
+        <td>Daniela Fuentes</td>
+        <td>7.0</td>
+        <td>225</td>
+      </tr>
+      <tr>
+        <td>Distancia Cero</td>
+        <td>Acción</td>
+        <td>2020</td>
+        <td>132</td>
+        <td>Víctor Oliva</td>
+        <td>6.9</td>
+        <td>470</td>
+      </tr>
+      <tr>
+        <td>La Noche Dentro</td>
+        <td>Drama</td>
+        <td>2011</td>
+        <td>118</td>
+        <td>Carlos Méndez</td>
+        <td>7.3</td>
+        <td>150</td>
+      </tr>
+      <tr>
+        <td>Horizonte Final</td>
+        <td>Ciencia ficción</td>
+        <td>2018</td>
+        <td>139</td>
+        <td>Mario Quintero</td>
+        <td>7.2</td>
+        <td>500</td>
+      </tr>
+
+      <tr>
+        <td>La Promesa</td>
+        <td>Drama</td>
+        <td>2004</td>
+        <td>120</td>
+        <td>Fernando Arias</td>
+        <td>7.8</td>
+        <td>145</td>
+      </tr>
+      <tr>
+        <td>Instantes</td>
+        <td>Romance</td>
+        <td>1998</td>
+        <td>102</td>
+        <td>José Linares</td>
+        <td>7.1</td>
+        <td>85</td>
+      </tr>
+      <tr>
+        <td>El Laberinto</td>
+        <td>Suspense</td>
+        <td>2015</td>
+        <td>114</td>
+        <td>Alicia Soto</td>
+        <td>6.8</td>
+        <td>310</td>
+      </tr>
+      <tr>
+        <td>Más Rápido</td>
+        <td>Acción</td>
+        <td>2021</td>
+        <td>128</td>
+        <td>Daniela Fuentes</td>
+        <td>6.6</td>
+        <td>495</td>
+      </tr>
+      <tr>
+        <td>El Eco</td>
+        <td>Drama</td>
+        <td>2007</td>
+        <td>117</td>
+        <td>Natalia Cruz</td>
+        <td>7.4</td>
+        <td>160</td>
+      </tr>
+
+      <tr>
+        <td>Zona Oscura</td>
+        <td>Terror</td>
+        <td>2019</td>
+        <td>103</td>
+        <td>Rubén Galán</td>
+        <td>6.5</td>
+        <td>340</td>
+      </tr>
+      <tr>
+        <td>Camino Abierto</td>
+        <td>Aventura</td>
+        <td>2003</td>
+        <td>122</td>
+        <td>Esther Vidal</td>
+        <td>7.0</td>
+        <td>130</td>
+      </tr>
+      <tr>
+        <td>El Acuerdo</td>
+        <td>Drama</td>
+        <td>2012</td>
+        <td>111</td>
+        <td>Fernando Arias</td>
+        <td>7.2</td>
+        <td>155</td>
+      </tr>
+      <tr>
+        <td>Último Nivel</td>
+        <td>Ciencia ficción</td>
+        <td>2020</td>
+        <td>141</td>
+        <td>Paula Roldán</td>
+        <td>6.9</td>
+        <td>520</td>
+      </tr>
+      <tr>
+        <td>La Sombra Larga</td>
+        <td>Thriller</td>
+        <td>2016</td>
+        <td>118</td>
+        <td>Carlos Méndez</td>
+        <td>7.1</td>
+        <td>285</td>
+      </tr>
+
+      <tr>
+        <td>En Suspenso</td>
+        <td>Drama</td>
+        <td>2009</td>
+        <td>109</td>
+        <td>Rita Campos</td>
+        <td>6.7</td>
+        <td>140</td>
+      </tr>
+      <tr>
+        <td>La Ruta Roja</td>
+        <td>Acción</td>
+        <td>2018</td>
+        <td>127</td>
+        <td>Daniela Fuentes</td>
+        <td>6.8</td>
+        <td>430</td>
+      </tr>
+      <tr>
+        <td>El Reflejo</td>
+        <td>Drama</td>
+        <td>2001</td>
+        <td>116</td>
+        <td>María Baeza</td>
+        <td>7.6</td>
+        <td>135</td>
+      </tr>
+      <tr>
+        <td>Horizonte Azul</td>
+        <td>Aventura</td>
+        <td>2005</td>
+        <td>123</td>
+        <td>Fernando Arias</td>
+        <td>7.0</td>
+        <td>165</td>
+      </tr>
+      <tr>
+        <td>La Última Noche</td>
+        <td>Drama</td>
+        <td>2014</td>
+        <td>118</td>
+        <td>Carlos Méndez</td>
+        <td>7.3</td>
+        <td>190</td>
+      </tr>
+
+      <tr>
+        <td>Sin Huella</td>
+        <td>Thriller</td>
+        <td>2017</td>
+        <td>110</td>
+        <td>Ángel Moya</td>
+        <td>6.6</td>
+        <td>305</td>
+      </tr>
+      <tr>
+        <td>Órbita Cero</td>
+        <td>Ciencia ficción</td>
+        <td>2022</td>
+        <td>146</td>
+        <td>Claudia Ríos</td>
+        <td>7.4</td>
+        <td>580</td>
+      </tr>
+      <tr>
+        <td>La Decisión</td>
+        <td>Drama</td>
+        <td>2008</td>
+        <td>114</td>
+        <td>Fernando Arias</td>
+        <td>7.1</td>
+        <td>150</td>
+      </tr>
+      <tr>
+        <td>Frontera Sur</td>
+        <td>Western</td>
+        <td>2013</td>
+        <td>117</td>
+        <td>Daniela Fuentes</td>
+        <td>6.9</td>
+        <td>120</td>
+      </tr>
+      <tr>
+        <td>La Luz Tardía</td>
+        <td>Drama</td>
+        <td>1997</td>
+        <td>108</td>
+        <td>Carlos Méndez</td>
+        <td>7.8</td>
+        <td>90</td>
+      </tr>
+
+      <tr>
+        <td>Pulso</td>
+        <td>Thriller</td>
+        <td>2019</td>
+        <td>112</td>
+        <td>Ángel Moya</td>
+        <td>6.7</td>
+        <td>315</td>
+      </tr>
+      <tr>
+        <td>El Umbral 2</td>
+        <td>Drama</td>
+        <td>2011</td>
+        <td>115</td>
+        <td>Andrés Téllez</td>
+        <td>7.2</td>
+        <td>145</td>
+      </tr>
+      <tr>
+        <td>Caída Libre</td>
+        <td>Acción</td>
+        <td>2020</td>
+        <td>129</td>
+        <td>Héctor Pujol</td>
+        <td>6.8</td>
+        <td>460</td>
+      </tr>
+      <tr>
+        <td>El Umbral</td>
+        <td>Drama</td>
+        <td>2004</td>
+        <td>118</td>
+        <td>Andrés Téllez</td>
+        <td>7.5</td>
+        <td>130</td>
+      </tr>
+      <tr>
+        <td>Mar de Fondo</td>
+        <td>Aventura</td>
+        <td>2016</td>
+        <td>124</td>
+        <td>Ángel Moya</td>
+        <td>7.0</td>
+        <td>210</td>
+      </tr>
+
+      <tr>
+        <td>El Último Testigo</td>
+        <td>Policiaco</td>
+        <td>2018</td>
+        <td>113</td>
+        <td>Rosa Iriarte</td>
+        <td>6.9</td>
+        <td>280</td>
+      </tr>
+      <tr>
+        <td>Instantes Rotos</td>
+        <td>Drama</td>
+        <td>2007</td>
+        <td>116</td>
+        <td>Carlos Méndez</td>
+        <td>7.3</td>
+        <td>155</td>
+      </tr>
+      <tr>
+        <td>Más Allá del Fin</td>
+        <td>Ciencia ficción</td>
+        <td>2021</td>
+        <td>140</td>
+        <td>Fernando Arias</td>
+        <td>7.1</td>
+        <td>495</td>
+      </tr>
+      <tr>
+        <td>La Última Línea</td>
+        <td>Thriller</td>
+        <td>2010</td>
+        <td>109</td>
+        <td>Daniela Fuentes</td>
+        <td>6.6</td>
+        <td>235</td>
+      </tr>
+      <tr>
+        <td>Vértigo</td>
+        <td>Drama</td>
+        <td>2002</td>
+        <td>118</td>
+        <td>Ángel Moya</td>
+        <td>7.7</td>
+        <td>140</td>
+      </tr>
+
+      <tr>
+        <td>Punto Muerto</td>
+        <td>Acción</td>
+        <td>2015</td>
+        <td>125</td>
+        <td>Alfonso Ibáñez</td>
+        <td>6.5</td>
+        <td>375</td>
+      </tr>
+      <tr>
+        <td>El Regreso</td>
+        <td>Drama</td>
+        <td>1999</td>
+        <td>120</td>
+        <td>Daniela Fuentes</td>
+        <td>7.9</td>
+        <td>110</td>
+      </tr>
+      <tr>
+        <td>La Senda</td>
+        <td>Aventura</td>
+        <td>2006</td>
+        <td>123</td>
+        <td>Ángel Moya</td>
+        <td>7.2</td>
+        <td>165</td>
+      </tr>
+      <tr>
+        <td>Noche Fría</td>
+        <td>Terror</td>
+        <td>2017</td>
+        <td>104</td>
+        <td>Fernando Arias</td>
+        <td>6.6</td>
+        <td>320</td>
+      </tr>
+      <tr>
+        <td>El Vínculo</td>
+        <td>Drama</td>
+        <td>2013</td>
+        <td>116</td>
+        <td>Carlos Méndez</td>
+        <td>7.4</td>
+        <td>180</td>
+      </tr>
+
+      <tr>
+        <td>Tiempo Prestado</td>
+        <td>Drama</td>
+        <td>2022</td>
+        <td>121</td>
+        <td>Andrea Millán</td>
+        <td>7.0</td>
+        <td>220</td>
+      </tr>
+      <tr>
+        <td>La Última Ruta</td>
+        <td>Acción</td>
+        <td>2008</td>
+        <td>128</td>
+        <td>César Padilla</td>
+        <td>6.8</td>
+        <td>345</td>
+      </tr>
+      <tr>
+        <td>El Vacío</td>
+        <td>Ciencia ficción</td>
+        <td>2019</td>
+        <td>137</td>
+        <td>Nora Benítez</td>
+        <td>7.1</td>
+        <td>455</td>
+      </tr>
+      <tr>
+        <td>Después del Silencio</td>
+        <td>Drama</td>
+        <td>2014</td>
+        <td>119</td>
+        <td>Carlos Méndez</td>
+        <td>7.6</td>
+        <td>190</td>
+      </tr>
+      <tr>
+        <td>El Eco del Silencio</td>
+        <td>Drama</td>
+        <td>2022</td>
+        <td>126</td>
+        <td>Daniela Fuentes</td>
+        <td>8.1</td>
+        <td>285</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://cdn.datatables.net/2.3.7/js/dataTables.js"></script>
+  <script>
+    var table = new DataTable('#pelis', {
+      lengthMenu: [20, 30, 50],
+      info: false,
+      language: {
+        lengthMenu: '_MENU_ registros por página',
+        search: 'Filtrar por:'
+      },
+      layout: {
+        topStart: 'search',
+        bottomEnd: 'pageLength',
+        topEnd:null,
+        top: {
+            paging: {
+                previousNext: true
+            }
+        }
+
+      },
+      columnDefs: [
+        {
+          target: 6,
+          visible: false,
+          searchable: false
+        },
+        {
+          target: 3,
+          visible: true,
+          searchable: false,
+          orderable: false
+        },
+        {
+          target: 4,
+          visible: true,
+          orderable: false
+        }
+      ]
+    });
+    table.order([5, 'desc'], [2, 'asc']).draw()
+  </script>
+
+</body>
+
+</html>
