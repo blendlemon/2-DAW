@@ -25,7 +25,7 @@ class UsuarioRepository extends AbstractRepository
     }
 
 
-    public function create(Usuario $usuario): ?object
+    public function create(object $usuario): ?object
     {
         $stmt = $this->pdo->prepare(
             "INSERT INTO usuarios (nombre, email) VALUES (?, ?)"
