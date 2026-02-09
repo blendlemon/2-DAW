@@ -47,28 +47,6 @@ class Plato {
                 precioMaximo += platostipo[i][0].precio;
             }
         }
-
-        let tipos = Object.keys(platostipo);
         
-        function generarCombinaciones(index, combinacionActual, precioActual) {
-            if (index === tipos.length) {
-                if (precioActual < precioMaximo && !resultado) {
-                    resultado = `<h1><b>Menú</b></h1>`;
-                    for (let plato of combinacionActual) {
-                        resultado += `${plato.tipo}:${plato.nombre}<br>`;
-                    }
-                    resultado += `Precio: ${precioActual}€`;
-                }
-                return;
-            }
-            
-            let tipoActual = tipos[index];
-            for (let plato of platostipo[tipoActual]) {
-                generarCombinaciones(index + 1, [...combinacionActual, plato], precioActual + plato.precio);
-            }
-        }
-        
-        generarCombinaciones(0, [], 0);
-        return resultado;
     }
 }
