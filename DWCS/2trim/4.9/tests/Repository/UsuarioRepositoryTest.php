@@ -57,10 +57,8 @@ class UsuarioRepositoryTest extends TestCase
         $usuario = new Usuario("Juan", "juan@example.com");
 
         $usuario = $this->repository->create($usuario);
-        
-        $usuario = new Usuario("Juan", "juan@example.com");
 
-        $usuario = $this->repository->create($usuario);
+        $this->assertEquals($this->repository->deleteById($usuario->getId), false);
 
     }
 }
