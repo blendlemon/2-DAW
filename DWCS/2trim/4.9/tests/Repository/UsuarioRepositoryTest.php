@@ -50,15 +50,17 @@ class UsuarioRepositoryTest extends TestCase
         $this->assertEquals("Juan", $usuarioBD->getNombre());
         $this->assertEquals("juan@example.com", $usuarioBD->getEmail());
         $this->assertEquals($usuario->getId(), $usuarioBD->getId());
+        $this->assertNull($this->repository->findByEmail('inexistente'));
     }
 
     public function testDeleteById()
     {
         $usuario = new Usuario("Juan", "juan@example.com");
-
         $usuario = $this->repository->create($usuario);
+        $id = $usuario->getId();
 
-        $this->assertEquals($this->repository->deleteById($usuario->getId), false);
+        $this->assertEquals($this->repository->deleteById($id), 1);
+        $this->assertEquals($this->repository->deleteById(999), 0);
 
     }
 }
