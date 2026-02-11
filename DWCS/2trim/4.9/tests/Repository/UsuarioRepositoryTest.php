@@ -61,6 +61,6 @@ class UsuarioRepositoryTest extends TestCase
         $this->assertNotNull($usuario);
 
         $this->assertTrue($this->repository->deleteById($usuario));
-        $this->assertFalse($this->repository->deleteById($usuario));
+        $this->assertFalse($this->repository->deleteById($usuario) );
     }
 }

@@ -2,22 +2,28 @@
 
 namespace App\Service;
 
-use App\Model\Biblioteca\Usuario;
-use App\Model\Biblioteca\Recurso;
-use App\Model\Biblioteca\Prestamo;
-use App\Service\Traits\Logger;
 use DateTimeImmutable;
+use App\Service\Traits\Logger;
+use App\Model\Biblioteca\Recurso;
+use App\Model\Biblioteca\Usuario;
+use App\Model\Biblioteca\Prestamo;
+use App\Repository\UsuarioRepository;
 use App\Model\Biblioteca\Enum\EstadoRecurso;
 
 class PrestamoService
 {
     use Logger;
-    private array $usuarios = [];
+    private UsuarioRepository $usuarioRepository;
+    //private array $usuarios = [];
     private array $recursos = [];
+
+    public function __construct(UsuarioRepository $usuarioRepository) {
+        $this->usuarioRepository = $usuarioRepository;
+    }
 
     public function registrarUsuario(Usuario $usuario)
     {
-        $this->usuarios[$usuario->getEmail()] = $usuario;
+        $this->usuarioRepository->create($usuario);
     }
 
     public function registrarRecurso(Recurso $recurso)
@@ -27,7 +33,8 @@ class PrestamoService
 
     public function prestar(string $emailUsuario, int $idRecurso)
     {
-        if (!isset($this->usuarios[$emailUsuario])) {
+        $usuario = $this->usuarioRepository->findByEmail($emailUsuario);
+        if ($usuario === null) {
             $this->log("El email indicado: {$emailUsuario}, no se corresponde con ningún usuario", null, "prestamoservice.log");
             throw new \Exception("Usuario no encontrado");
         }
@@ -40,10 +47,10 @@ class PrestamoService
             throw new \Exception("Recurso no disponible");
         }
 
-        if (count($this->usuarios[$emailUsuario]->getPrestamos()) < 3) {
-            $prestamo = new Prestamo($this->usuarios[$emailUsuario], $this->recursos[$idRecurso], new DateTimeImmutable("now"));
+        if (count($usuario->getPrestamos()) < 3) {
+            $prestamo = new Prestamo($usuario, $this->recursos[$idRecurso], new DateTimeImmutable("now"));
             $this->recursos[$idRecurso]->setEstado(EstadoRecurso::PRESTADO);
-            $this->usuarios[$emailUsuario]->addPrestamo($prestamo);
+            $usuario->addPrestamo($prestamo);
         } else {
             $this->log("El email indicado: {$emailUsuario}, tiene ya registrados 3 prestamos", null, "prestamoservice.log");
             throw new \Exception("El usuario, tiene ya registrados 3 prestamos");
@@ -60,9 +67,6 @@ class PrestamoService
 
     public function getUsuarioByEmail(string $emailUsuario): ?Usuario
     {
-        if (isset($this->usuarios[$emailUsuario])) {
-            return $this->usuarios[$emailUsuario];
-        }
-        return null;
+        return $this->usuarioRepository->findByEmail($emailUsuario);
     }
 }
