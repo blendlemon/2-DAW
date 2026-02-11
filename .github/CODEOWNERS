@@ -1,0 +1,22 @@
+# Code Owners for 2-DAW Repository
+# All changes require approval from @blendlemon
+
+# Default owner for everything in the repo
+* @blendlemon
+
+# Specific ownership by file type
+*.php @blendlemon
+*.html @blendlemon
+*.css @blendlemon
+*.js @blendlemon
+*.javascript @blendlemon
+
+# Configuration files
+*.json @blendlemon
+*.xml @blendlemon
+*.yml @blendlemon
+*.yaml @blendlemon
+
+# Documentation
+*.md @blendlemon
+*.txt @blendlemon
