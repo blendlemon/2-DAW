@@ -31,20 +31,13 @@ abstract class AbstractRepository
     public abstract function create(object $object): ?object;  //La creación y la actualización son más dependientes del nº de columnas de la tabla y menos sencillo de generalizar.
     // Podría haber otro método abstracto para update
 
-        public function deleteById(int $id)
+    public function deleteById(int $id)
     {
         $stmt = $this->pdo->prepare(
-            "DELETE ? FROM ?"
+            "DELETE FROM {$this->table} WHERE {$this->primaryKey} = ?  "
         );
-        $stmt->execute([
-            $id,
-            $this->table
-        ]);
+        $stmt->execute([$id]);
 
-        if ($id !== $this->pdo->lastInsertId()){
-            return true;
-        }
-
-        return true;
+        return $stmt->rowCount();
     }
 }
