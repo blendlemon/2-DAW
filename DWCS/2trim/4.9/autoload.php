@@ -31,4 +31,3 @@ spl_autoload_register(function (string $nombreClase) {
         require_once $archivo;
     }
 });
-//a
