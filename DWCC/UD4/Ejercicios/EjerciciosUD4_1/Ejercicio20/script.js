@@ -35,6 +35,10 @@ function dame_numero_casillas_blanco(Tablero) {
     Tablero.find(x => x.fila == 0 && x.columna == 1).pieza = 10;
 
     let rey = Tablero.find(rey => rey.pieza == 1000);
+    
+    // por posicion es mas facil y simple de hacer los calculos dependen de si esta en 0 o 7 si esta en cero se le suma uno para comprobar
+    // si esta en 7 se le resta simplifica todos los calculos de tener que hacer 4 sets de 3 if a 1 y solo 2 para establecer las variables
+    //que tambien va a ayudar con todos los calculos dependientes de los limites del tablero
 
     if ((rey.fila == 0 && rey.columna == 0) || (rey.fila == 7 && rey.columna == 7) || (rey.fila == 0 && rey.columna == 7) || (rey.fila == 7 && rey.columna == 0)) {
         nMovimientos -= 5;
