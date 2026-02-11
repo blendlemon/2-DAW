@@ -10,20 +10,21 @@ use App\Model\Biblioteca\Prestamo;
 use App\Repository\UsuarioRepository;
 use App\Model\Biblioteca\Enum\EstadoRecurso;
 
-class PrestamoService
+class PrestamoServiceConRepo
 {
     use Logger;
     private UsuarioRepository $usuarioRepository;
     //private array $usuarios = [];
     private array $recursos = [];
 
-    public function __construct(UsuarioRepository $usuarioRepository) {
+    public function __construct(UsuarioRepository $usuarioRepository)
+    {
         $this->usuarioRepository = $usuarioRepository;
     }
 
-    public function registrarUsuario(Usuario $usuario)
+    public function registrarUsuario(Usuario $usuario) :?Usuario
     {
-        $this->usuarioRepository->create($usuario);
+        return $this->usuarioRepository->create($usuario);
     }
 
     public function registrarRecurso(Recurso $recurso)

@@ -5,7 +5,7 @@ require_once __DIR__ . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'a
 //cargar los namespaces necesarios
 use App\Model\Biblioteca\Usuario;
 use App\Model\Biblioteca\Libro;
-use App\Service\PrestamoService;
+use App\Service\PrestamoServiceConRepo;
 
 // Crear usuarios
 $juan = new Usuario("Juan", "juan@email.com");
@@ -18,7 +18,7 @@ $libro3 = new Libro("libro3", "f");
 $libro4 = new Libro("libro4", "g"); // este no se podrá prestar a Juan, límite 3 préstamos
 
 // Crear servicio de préstamos
-$prestamos = new PrestamoService();
+$prestamos = new PrestamoServiceConRepo();
 $prestamos->registrarUsuario($juan);
 $prestamos->registrarUsuario($maria);
 $prestamos->registrarRecurso($libro1);
