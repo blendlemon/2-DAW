@@ -33,7 +33,6 @@ function dame_numero_casillas_blanco(Tablero) {
 
     Tablero.find(x => x.fila == 0 && x.columna == 0).pieza = 1000;
     Tablero.find(x => x.fila == 0 && x.columna == 1).pieza = 10;
-
     let rey = Tablero.find(rey => rey.pieza == 1000);
 
     for (let i = rey.fila - 1; i <= rey.fila + 1; i++) {
