@@ -79,36 +79,36 @@ function registrarEvento(calendario) {
                 }
             }
         }
+    }
 
-        salir = false;
-        while (salir === false) {
-            mes = prompt("Introduce el mes 1-12");
-            if (mes === null) {
-                salir = true;
-            }
-            else if (Number(mes) < 1 || Number(mes) > 12 || Number.isInteger(Number(mes)) === false) {
-                alert("Mes fuera de rango");
-            }
-            else {
-                salir = true;
-                mes = Number(mes) - 1;
-                resultado += `${MESES[mes]}:<br>`;
-                let limite = calendario.findLast(a => a.Mes == mes).diaMes;
+    salir = false;
+    while (salir === false) {
+        mes = prompt("Introduce el mes 1-12");
+        if (mes === null) {
+            salir = true;
+        }
+        else if (Number(mes) < 1 || Number(mes) > 12 || Number.isInteger(Number(mes)) === false) {
+            alert("Mes fuera de rango");
+        }
+        else {
+            salir = true;
+            mes = Number(mes) - 1;
+            resultado += `${MESES[mes]}:<br>`;
+            let limite = calendario.findLast(a => a.Mes == mes).diaMes;
 
-                for (let i = 1; i <= limite; i++) {
-                    resultado += `${i} (${calendario.find(a => a.Mes && a.diaMes).diaSemana}) `;
-                    for (let j = 0; j < 24; j++) {
-                        let evento = calendario.find(a => a.Mes == mes && a.diaMes == i && a.hora == j);
-                        if (evento && evento.evento != '') {
-                            resultado += `${j}:00h ${evento.evento}`;
-                        }
+            for (let i = 1; i <= limite; i++) {
+                resultado += `${i} (${DIAS[calendario.find(a => a.Mes==mes && a.diaMes==i).diaSemana]}) `;
+                for (let j = 0; j < 24; j++) {
+                    let evento = calendario.find(a => a.Mes == mes && a.diaMes == i && a.hora == j);
+                    if (evento && evento.evento != '') {
+                        resultado += `${j}:00h ${evento.evento} `;
                     }
                 }
             }
         }
-
-        document.write(resultado);
     }
+
+    document.write(resultado);
 }
 
 registrarEvento(crearCalendario(2026));
