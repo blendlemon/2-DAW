@@ -52,7 +52,7 @@ class PrestamoServiceConRepoTest extends TestCase
         $this->revista3 = new Revista("Revista de prueba", 45);
         //stub 
         //No usar expectativas en setUp por regla general
-        $this->usuarioRe pository
+        $this->usuarioRepository
             ->method('create')
             ->willReturn($this->usuario)
             ->with($this->usuario);
