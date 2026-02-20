@@ -1,8 +1,6 @@
 {
-    "name": "symfony/skeleton",
     "type": "project",
-    "license": "MIT",
-    "description": "A minimal Symfony project recommended to create bare bones applications",
+    "license": "proprietary",
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
@@ -48,8 +46,10 @@
         "symfony/polyfill-php82": "*"
     },
     "scripts": {
-        "auto-scripts": [
-        ],
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+        },
         "post-install-cmd": [
             "@auto-scripts"
         ],
