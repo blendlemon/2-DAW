@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class LuckyController extends AbstractController
 {
-    #[Route('/lucky/number/{max}', name: 'app_lucky')]
+    #[Route('/lucky/number/{max}', name: 'app_lucky_number')]
 
     public function number(int $max){
         $number = random_int(0, $max);
