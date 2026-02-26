@@ -1,0 +1,117 @@
+[
+  {
+    "concesionario": "AutoPlus",
+    "ciudad": "Madrid",
+    "comunidad": "Madrid",
+    "anioFundacion": 2005,
+    "vehiculos": [
+      { "marca": "Toyota", "modelo": "Corolla", "precio": 22000 },
+      { "marca": "Ford", "modelo": "Focus", "precio": 19500 },
+      { "marca": "Hyundai", "modelo": "i30", "precio": 18000 },
+      { "marca": "Kia", "modelo": "Ceed", "precio": 17500 }
+    ]
+  },
+  {
+    "concesionario": "Madrid Motors",
+    "ciudad": "Alcalá de Henares",
+    "comunidad": "Madrid",
+    "anioFundacion": 2012,
+    "vehiculos": [
+      { "marca": "Seat", "modelo": "Ibiza", "precio": 17000 },
+      { "marca": "Renault", "modelo": "Clio", "precio": 16500 },
+      { "marca": "Peugeot", "modelo": "208", "precio": 16800 },
+      { "marca": "Opel", "modelo": "Corsa", "precio": 16000 },
+      { "marca": "Citroën", "modelo": "C3", "precio": 15800 }
+    ]
+  },
+  {
+    "concesionario": "Premium Cars Madrid",
+    "ciudad": "Getafe",
+    "comunidad": "Madrid",
+    "anioFundacion": 1999,
+    "vehiculos": [
+      { "marca": "BMW", "modelo": "Serie 5", "precio": 52000 },
+      { "marca": "Audi", "modelo": "A6", "precio": 50000 },
+      { "marca": "Mercedes", "modelo": "Clase E", "precio": 54000 },
+      { "marca": "Tesla", "modelo": "Model S", "precio": 89000 },
+      { "marca": "Volvo", "modelo": "S90", "precio": 48000 },
+      { "marca": "Lexus", "modelo": "ES", "precio": 47000 }
+    ]
+  },
+
+  {
+    "concesionario": "MotorCity",
+    "ciudad": "Barcelona",
+    "comunidad": "Cataluña",
+    "anioFundacion": 2010,
+    "vehiculos": [
+      { "marca": "Volkswagen", "modelo": "Golf", "precio": 25000 },
+      { "marca": "Seat", "modelo": "León", "precio": 21000 },
+      { "marca": "Mazda", "modelo": "Mazda3", "precio": 23000 },
+      { "marca": "Hyundai", "modelo": "Tucson", "precio": 28000 }
+    ]
+  },
+  {
+    "concesionario": "Girona Auto",
+    "ciudad": "Girona",
+    "comunidad": "Cataluña",
+    "anioFundacion": 2008,
+    "vehiculos": [
+      { "marca": "Ford", "modelo": "Kuga", "precio": 30000 },
+      { "marca": "Nissan", "modelo": "Qashqai", "precio": 27000 },
+      { "marca": "Peugeot", "modelo": "3008", "precio": 29000 },
+      { "marca": "Toyota", "modelo": "RAV4", "precio": 32000 },
+      { "marca": "Kia", "modelo": "Sportage", "precio": 27500 }
+    ]
+  },
+  {
+    "concesionario": "Luxury BCN",
+    "ciudad": "Tarragona",
+    "comunidad": "Cataluña",
+    "anioFundacion": 2015,
+    "vehiculos": [
+      { "marca": "Porsche", "modelo": "Macan", "precio": 75000 },
+      { "marca": "Jaguar", "modelo": "F-Pace", "precio": 68000 },
+      { "marca": "Land Rover", "modelo": "Evoque", "precio": 72000 },
+      { "marca": "Maserati", "modelo": "Ghibli", "precio": 81000 }
+    ]
+  },
+
+  {
+    "concesionario": "CarNova",
+    "ciudad": "Valencia",
+    "comunidad": "Valenciana",
+    "anioFundacion": 1998,
+    "vehiculos": [
+      { "marca": "Audi", "modelo": "A3", "precio": 39000 },
+      { "marca": "BMW", "modelo": "Serie 3", "precio": 42000 },
+      { "marca": "Mercedes", "modelo": "Clase C", "precio": 45000 },
+      { "marca": "Volvo", "modelo": "S60", "precio": 41000 }
+    ]
+  },
+  {
+    "concesionario": "Alicante Drive",
+    "ciudad": "Alicante",
+    "comunidad": "Valenciana",
+    "anioFundacion": 2003,
+    "vehiculos": [
+      { "marca": "Seat", "modelo": "Arona", "precio": 22000 },
+      { "marca": "Hyundai", "modelo": "Kona", "precio": 23000 },
+      { "marca": "Renault", "modelo": "Captur", "precio": 21000 },
+      { "marca": "Peugeot", "modelo": "2008", "precio": 22500 },
+      { "marca": "Opel", "modelo": "Mokka", "precio": 24000 }
+    ]
+  },
+  {
+    "concesionario": "Castellón Motor",
+    "ciudad": "Castellón de la Plana",
+    "comunidad": "Valenciana",
+    "anioFundacion": 2018,
+    "vehiculos": [
+      { "marca": "Tesla", "modelo": "Model 3", "precio": 47000 },
+      { "marca": "Tesla", "modelo": "Model Y", "precio": 52000 },
+      { "marca": "Ford", "modelo": "Mustang", "precio": 55000 },
+      { "marca": "Chevrolet", "modelo": "Camaro", "precio": 60000 }
+    ]
+  }
+]

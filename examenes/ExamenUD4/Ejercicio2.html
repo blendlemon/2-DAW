@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+
+        <script>
+        function genera(){
+            let meses = [
+                'Enero',
+                'Febrero',
+                'Marzo',
+                'Abril',
+                'Mayo',
+                'Junio',
+                'Julio',
+                'Agosto',
+                'Septiembre',
+                'Octubre',
+                'Noviembre',
+                'Diciembre'
+            ];
+            let arr = [];
+
+            for (let i=0;i<meses.length;i++){
+                for(let j=1; j<32; j++){
+                    arr.push({
+                        mes: meses[i],
+                        dia: j,
+                        dato: Math.floor(Math.random()*100),
+                    });
+                }
+            }
+
+            return arr;
+        }
+
+        // 2.1
+        let arr = genera();
+        let resultado = '';
+        console.log(arr);
+        arr.sort((a,b)=>a.dato - b.dato);
+        resultado += `El día ${arr[arr.length-1].dia} de ${arr[arr.length-1].mes} se obtuvieron las mejores ventas: ${arr[arr.length-1].dato}`;
+        resultado += '<br>';
+
+        // 2.2
+        let dia = Number(prompt("Introduce un día del mes"));
+        let ventas = arr.filter(venta=> venta.dia === dia && venta.dato !==0);
+        let suma = 0;
+        console.log(ventas);
+        for (let i = 0; i<ventas.length; i++){
+            suma += ventas[i].dato;
+        }
+        resultado += `La media de ventas del día ${dia} es de ${(suma/ventas.length).toFixed(2)}`;
+
+        document.write(resultado);
+    </script>
+</body>
+</html>

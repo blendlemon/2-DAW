@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+        function dame_expediente(numero){
+            let modo = 1;
+            let cadena = '';
+            let suma = 0;
+            let num;
+            if (numero % 2 === 0){
+                modo = 0;
+            }
+            while(cadena.length<11){
+                num = Math.floor(Math.random()*(9-1+1)+1);
+
+                if (modo === 0){
+                    if(num%2 === 0){
+                        cadena += num;
+                        suma += num;
+                    }
+                }
+                else{
+                    if(num%2 !== 0){
+                        cadena += num;
+                        suma += num;
+                    }
+                }
+                if(cadena.length === 2 || cadena.length === 7){
+                    cadena += '-';
+                }
+            }
+            if((modo===0 && suma%2 ===0)||(modo===1 && suma%2 !==0)){
+            return cadena;
+            }
+        }
+
+        document.write(dame_expediente(Number(prompt("Introduce un numero"))));
+    </script>
+    </body>
+</html>
