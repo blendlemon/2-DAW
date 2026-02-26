@@ -35,12 +35,18 @@ class TragaPerras {
         let tabla = [];
         while (this.saldo > 0) {
             resultado += texto;
-            if (contador == 2)
+            if (this.contador == 2)
                 texto.replace("inicial", "");
             for (let i = 0; i < 3; i++) {
-                tabla[i] = [];
                 for (let j = 0; j < 3; j++) {
-                    tabla[i][j] = this.Probabilidades();
+                    tabla.push(
+                        {
+                            valor: this.Probabilidades(),
+                            fila: i,
+                            columna: j,
+                            color: "white",
+                        }
+                    );
                 }
             }
 
@@ -49,20 +55,62 @@ class TragaPerras {
         }
     }
 
-    Imprimir(tabla) {
-        let color = '';
-        let resultado = `<table style="border: 1px solid black; border-collapse: collapse;">`;
-        for (let i = 0; i < tabla.length; i++) {
-            resultado += `<tr>`
-            for (let j = 0; j < i.length; j++) {
-                if (j === 0) {
-                    if (tabla[i][j] === tabla[i][j + 1] && tabla[i][j] === tabla[i][j + 2]) {
-                        color = "grey";
-                    }
+    defineColor(tabla) {
+        let aux;
+        let puntos = 0;
+        const Puntos = [
+            {
+                letra: 'P',
+                puntos: 600
+            },
+            {
+                letra: 'M',
+                puntos: 200
+            },
+            {
+                letra: 'C',
+                puntos: 100
+            },
+            {
+                letra: 'D',
+                puntos: 30
+            },
+            {
+                letra: 'X',
+                puntos: 10
+            },
+            {
+                letra: 'Y',
+                puntos: 1
+            },
+        ];
+        let diagonal = tabla.filter(slot => slot.fila == slot.columna);
+        let diagonalInversa = tabla.filter(slot => (slot.fila + slot.columna) == 2);
+        for (let i = 0; i < 3; i++) {
+            aux = tabla.filter(x => x.fila == i);
+            if (aux[0].valor === aux[1].valor && aux[1].valor === aux[2].valor) {
+                for (let j = 0; j < 3; j++) {
+                    aux[j].color = "lightgrey";
+                }
+                puntos += Puntos.find(x => x.letra == aux[0].valor).puntos;
+            }
+            if (diagonal[0].valor === diagonal[1].valor && diagonal[1].valor === diagonal[2].valor) {
+                diagonal[i].color = "lightgrey";
+                if (i === 0) {
+                    puntos += Puntos.find(x => x.letra == diagonal[0].valor).puntos;
                 }
             }
-            resultado += `</tr>`
+            if (diagonalInversa[0].valor === diagonalInversa[1].valor && diagonalInversa[1].valor === diagonalInversa[2].valor) {
+                diagonalInversa[i].color = "lightgrey";
+                if (i === 0) {
+                    puntos += Puntos.find(x => x.letra == diagonalInversa[0].valor).puntos;
+                }
+            }
         }
-        resultado += `</table>`;
+    }
+    Imprimir(tabla) {
+
     }
 }
+
+// hacer funcion para validar diagonales y simplificar y clarificar codigo
