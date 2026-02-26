@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+        function genera(){
+            let meses = [
+                'Enero',
+                'Febrero',
+                'Marzo',
+                'Abril',
+                'Mayo',
+                'Junio',
+                'Julio',
+                'Agosto',
+                'Septiembre',
+                'Octubre',
+                'Noviembre',
+                'Diciembre'
+            ];
+            let arr = [];
+            for (let x = 1; x<11; x++){
+                for (let i=0;i<meses.length;i++){
+                    for(let j=1; j<32; j++){
+                        arr.push({
+                            id: x,
+                            mes: meses[i],
+                            dia: j,
+                            dato: Math.floor(Math.random()*100),
+                        });
+                    }
+                }
+            }
+
+            return arr;
+        }
+        let arr = genera();
+        let mes = prompt("Introduce un mes");
+        let sum = [];
+        let suma = 0;
+        for (let j = 1; j<11;j++){
+            for (let i = 1; i<32;i++){
+                suma += arr.find(x=>x.dia === i && x.mes === mes && x.id === j).dato;
+            }
+            sum.push({
+                id: j,
+                total: suma
+            });
+
+            suma = 0;
+        }
+        
+        sum.sort((a,b)=> b.total - a.total);
+
+        
+        document.write(`En el mes de ${mes}, la empresa ${sum[0].id} tiene el mayor importe de ventas: ${sum[0].total}`)
+        
+
+    </script>
+    </body>
+</html>
