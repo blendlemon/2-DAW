@@ -30,6 +30,9 @@ class Libro
     #[ORM\ManyToMany(targetEntity: Autor::class, inversedBy: 'libros')]
     private Collection $autores;
 
+    #[ORM\ManyToOne(inversedBy: 'libros')]
+    private ?Editorial $editorial = null;
+
     public function __construct()
     {
         $this->autores = new ArrayCollection();
@@ -96,6 +99,18 @@ class Libro
     public function removeAutore(Autor $autore): static
     {
         $this->autores->removeElement($autore);
+
+        return $this;
+    }
+
+    public function getEditorial(): ?Editorial
+    {
+        return $this->editorial;
+    }
+
+    public function setEditorial(?Editorial $editorial): static
+    {
+        $this->editorial = $editorial;
 
         return $this;
     }
