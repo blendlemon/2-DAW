@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\LibroRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: LibroRepository::class)]
@@ -21,6 +23,17 @@ class Libro
 
     #[ORM\Column(nullable: true)]
     private ?int $unidadesVendidas = null;
+
+    /**
+     * @var Collection<int, Autor>
+     */
+    #[ORM\ManyToMany(targetEntity: Autor::class, inversedBy: 'libros')]
+    private Collection $autores;
+
+    public function __construct()
+    {
+        $this->autores = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -59,6 +72,30 @@ class Libro
     public function setUnidadesVendidas(?int $unidadesVendidas): static
     {
         $this->unidadesVendidas = $unidadesVendidas;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Autor>
+     */
+    public function getAutores(): Collection
+    {
+        return $this->autores;
+    }
+
+    public function addAutore(Autor $autore): static
+    {
+        if (!$this->autores->contains($autore)) {
+            $this->autores->add($autore);
+        }
+
+        return $this;
+    }
+
+    public function removeAutore(Autor $autore): static
+    {
+        $this->autores->removeElement($autore);
 
         return $this;
     }
