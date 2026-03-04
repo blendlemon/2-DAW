@@ -16,6 +16,20 @@ class LibroRepository extends ServiceEntityRepository
         parent::__construct($registry, Libro::class);
     }
 
+    public function buscarLibros(?string $titulo, ?int $unidades, ?string $autor): array
+    {
+        $qb = $this->createQueryBuilder('l')
+            ->join('l.autores', 'a');
+
+
+        if ($titulo) {
+            $qb->andWhere('l.titulo LIKE :titulo')
+                ->setParameter('titulo', '%' . $titulo . '%');
+        }
+
+       //Completa aquí
+    }
+
     //    /**
     //     * @return Libro[] Returns an array of Libro objects
     //     */

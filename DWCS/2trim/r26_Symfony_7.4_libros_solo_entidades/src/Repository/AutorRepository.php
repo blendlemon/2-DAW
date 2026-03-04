@@ -16,6 +16,18 @@ class AutorRepository extends ServiceEntityRepository
         parent::__construct($registry, Autor::class);
     }
 
+    public function findAutoresDesdeFecha(\DateTimeInterface $fecha): array{
+        $dql = "
+        SELECT a
+        FROM APP\Entity\Autor a
+        WHERE a.fechaNacimiento >= :fecha
+        ";
+
+        return $this->createQuery($dql)
+                    ->setParameter('fecha', $fecha)
+                    ->getResult();
+    }
+
     //    /**
     //     * @return Autor[] Returns an array of Autor objects
     //     */
