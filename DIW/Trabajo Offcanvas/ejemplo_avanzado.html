@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Offcanvas Avanzado</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- BARRA DE NAVEGACIÓN -->
+  <nav class="navbar navbar-dark bg-dark px-3">
+    <button class="btn btn-outline-light"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#menuNav">
+      ☰ Menú
+    </button>
+    <span class="navbar-brand mx-auto">Mi Tienda</span>
+    <button class="btn btn-outline-warning"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#carrito">
+      🛒 Carrito <span class="badge bg-warning text-dark">3</span>
+    </button>
+  </nav>
+
+  <!-- CONTENIDO DE LA PÁGINA -->
+  <div class="container mt-4">
+    <h2>Bienvenido a Mi Tienda</h2>
+    <p class="text-muted">Usa los botones de la barra para abrir el menú o el carrito.</p>
+  </div>
+
+  <!-- PANEL IZQUIERDA: Menú de navegación -->
+  <div class="offcanvas offcanvas-start"
+       tabindex="-1"
+       id="menuNav"
+       aria-labelledby="menuNavLabel">
+    <div class="offcanvas-header bg-dark text-white">
+      <h5 class="offcanvas-title" id="menuNavLabel">Navegación</h5>
+      <button type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body p-0">
+      <ul class="nav flex-column">
+        <li class="nav-item border-bottom">
+          <a class="nav-link px-4 py-3 text-dark" href="#">🏠 Inicio</a>
+        </li>
+        <li class="nav-item border-bottom">
+          <a class="nav-link px-4 py-3 text-dark" href="#">👕 Ropa</a>
+        </li>
+        <li class="nav-item border-bottom">
+          <a class="nav-link px-4 py-3 text-dark" href="#">👟 Calzado</a>
+        </li>
+        <li class="nav-item border-bottom">
+          <a class="nav-link px-4 py-3 text-dark" href="#">🎒 Accesorios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-4 py-3 text-dark" href="#">📞 Contacto</a>
+        </li>
+      </ul>
+    </div>
+    <div class="p-3 border-top">
+      <button class="btn btn-outline-secondary w-100"
+              data-bs-dismiss="offcanvas">
+        Cerrar menú
+      </button>
+    </div>
+  </div>
+
+  <!-- PANEL DERECHA: Carrito de compra -->
+  <div class="offcanvas offcanvas-end"
+       data-bs-backdrop="static"
+       tabindex="-1"
+       id="carrito"
+       aria-labelledby="carritoLabel">
+    <div class="offcanvas-header bg-warning">
+      <h5 class="offcanvas-title fw-bold" id="carritoLabel">🛒 Mi Carrito</h5>
+      <button type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <div>
+            <p class="mb-0 fw-bold">Camiseta azul</p>
+            <small class="text-muted">Talla M</small>
+          </div>
+          <span class="fw-bold">15,00 €</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <div>
+            <p class="mb-0 fw-bold">Pantalón negro</p>
+            <small class="text-muted">Talla 42</small>
+          </div>
+          <span class="fw-bold">29,99 €</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <div>
+            <p class="mb-0 fw-bold">Zapatillas blancas</p>
+            <small class="text-muted">Talla 41</small>
+          </div>
+          <span class="fw-bold">45,00 €</span>
+        </li>
+      </ul>
+    </div>
+    <div class="p-3 border-top">
+      <div class="d-flex justify-content-between fw-bold fs-5 mb-3">
+        <span>Total:</span>
+        <span>89,99 €</span>
+      </div>
+      <button class="btn btn-warning w-100 fw-bold mb-2">
+        Finalizar compra
+      </button>
+      <button class="btn btn-outline-secondary w-100"
+              data-bs-dismiss="offcanvas">
+        Seguir comprando
+      </button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
