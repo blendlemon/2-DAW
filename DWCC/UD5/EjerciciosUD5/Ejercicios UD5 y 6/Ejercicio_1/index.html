@@ -1,19 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <p>Un parrafo</p>
     <p>Otro parrago</p>
     <p>Un parrafo mas</p>
 
     <script>
-        window.onload(
+        function bordeParrafo(){
+            let parrafo = document.getElementsByTagName("p");
+            for (let i = 0; i < parrafo.length; i++) {
+                parrafo[i].onmouseover = function () {
+                    this.style.border = "1px solid black";
+                }
+                parrafo[i].onmouseout = function () {
+                    this.style.border = "0px";
+                }
+            }
+        }
+
+        window.onload = bordeParrafo;
             
-        );
     </script>
 </body>
+
 </html>

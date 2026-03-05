@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #colores td {
+            padding: 5px;
+            background-clip: content-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="tabla"></div>
+
+    <script>
+        function listarColores() {
+            let resultado = `<table id="colores" width="100%" border="1" style="border-collapse:collapse;">
+                            <tr style="height:30px;">
+                            <td style="background-color:yellow;"></td>
+                            <td style="background-color:orange;"></td>
+                            <td style="background-color:blue;"></td>
+                            <td style="background-color:lightblue;"></td>
+                            <td style="background-color:lightgreen;"></td>
+                            <td style="background-color:red;"></td>
+                            <td style="background-color:black;"></td>
+                            <td style="background-color:white;"></td>
+                            </tr>
+                            </table>`;
+            resultado += `<br><div>Seleccionado el color:<div id="color" style="border:1px solid black; width:100px; height:20px;"></div></div>`;
+
+            resultado += `<br><table id="tablon"  width="100%" border="1" style="border-collapse:collapse;">`;
+
+            for (let i = 0; i < 50; i++) {
+                resultado += `<tr style="height:30px;>`;
+                for (let j = 0; j < 50; j++) {
+                    resultado += `<td></td>`;
+                }
+                resultado += `<tr>`;
+            }
+
+            document.getElementById("tabla").innerHTML = resultado;
+
+
+            // Asignar listeners DESPUÉS de renderizar
+            let colores = document.getElementById("colores");
+            let color = document.getElementById("color");
+            let tablon = document.getElementById("tablon");
+            for (let i = 0; i < colores.rows[0].cells.length; i++) {
+                colores.rows[0].cells[i].onclick = function () {
+                    color.style.backgroundColor = this.style.backgroundColor;
+                }
+            }
+
+            let teclaPresionada = false;
+
+            window.onkeyup = function (event) {
+                if (event.key.toLowerCase() === 'p') {
+                    if (teclaPresionada === true) {
+                        teclaPresionada = false;
+                    }
+                    else {
+                        teclaPresionada = true;
+                    }
+                }
+            }
+            for (let i = 0; i < tablon.rows.length; i++) {
+                for (let j = 0; j < tablon.rows[i].cells.length; j++) {
+                    tablon.rows[i].cells[j].onmouseover = function () {
+                        if (teclaPresionada) {
+                            this.style.backgroundColor = color.style.backgroundColor;
+                        }
+                    }
+                }
+            }
+        }
+
+        window.onload = listarColores;
+    </script>
+</body>
+
+</html>
