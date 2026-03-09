@@ -19,7 +19,8 @@ class LibroRepository extends ServiceEntityRepository
     public function buscarLibros(?string $titulo, ?int $unidades, ?string $autor): array
     {
         $qb = $this->createQueryBuilder('l')
-            ->join('l.autores', 'a');
+            ->leftjoin('l.autores', 'a')
+            ->addSelect('a');
 
 
         if ($titulo) {
@@ -27,7 +28,17 @@ class LibroRepository extends ServiceEntityRepository
                 ->setParameter('titulo', '%' . $titulo . '%');
         }
 
-       //Completa aquí
+        if ($unidades !== null) {
+            $qb->andWhere('l.unidadesVendidas = :unidades')
+                ->setParameter('unidades', $unidades);
+        }
+
+       if ($autor) {
+            $qb->andWhere('a.nombre LIKE :nombre')
+                ->setParameter('nombre', '%' . $autor . '%');
+        }
+
+        return $qb->getQuery()->getResult();
     }
 
     //    /**
