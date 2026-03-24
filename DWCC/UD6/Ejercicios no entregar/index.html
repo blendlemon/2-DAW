@@ -1,0 +1,26 @@
+<!-- Crear un parrafo con un texto cualquiera al darle a un boton -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.classless.min.css">
+</head>
+
+<body>
+    <button id="boton" style="max-width: 100px;">aquí</button>
+    <script>
+
+        document.getElementById("boton").onclick = () => {
+            let body = document.body;
+            let parrafo = document.createElement("p");
+            let texto = document.createTextNode("Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, delectus quaerat accusamus ipsum unde quae exercitationem ratione modi vel ipsam, animi omnis earum facere?");
+            parrafo.appendChild(texto);
+            body.appendChild(parrafo);
+        }
+    </script>
+</body>
+
+</html>
