@@ -2,14 +2,16 @@
 
 namespace App\Controller;
 
+use App\Repository\LibroRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
-use App\Repository\LibroRepository;
 
 final class LibroController extends AbstractController
 {
+   
+
     #[Route('/libros/buscar', name: 'libro_buscar')]
     public function buscar(Request $request, LibroRepository $libroRepository): Response
     {
@@ -23,13 +25,10 @@ final class LibroController extends AbstractController
         $unidades = !empty($unidades) ? (int) $unidades : null; // convertimos a int
         $autor    = !empty($autor) ? $autor : null;
 
+        // Ahora podemos usar estos valores para buscar en el repositorio
+      
         $libros = $libroRepository->buscarLibros($titulo, $unidades, $autor);
 
-        return $this->render('libro/busqueda.html.twig', [
-            'libros' => $libros,
-            'titulo' => $titulo,
-            'unidades' => $unidades,
-            'autor' => $autor,
-        ]);
+        return $this->render("libro/busqueda.html.twig", ["libros" => $libros]);
     }
 }
