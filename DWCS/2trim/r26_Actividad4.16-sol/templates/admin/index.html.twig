@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!
+{% endblock %}
+
+{% block body %}
+	{% if app.user %}
+		<h2>Bienvenido,
+			{{ app.user.email }}!</h2>
+	{% else %}
+		<h2>No estás autenticado</h2>
+	{% endif %}
+</div>{% endblock %}
