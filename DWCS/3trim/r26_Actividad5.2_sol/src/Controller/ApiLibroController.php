@@ -4,14 +4,12 @@ namespace App\Controller;
 
 use App\Entity\Libro;
 use App\Repository\LibroRepository;
-
-
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
-
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 
 
@@ -73,7 +71,73 @@ final class ApiLibroController extends AbstractController
         } else {
             return $this->json(['error' => 'El campo titulo es obligatorio'], 400);
         }
+    }
+    #[Route('/libros/v', name: 'libros_create_v', methods: ['POST'])]
+    public function createLibroValidacion(Request $request, ValidatorInterface $validator, EntityManagerInterface $em): JsonResponse
+    {
+        $data = json_decode($request->getContent(), true);
+        if ($data == null) {
+            return $this->json(["error" => "Invalid JSON"], 400);
+        }
+        if (!isset($data["titulo"])) {
+            return $this->json(["error" => "Invalid JSON"], 400);
+        }
 
+        $libro = new Libro();
+        $libro->setTitulo($data['titulo'] ?? null);
 
+        $errors = $validator->validate($libro);
+
+        if (count($errors) > 0) {
+            $formattedErrors = [];
+            foreach ($errors as $error) {
+                $formattedErrors[$error->getPropertyPath()] = $error->getMessage();
+            }
+            return $this->json([
+                'error' => 'Validation failed',
+                'fields' => $formattedErrors
+            ], 400);
+        }
+
+        $em->persist($libro);
+        $em->flush();
+
+        return $this->json($libro, 201);
+    }
+
+    //Update libro
+    #[Route('/libros/{id}/update', name: 'libros_update', methods: ['PUT'])]
+    public function update(Request $request, EntityManagerInterface $em, LibroRepository $repo, int $id, ValidatorInterface $validator): JsonResponse
+    {
+        $libro = $repo->find($id);
+        if (!$libro) {
+            return $this->json(['error' => 'Libro not found'], 404);
+        }
+        $data = json_decode($request->getContent(), true);
+        if ($data == null) {
+            return $this->json(["error" => "Invalid JSON"], 400);
+        }
+        if (!isset($data["titulo"])) {
+            return $this->json(["error" => "Invalid JSON"], 400);
+        }
+
+        $libro->setTitulo($data['titulo'] ?? null);
+
+        $errors = $validator->validate($libro);
+
+        if (count($errors) > 0) {
+            $formattedErrors = [];
+            foreach ($errors as $error) {
+                $formattedErrors[$error->getPropertyPath()] = $error->getMessage();
+            }
+            return $this->json([
+                'error' => 'Validation failed',
+                'fields' => $formattedErrors
+            ], 400);
+        }
+
+        $em->flush();
+
+        return $this->json($libro, 200);
     }
 }
