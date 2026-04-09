@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Fluid viewport -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.min.css">
+</head>
+
+<body>
+    <form action="" id="formulario">
+        <label for="usuario">usuario</label>
+        <input type="text" name="usuario" id="usuario" />
+        <label for="contrasena">contraseña</label>
+        <input type="password" name="contrasena" id="contrasena" />
+        <label for="contrasena1">contraseña</label>
+        <input type="password" name="contrasena1" id="contrasena1" />
+        <label for="edad">Edad</label>
+        <input type="number" name="edad" id="edad"/>
+        <label for="sexo">Sexo:</label>
+        <select name="sexo" id="sexo">
+            <option value="" selected disabled hidden>-</option>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+            <option value="nobinario">No Binario</option>
+        </select>
+        <button id="submit" type="submit">enviar</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
