@@ -9,7 +9,7 @@ final class ApiLibroControllerTest extends WebTestCase
     public function testIndex(): void
     {
         $client = static::createClient();
-        $client->request('GET', '/api/libro');
+        $client->request('GET', '/api/libros');
 
         self::assertResponseIsSuccessful();
     }

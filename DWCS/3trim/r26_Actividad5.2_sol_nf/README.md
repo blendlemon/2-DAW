@@ -19,7 +19,7 @@ composer require --dev phpunit/phpunit
 
 # Configurar base de datos
 
-DATABASE_URL="mysql://root:abc123.@127.0.0.1:3306/api_librosp?serverVersion=8.0.40&charset=utf8mb4"
+DATABASE_URL="mysql://root:abc123.@127.0.0.1:3306/api_libros?serverVersion=8.0.40&charset=utf8mb4"
 
 # Crear la base de datos
 
@@ -55,6 +55,8 @@ INSERT INTO libro (titulo) VALUES
 ('1984'),
 ('La sombra del viento'),
 ('El nombre del viento');
+
+La migración crea la tabla, pero no inserta estos registros automáticamente. Si la tabla está vacía, `/api/libros` devolverá `[]` hasta que cargues datos.
 
 
 
