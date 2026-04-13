@@ -25,7 +25,7 @@ class Libro
     private ?string $titulo = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-     #[Assert\NotBlank(message: "La descripción es obligatoria", normalizer:"trim")]
+     //#[Assert\NotBlank(message: "La descripción es obligatoria", normalizer:"trim", allowNull: true)]
      #[Assert\Length(
         min: 10,
         max: 255,
