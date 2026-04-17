@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+            display: flex;
+            justify-content: space-around;
+        }
+        .menu{
+        display: flex;
+        flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="menu">
+           <label for="primeros">Primeros:</label>
+           <select name="primeros" id="primeros" size="4">
+            <option value="5">Sopa</option>
+            <option value="6">Croquetas</option>
+            <option value="4">Ensaladilla</option>
+           </select>
+           <label for="segundos">Segundos:</label>
+           <select name="segundos" id="segundos" size="4">
+            <option value="6">Ternera</option>
+            <option value="2">Pollo</option>
+            <option value="3">Merluza</option>
+           </select>
+           <label for="postres">Postres:</label>
+           <select name="postres" id="postres" size="4">
+            <option value="3">Tarta</option>
+            <option value="1">Fruta</option>
+            <option value="2">Helado</option>
+           </select>
+           <button id="anhadir">></button>
+        </div>
+        <div>
+            <select name="" id="factura" size="20">
+                <option value="" disabled>----------------------------</option>
+            </select>
+            <button id="borrarUno">Borrar uno</button>
+            <button id="borrar">Borrar todo</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
