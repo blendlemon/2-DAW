@@ -1,5 +1,5 @@
 const URL_BASE = '/api/v2';
-const API_LIBROS = `${URL_BASE}/libros`;
+const API_LIBROS = `http://127.0.0.1:8001/api/v2/libros`;
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -10,7 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', () => {
 
         fetch(API_LIBROS)
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+                return response.json();
+            })
             .then(libros => {
                 mostrarLibros(libros);
             })
@@ -22,6 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function mostrarLibros(libros) {
     const lista = document.getElementById('listaLibrosApi');
+    if (!lista) return;
+
     lista.innerHTML = '';
 
     libros.forEach(libro => {
