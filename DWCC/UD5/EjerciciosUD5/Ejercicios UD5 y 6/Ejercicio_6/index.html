@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" id="formulario">
+        <label for="bebidas">
+            <b>Bebidas:</b>
+        </label>
+        <select name="bebidas" id="bebidas" style="overflow: scroll;" size="4">
+            <option value="2.34" nombre="hola">Cerveza marca A</option>
+            <option value="2.60">Cerveza marca B</option>
+            <option value="1.20">Agua</option>
+        </select>
+        <label for="cantidad">Cantidad</label>
+        <input type="number" name="cantidad" id="cantidad">
+        <button id="anhadir">></button>
+        <div id="contenedor" style="overflow: scroll;">
+        </div>
+        <button id="borrar">Borrar todo</button>
+        <label for="importe">Importe total:</label>
+        <input type="number" id="importe" name="importe" disabled value="0">
+    </form>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+no ajax, no jquery
