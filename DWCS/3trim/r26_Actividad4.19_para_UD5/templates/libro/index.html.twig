@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Listado de libros{% endblock %}
+
+{% block body %}
+<h2>Listado de libros</h2>
+<ul>
+    {% for libro in libros %}
+        <li>{{libro.id}}- {{ libro.titulo }} </li>
+    {% endfor %}
+</ul>
+
+
+
+
+    <button id="btnLibros" type="button" class="btn btn-secondary mx-2">  Cargar libros del servicio web</button>
+
+    <ul id="listaLibrosApi"></ul>
+{% endblock %}
