@@ -1,5 +1,5 @@
 const URL_BASE = '/api/v2';
-const API_LIBROS = `http://127.0.0.1:8001/api/v2/libros`;
+const API_LIBROS = `https://127.0.0.1:8001/api/v2/libros`;
 
 document.addEventListener('DOMContentLoaded', () => {
 
