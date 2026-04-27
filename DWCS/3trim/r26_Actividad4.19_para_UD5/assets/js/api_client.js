@@ -16,6 +16,15 @@ export async function apiCall(url, method = 'GET', body = null) {
     }
 
     const response = await fetch(url, options);
+
+    // extra para evitar errores al eliminar (204 No Content)
+
+    if (response.status === 204) {
+
+        return null;
+
+    }
+
     const data = await response.json();
 
     if (!response.ok) {

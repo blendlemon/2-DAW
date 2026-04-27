@@ -56,6 +56,28 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
     });
+
+    // Delegación de eventos en el cuerpo de la tabla
+
+    document.getElementById('cuerpoTablaLibros').addEventListener('click', (e) => {
+
+        if (e.target.classList.contains('btn-borrar')) {
+
+            const id = e.target.dataset.id;
+
+            const fila = e.target.closest('tr'); // Encuentra la fila (tr) más cercana al botón
+
+
+
+            if (confirm(`¿Estás seguro de eliminar el libro con ID ${id}?`)) {
+
+                eliminarLibro(id, fila);
+
+            }
+
+        }
+
+    });
 });
 
 
@@ -72,6 +94,16 @@ function mostrarLibros(libros) {
             <td>${libro.id}</td>
             <td><strong>${libro.titulo}</strong></td>
             <td>${libro.descripcion || '<span class="text-muted">Sin descripciÃ³n</span>'}</td>
+
+  <td class="text-center">
+
+                <button class="btn btn-danger btn-sm btn-borrar" data-id="${libro.id}">
+
+                    Eliminar
+
+                </button>
+
+            </td>
         `;
         cuerpoTabla.appendChild(fila);
     });
@@ -86,4 +118,17 @@ function mostrarNotificacion(mensaje, tipo = 'success') {
     if (tipo === 'success') {
         setTimeout(() => divAlert.style.display = 'none', 3000);
     }
+}
+
+// --- ELIMINAR LIBRO ---
+function eliminarLibro(id, fila) {
+    apiCall(`${API_URL}/${id}`, 'DELETE')
+        .then(() => {
+            fila.remove();
+            mostrarNotificacion('Se ha eliminaod el libro con id' + id, 'success');
+        })
+        .catch(err => {
+            console.error('Error al eliminar el libro:', err);
+            mostrarNotificacion('Error al eliminar el libro con id' + id, 'danger');
+        });
 }
