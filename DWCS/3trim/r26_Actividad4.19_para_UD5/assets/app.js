@@ -7,6 +7,7 @@
  */
 import './styles/app.css';
 import './js/libros.js';
+import './stimulus_bootstrap.js'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
