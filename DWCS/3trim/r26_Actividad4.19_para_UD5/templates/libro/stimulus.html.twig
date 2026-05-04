@@ -16,10 +16,10 @@
 
 
 		<div class="row">
-			<button id="btnLibros" type="button" class="col-5 btn btn-secondary mx-2" data-action="libros#cargarLibros">
+			<button id="btnLibros" type="button" class="col-5 btn btn-secondary mx-2" data-action="click->libros#cargarLibros">
 				Cargar libros del servicio web
 			</button>
-			<button id="btnCrearLibro" type="button" class=" col-5 btn btn-primary mx-2">
+			<button id="btnCrearLibro" type="button" class=" col-5 btn btn-primary mx-2" data-action="click->libros#mostrarCrear">
 				Crear nuevo libro
 			</button>
 		</div>
@@ -31,17 +31,17 @@
 			<div id="contenedorErrores" class="alert alert-danger" style="display: none;">
 				<ul id="listaErrores" class="mb-0"></ul>
 			</div>
-			<form id="formLibro">
-				<class="mb-3">
+			<form id="formLibro" data-libros-target="form">
+				<div class="mb-3">
 					<label for="titulo" class="form-label">
 						Título
 					</label>
-					<input type="text" id="titulo" class="form-control" required>
-					<textarea id="descripcion" class="form-control mb-3" placeholder="Descripción del libro" rows="3"></textarea>
-					<button type="submit" class="btn btn-success">
+					<input type="text" id="titulo" class="form-control" required data-libros-target="titulo">
+					<textarea id="descripcion" class="form-control mb-3" placeholder="Descripción del libro" rows="3" data-libros-target="descripcion"></textarea>
+					<button type="submit" class="btn btn-success" data-action="click->libros#crearLibro">
 						Guardar en API
 					</button>
-					<button type="button" id="btnCancelar" class="btn btn-link">
+					<button type="button" id="btnCancelar" class="btn btn-link" data-action="click->libros#ocultarCrear">
 						Cancelar
 					</button>
 				</div>
@@ -70,7 +70,7 @@
 						</th>
 					</tr>
 				</thead>
-				<tbody id="cuerpoTablaLibros" data-libros-target="cuerpoTablaLibros"></tbody>
+				<tbody id="cuerpoTablaLibros" data-libros-target="cuerpoTablaLibros" data-action="click->libros#confirmarEliminarLibro"></tbody>
 			</table>
 		</div>
 	</div>

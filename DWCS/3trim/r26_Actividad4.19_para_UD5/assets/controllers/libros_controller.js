@@ -1,13 +1,16 @@
 import { Controller } from '@hotwired/stimulus';
 import { apiCall } from './../js/api_client.js';
 
-const API_URL = 'http://127.0.0';
+const API_URL = 'https://127.0.0.1:8001/api/v2/libros';
 
 export default class extends Controller {
     static targets = [
         'formularioContenedor',
-        "divListaLibrosApi",
-        "cuerpoTablaLibros"];
+        'divListaLibrosApi',
+        "cuerpoTablaLibros",
+        'form',
+        'titulo',
+        'descripcion'];
     connect() {
         console.log("Hola este es el controlador de libros");
     }
@@ -20,6 +23,70 @@ export default class extends Controller {
             .catch(err => {
                 console.error('Error al cargar libros:', err);
                 this.#mostrarNotificacion('Error al cargar libros', 'danger');
+            });
+    }
+
+    mostrarCrear() {
+        this.formularioContenedorTarget.style.display = 'block';
+        this.formTarget.reset();
+    }
+    ocultarCrear() {
+        this.formularioContenedorTarget.style.display = 'none';
+        this.formTarget.reset();
+    }
+
+    crearLibro(e) {
+        //Se previene el comportamiento por defecto del formulario, que es recargar la pÃ¡gina y enviar los datos de forma tradicional
+        e.preventDefault();
+
+        const nuevoLibro = {
+            titulo: this.tituloTarget.value,
+            // Si el campo de descripciÃ³n estÃ¡ vacÃ­o, enviamos null para que se guarde como NULL en la base de datos
+            descripcion: this.descripcionTarget.value.trim() || null
+        };
+
+        //Completar con la llamada a apiCall para crear el libro, mostrar notificaciÃ³n y refrescar la lista
+        apiCall(API_URL, 'POST', nuevoLibro)
+            .then(data => {
+                this.#mostrarNotificacion('Libro creado', 'success');
+                this.cargarLibros();
+            })
+            .catch(err => {
+                console.error('Error al crear libros:', err);
+                this.#mostrarNotificacion('Error al crear libros', 'danger');
+            });
+
+    }
+
+    confirmarEliminarLibro(e) {
+
+        if (e.target.classList.contains('btn-borrar')) {
+
+            const id = e.target.dataset.id;
+
+            const fila = e.target.closest('tr'); // Encuentra la fila (tr) más cercana al botón
+
+
+
+            if (confirm(`¿Estás seguro de eliminar el libro con ID ${id}?`)) {
+
+                this.#eliminarLibro(id, fila);
+
+            }
+
+        }
+
+    }
+
+    #eliminarLibro(id, fila) {
+        apiCall(`${API_URL}/${id}`, 'DELETE')
+            .then(() => {
+                fila.remove();
+                this.#mostrarNotificacion('Se ha eliminaod el libro con id' + id, 'success');
+            })
+            .catch(err => {
+                console.error('Error al eliminar el libro:', err);
+                this.#mostrarNotificacion('Error al eliminar el libro con id' + id, 'danger');
             });
     }
     #mostrarLibros(libros) {
@@ -40,7 +107,7 @@ export default class extends Controller {
                 </button>
             </td>
         `;
-            cuerpoTabla.appendChild(fila);
+            this.cuerpoTablaLibrosTarget.appendChild(fila);
         });
     }
 
