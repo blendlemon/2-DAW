@@ -10,6 +10,7 @@ framework:
             no_proxy: "localhost, 127.0.0.1"
             verify_peer: false
             verify_host: false
+            # cafile: '%env(default::SYMFONY_CA_FILE)%'
     #esi: true
     #fragments: true
 
