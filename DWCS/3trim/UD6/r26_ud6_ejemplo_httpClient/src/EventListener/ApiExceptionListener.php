@@ -2,9 +2,12 @@
 
 namespace App\EventListener;
 
-use Symfony\Component\HttpKernel\Event\ExceptionEvent;
-use Symfony\Component\HttpFoundation\JsonResponse;
+use App\Exception\ApiBadRequestException;
+use App\Exception\ApiConnectionException;
+use App\Exception\ApiServerException;
 use Psr\Log\LoggerInterface;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpKernel\Event\ExceptionEvent;
 
 class ApiExceptionListener
 {
