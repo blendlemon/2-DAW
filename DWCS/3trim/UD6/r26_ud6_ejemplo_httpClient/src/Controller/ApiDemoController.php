@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Service\LibrosService;
+use App\Service\WeatherApiClientService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Attribute\Route;
@@ -72,5 +73,12 @@ final class ApiDemoController extends AbstractController
         $librosService->createLibro(['titulo' => 'HC Service', 'descripcion' => 'Libro sobre HttpClient de Symfony y servicio']);
         $libros = $librosService->getLibros();
         return $this->json($libros);
+    }
+
+    #[Route('/ejemplo5', name: 'ejemplo5')]
+    public function ejemplo5(WeatherApiClientService $weatherService): JsonResponse
+    {
+        $response = $weatherService->getWeatherByCity('London');
+        return $this->json($response);
     }
 }
