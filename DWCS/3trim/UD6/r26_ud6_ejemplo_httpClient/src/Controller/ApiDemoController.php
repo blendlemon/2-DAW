@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Service\CountriesApiClientService;
+use App\Service\CountryWeatherAggregatorService;
 use App\Service\LibrosService;
 use App\Service\WeatherApiClientService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -79,6 +81,20 @@ final class ApiDemoController extends AbstractController
     public function ejemplo5(WeatherApiClientService $weatherService): JsonResponse
     {
         $response = $weatherService->getWeatherByCity('London');
+        return $this->json($response);
+
+        }
+    #[Route('/ejemplo6', name: 'ejemplo6')]
+    public function ejemplo6(CountriesApiClientService $countriesService): JsonResponse
+    {
+        $response = $countriesService->getAllCountries();
+        return $this->json($response);
+    }
+
+    #[Route('/ejemplo7', name: 'ejemplo7')]
+    public function ejemplo7(CountryWeatherAggregatorService $countryWeatherService): JsonResponse
+    {
+        $response = $countryWeatherService->getCountriesWithWeather();
         return $this->json($response);
     }
 }

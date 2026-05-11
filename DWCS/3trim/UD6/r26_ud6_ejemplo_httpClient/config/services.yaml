@@ -29,9 +29,9 @@ services:
         tags:
             - { name: kernel.event_listener, event: kernel.exception }
 
-    # App\Service\CountriesApiClient:
-    #     arguments:
-    #         $countriesApiUrl: "%countries_api_url%"
+    App\Service\CountriesApiClientService:
+        arguments:
+            $countriesApiUrl: "%countries_api_url%"
 
     App\Service\WeatherApiClientService:
         arguments:
