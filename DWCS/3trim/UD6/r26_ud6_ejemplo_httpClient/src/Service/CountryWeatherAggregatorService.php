@@ -23,7 +23,7 @@ class CountryWeatherAggregatorService
 
         foreach ($firstFiveCountries as $country) {
             // Obtener clima de la capital
-            $weather = $this->weatherService->getWeatherByCity($country['capital']);
+            $weather = $this->weatherService->getWeatherByCity($country['capital'][0]);
 
             // Crear nuevo array con los datos solicitados
             $countries[] = [
