@@ -2,22 +2,22 @@
 
 namespace App\Repository;
 
-use App\Entity\CapitalWeatherMesurement;
+use App\Entity\CapitalWeatherMeasurement;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<CapitalWeatherMesurement>
+ * @extends ServiceEntityRepository<CapitalWeatherMeasurement>
  */
-class CapitalWeatherMesurementRepository extends ServiceEntityRepository
+class CapitalWeatherMeasurementRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, CapitalWeatherMesurement::class);
+        parent::__construct($registry, CapitalWeatherMeasurement::class);
     }
 
     //    /**
-    //     * @return CapitalWeatherMesurement[] Returns an array of CapitalWeatherMesurement objects
+    //     * @return CapitalWeatherMeasurement[] Returns an array of CapitalWeatherMeasurement objects
     //     */
     //    public function findByExampleField($value): array
     //    {
@@ -31,7 +31,7 @@ class CapitalWeatherMesurementRepository extends ServiceEntityRepository
     //        ;
     //    }
 
-    //    public function findOneBySomeField($value): ?CapitalWeatherMesurement
+    //    public function findOneBySomeField($value): ?CapitalWeatherMeasurement
     //    {
     //        return $this->createQueryBuilder('c')
     //            ->andWhere('c.exampleField = :val')
@@ -40,4 +40,14 @@ class CapitalWeatherMesurementRepository extends ServiceEntityRepository
     //            ->getOneOrNullResult()
     //        ;
     //    }
+
+       public function findByMaxTemp($limit = 5): array
+       {
+           return $this->createQueryBuilder('c')
+               ->orderBy('c.temperature', 'DESC')
+               ->setMaxResults($limit)
+               ->getQuery()
+               ->getResult()
+           ;
+       }
 }

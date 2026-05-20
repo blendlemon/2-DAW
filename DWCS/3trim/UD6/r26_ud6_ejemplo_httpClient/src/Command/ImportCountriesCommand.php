@@ -48,15 +48,35 @@ class ImportCountriesCommand extends Command
             ]);
 
             // Limpiar tabla y resetear ids durante pruebas
-            $this->em->getConnection()->executeStatement('DELETE FROM country');
-            $this->em->getConnection()->executeStatement('ALTER TABLE country AUTO_INCREMENT = 1');
+            // $this->em->getConnection()->executeStatement('DELETE FROM country');
+            // $this->em->getConnection()->executeStatement('ALTER TABLE country AUTO_INCREMENT = 1');
 
             $imported = 0;
+            $skipped = 0;
 
             foreach ($countries as $country) {
+                $code = $country['cca2'] ?? null;
+
+                if ($code) {
+                    $existing = $this->em->getRepository(Country::class)->findOneBy(['code' => $code]);
+                    if ($existing) {
+                        $this->logger->info('País ya existe, omitido', [
+                            'code' => $code,
+                        ]);
+                        $skipped++;
+                        continue;
+                    }
+                } else {
+                    $this->logger->warning('País sin código en API, omitido', [
+                        'country' => $country['name']['official'] ?? null,
+                    ]);
+                    $skipped++;
+                    continue;
+                }
+
                 $newCountry = new Country();
                 $newCountry->setName($country['name']['official']);
-                $newCountry->setCode($country['cca2']);
+                $newCountry->setCode($code);
 
                 if (isset($country['capital'][0])) {
                     $newCountry->setCapital($country['capital'][0]);
@@ -78,9 +98,10 @@ class ImportCountriesCommand extends Command
 
             $this->logger->info('Importación completada', [
                 'imported' => $imported,
+                'skipped' => $skipped,
             ]);
 
-            $io->success('Importación terminada: ' . $imported . ' países.');
+            $io->success('Importación terminada: ' . $imported . ' importados, ' . $skipped . ' omitidos.');
             return Command::SUCCESS;
         } catch (\Throwable $e) {
             $this->logger->error('Error importando países', [

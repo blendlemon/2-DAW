@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Repository\CapitalWeatherMeasurementRepository;
+use App\Repository\CountryRepository;
 use App\Service\CountriesApiClientService;
 use App\Service\CountryWeatherAggregatorService;
 use App\Service\LibrosService;
@@ -97,4 +99,39 @@ final class ApiDemoController extends AbstractController
         $response = $countryWeatherService->getCountriesWithWeather();
         return $this->json($response);
     }
+
+     #[Route('/countries/{limit}', name: 'ejemploLeaflet', methods: ['GET'])]
+
+    public function getTopLocalCountriesByPopulation(CountryRepository $countryRepository, int $limit): JsonResponse
+
+    {
+
+        $countries = $countryRepository->findTopCountries($limit);
+
+        return $this->json($countries);
+
+    }
+
+     #[Route('/bottomcountry', name: 'ejemploLeafletpequeno', methods: ['GET'])]
+    public function getBottomLocalCountryByPopulation(CountryRepository $countryRepository): JsonResponse
+
+    {
+
+        $countries = $countryRepository->findBottomPopulatedCountry();
+
+        return $this->json($countries);
+
+    }
+
+     #[Route('/temperature/{limit}', name: 'temperaturasmaximas', methods: ['GET'])]
+    public function getTopLocalCountryByTemperature(int $limit, CapitalWeatherMeasurementRepository $capitalWeatherMeasurementRepository): JsonResponse
+
+    {
+
+        $capitales = $capitalWeatherMeasurementRepository->findByMaxTemp($limit);
+
+        return $this->json($capitales);
+
+    }
+
 }
